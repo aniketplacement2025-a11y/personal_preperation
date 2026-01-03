@@ -5,7 +5,7 @@ I'm gaining hands on experience in building cross platform
 mobile applications.
 
 During my internship, I have worked on flutter development, including
-Firebase Integration, REST API handling, reusable widget creation and
+REST API handling, reusable widget creation and
 Ui optimization to ensure smooth performance across Android and iOS devices.
 I have also developed some projects.
 
