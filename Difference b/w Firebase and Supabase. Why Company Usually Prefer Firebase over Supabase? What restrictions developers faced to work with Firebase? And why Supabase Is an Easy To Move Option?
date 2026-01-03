@@ -1,0 +1,31 @@
+            D/W FIREBASE AND SUPABASE?  
+Firabase is a backend as a Service(BaaS) platform that provides a fully
+managed, serverless backend where Google controls most of the 
+Infrastructure.
+It focus on:
+ i. Speed of development.                  ii. Real time apps.
+          ii. Deep integration with Google Cloud.
+
+Supabase is an open source Firebase alternative built on PostgreSQL. 
+It gives:       *SQL Based relational database.
+ *More backend Control.
+ *Easier migration and self hosting options.
+Supabase is more like "Backend with freedom" rather than fully 
+ abstracted backend.
+
+  WHY COMPANIES USUALLY PREFER FIREBASE OVER SUPABASE?    
+1. Google Trust & Stability:
+ Firebase is backed by Google, which gives companies:
+   *Long term reliablity.          *Enterprise grade infrastructure.
+              *Strong SLA (Service level Agreement)
+For large companies, risk matters more than flexibility.
+
+2. Faster Time to Market:
+  Firebase allows companies to:    *Build MVPs very fast.
+  *Avoid backend engineering efforts.
+  *Focus more on UI & product logic.
+ No need to manage:
+  *Servers.       *Database scaling.       *Security patches.
+ This is critical for statups and rapid prototyping.
+
+ 3. Mature Ecosystem:   Firebase has:
