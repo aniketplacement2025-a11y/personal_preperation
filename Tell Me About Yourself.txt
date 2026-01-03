@@ -1,0 +1,21 @@
+I am a 2025 B.Tech graduate in Computer Science Engineering from 
+Shri Vaishnav Vidhyapeeth Vishwavidhyalaya. I am working as a 
+flutter Developer Intern at VKAPS IT Solutions Pvt. Ltd., Where
+I'm gaining hands on experience in building cross platform
+mobile applications.
+
+During my internship, I have worked on flutter development, including
+Firebase Integration, REST API handling, reusable widget creation and
+Ui optimization to ensure smooth performance across Android and iOS devices.
+I have also developed some projects.
+
+Technically i have strong foundation in Dart, flutter with basic backend
+conecpts, along with good problem solving and debugging skills. I enjoy
+learning new technologies and quickly adapting to new challenges.
+
+Apart from technical work, I like playing chess and reading, which help me 
+improve my analytical thinking and decision making skills.
+
+I am now looking for full - time flutter Developer opportunity where i can
+apply my skills, learn from experienced professionals and contribute to 
+building impactful mobile applications.
