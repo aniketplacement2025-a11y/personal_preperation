@@ -1,0 +1,29 @@
+1. Flutter Is Developed By google in Compedition of React Native(Meta).
+2. Flutter Uses Dart Programming language Instead JavaScript.
+3. Flutter has it's own GUI rendering Engine call Skia While 
+     React has it's own Native components.
+4. Ui is build Using widgets Instead of JavaScript Bridge.
+5. Performance is very close to native While
+  React Native has Performance good but bridge can cause delay.
+6. Same Ui on Android, iOS, Web and Desktop Not Mostly focused 
+  On Mobile apps.
+
+           WHY DID U CHOOSE OVER FLUTTER OVER REACT
+I chose Flutter over React Native mainly because of it's performance,
+Ui consistency and long term scalability.
+   Reason 1: Better Performance:
+ i. Flutter Does not use a Javascript bridge.
+ ii. Ui is rendered directly using skia engine.
+ iii. Results in faster and smoother apps.
+      Reason 2: Ui Consistency:
+   i. Flutter provides its own widgets.
+  ii. App looks exactly the same on Android and iOS.
+  iii. No platform specific Ui issues.
+    Reason 3: Easy for Java / OOP Background
+ i. Dart is object oriented
+ ii. Syntax is similar to java.
+  iii. Easy transition for someone like me with Java Knowledge.
+   Reason 4: Single Codebase for Multiple Platforms
+   Reason 5: Strong Community & Google Support
+ *Backed by Google.
+ *Growing demand in startups and enterprises.
