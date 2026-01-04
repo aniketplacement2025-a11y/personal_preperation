@@ -1,1 +1,28 @@
+         AUTHENTICATION - "Who are you?"
+Authentication is the process of verifying the identity of a user.
+It checks whether the user is really the person they claim to be.
+  *It happens first in any application.
+  *it is done using credenticals.
+ Common authentication methods:
+  *Username & Password.
+  *OTP (Email/ SMS /Phone).
+  *Biometric (Fingerprint, Face ID).
+  *Token - based login (JWT, OAuth).
 
+Example: When your enter email and password on a login page, the system
+         checks them against the database.
+If they match -> authentication is successful.
+
+        AUTHORIZATION - "What are you allowed to do?"
+Is the process of deciding what an authenticated user can access or perform.
+*It happens after authentication.
+*It is based on roles, permissions or access levels.
+ Common authorization types:
+* Role Based Access Control(Admin, User, Manager).
+* Permission Based Access.
+* Policy Based Access.
+   Example:
+After logging in:
+ *Admin can add users and view reports.
+ *User can only view their own profile.
+Both are authenticated, but not authorized for the same actions. 
