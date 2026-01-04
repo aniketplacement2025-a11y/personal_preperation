@@ -1,0 +1,35 @@
+        WHAT IS SCAFFOLD IN FLUTTER?
+In flutter, Scaffold is a material design layout structure that provides
+a basic visual framework for an application screen. It helps us build a 
+standard app page by offering predefined slots like AppBar, Body, Drawer,
+BottomNavigationBar, FloatingActionButton, and more.
+
+        WHY DO WE USE SCAFFOLD?
+Explain the problem first (Interviewers like this):
+  Without Scaffold, we would have to manually manage layout, positioning,
+  Safe areas and UI behaviours like snackbars or drawers. Scaffold 
+  simplifies this by giving us a ready made screen structure.
+  Key reasons: 
+   *Providers Material Design UI.
+   *Manages screen layout.         *Handles Ui behaviors automatically
+    *Reduces boilerplate code.
+
+          MAIN COMPONENTS OF SCAFFOLD?
+Explain only important ones (don't overdo it):
+ 1. 'appBar': Top bar of the screen
+    Used for title, navigation icons, actions.
+  Example:     appBar: AppBar( title: Text("Home"), )
+ 2. 'body': main content of the screen.
+  * Can contain any widget (Column, ListView, Form, etc).
+  Example:     body: Center( child: Text("Welcome"), )
+ 3. 'drawer': Side navigation menu.
+  * Slides from left.
+  Example:     drawer: Drawer()
+ 4. 'bottomNavigationBar': Used for app wide navigation.
+  Example:    bottomNavigationBar: BottomNavigationBar(...)
+ 5. 'floatingActionButton': Circular action button.
+   *Used for primary actions.
+  Example: floatingActionButton: 
+        FloatingActionButton( onPressed: () {}, ) 
+ 6. 'snackBar' &  'bottomSheet':
+ * Used for messages and temporary UI feedback
