@@ -1,0 +1,21 @@
+It's the root widget of a flutter application that follows Google's Material
+Design guidelines.
+It provides the basic structure, theme, navigation and app level 
+configurations required to build a complete Flutter app.
+In Simple words, MaterialApp acts as a wrapper that connects your Flutter 
+app With Material Design features like themes, navigation, icons, text styles 
+and animations.
+
+              WHY DO WE USE MATERIALAPP?
+When we build a FLutter app, we need:
+ *A consistent UI theme.
+ *Navigation between screens.
+ *Material widgets like Scaffold, AppBar, Buttons.
+ *App - level configurations (routes, localization, debug banner).
+      -> MaterialApp gives all of this in one place.
+Without 'materialApp', many Material widgets 
+(like Scaffold, AppBar, SnackBar) will not work properly.
+
+           WHAT DOES 'MATERIALAPP' PROVIDE INTERNALLY?
+ 1. Material Design Styling: It Enables:
+ *Material colors.       *Typography.        *Icons.    *Animations.   
