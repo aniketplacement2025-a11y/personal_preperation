@@ -1,0 +1,7 @@
+In Flutter, a widget is the basic building block of the user interface.
+Everything u see on the screen - such as text, buttons, images, layouts
+and even the app structure itself - is a widget.
+
+Widgets describe what the UI should look like for a given state. when the
+state changes, flutter rebuilds the widget tree and updates only the parts
+of the UI that need to change.
