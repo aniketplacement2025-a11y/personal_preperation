@@ -33,3 +33,20 @@ Explain only important ones (don't overdo it):
         FloatingActionButton( onPressed: () {}, ) 
  6. 'snackBar' &  'bottomSheet':
  * Used for messages and temporary UI feedback
+   (Works only inside Scaffold).
+
+         EXAMPLE (EXMPLAINING WHILE SHOWING)
+ Scaffold( 
+   appBar: AppBar( title: Text('My App'),),
+   body: Center( child: Text('Hello Flutter'), ),
+   FloatingActionButton: FloatingActionButton(
+    onPressed: () {},  child: Icon(Icons.add),
+   )
+);
+
+       Important Interview Point (VERY IMPORTANT)
+ Scaffold works only with MaterialApp
+   Say this clearly:
+ Scaffold follows Material Design principles, so it must be used inside
+ a "MaterialApp". Otherwise, widgets like AppBar or SnackBar will not
+ work properly.
