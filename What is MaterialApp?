@@ -19,3 +19,6 @@ Without 'materialApp', many Material widgets
            WHAT DOES 'MATERIALAPP' PROVIDE INTERNALLY?
  1. Material Design Styling: It Enables:
  *Material colors.       *Typography.        *Icons.    *Animations.   
+
+                INTERVIEW ONE LINE SUMMARY?
+MaterialApp is the root widget in Flutter that provides Material Design styling, navigation, theme management, and app-level configuration, making it essential for building modern Flutter applications.
