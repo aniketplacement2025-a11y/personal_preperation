@@ -26,3 +26,22 @@ After logging in:
  *Admin can add users and view reports.
  *User can only view their own profile.
 Both are authenticated, but not authorized for the same actions. 
+
+            REAL WORLD EXAMPLE (Very interview Friendly)
+ Think of a college campus:
+  *"Authentication: Showing your ID card at the gate -> proves who u are".
+  *"Authorization:  Accessing staff room or student lab -> depends on 
+    Your role".
+
+            TECHNICAL EXAMPLE (Software Perspective)
+ In a web application:
+  *Login using email + password -> Authentication.
+ *Checking if user has "ROLE_ADMIN" to access '/admin/dashboard' ->
+   Authorization.
+ In JWT - based systems:
+  * Token validation -> Authentication.
+  * Checking claims like role = admin -> Authorization.
+
+                ONE LINE INTERVIEW ANSWER: 
+Authentication verifies the user's identity, while authorization determine
+what actions or resources that authenticated user is allowed to access.
