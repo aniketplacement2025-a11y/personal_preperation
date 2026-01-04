@@ -23,8 +23,34 @@ Flutter uses widgets to create:
  *Layout (Row, Column, Stack).
  *App structure (MaterialApp, Scaffold).
 Even 'MaterialApp' and 'Scaffold' are widgets.
-
   EVERYTHING IN FLUTTER IS A WIDGET?
 This is a very important interview point. Example
  Text, Icons, Padding, Center, Scaffold -> Widget.
 There is no separate XML or UI file like Android.
+ Everything is built using widgets in Dart.
+  WIDGET TREE (VERY IMPORTANT):
+ Flutter UI is built as a tree structure.
+ Flutter compares the old widget tree with the new one and updates only
+ the necessary parts - this makes Flutter fast and efficient.
+  WIDGETS ARE IMMUTABLE (KEY INTERVIEW POINT):
+ Once a widget is created:
+  *You cannot change it.          *You must rebuild it with new data.
+ That's why Flutter separates:
+  *Widget -> UI description       *State -> Changing data.
+
+     TYPES OF WIDGETS:
+ 1) StatelessWidget: UI does not change.         *No internal state.
+        Example: Text, Icon, Static Screens:
+ class MyText extends StatelessWidget {
+@override   Widget build(BuildContext context){ return Text("Hello"); }
+ }
+2) StatefulWidget: *UI changes dynamically.      *Uses 'setState()'.
+ *Example: Counter, Login Form, OTP Screen. 
+class Counter extends StatefulWidget {
+ @override _CounterState createState() => _CounterState();
+}
+             WHY FLUTTER USES WIDGETS?
+ Interviewers love "why" answers.
+    Flutter uses widgets because: *Reusable UI components.
+ *Fast UI rendering.        *Easy state management.
+ *Same UI on Android, iOS, web.        *Clean and maintainable code.
