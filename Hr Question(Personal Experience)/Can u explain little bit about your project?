@@ -1,0 +1,29 @@
+'Tijori+' is a Flutter application designed to be a digital locker.
+It allows users to securely store and organize various types of 
+documents. Based on my exploration of the code.
+Here's a breadkdown of what the app does:
+
+                 CODE FUNCTIONALITY:
+The main purpose of the app is to provide a secure place for users to
+manage their important documents digitally. This could include things
+like contracts, warranties, appointments and other personal records.
+
+*User Flow:
+ 1. The app starts with a splash screen.
+ 2. New users are guided through an onboarding process that highlights 
+    the app's features.
+ 3. After onboarding, users are presented with options to register, login
+    in or enter as a guest.
+ 4. Once logged in, users are taken to the main landing page of the app.
+
+*Technical Details:
+ *It's built with Flutter, which means it can run on Android, iOS and
+  potentially other platforms from a single codebase.
+ *It uses several common Flutter libraries, including http and dio for 
+ network requests (likely for communicating with a server),
+ shared_preferences for storing data locally (like login tokens), and
+ provider for state management.
+
+In essence, it's a comprehensive document management solution for
+individuals, allowing them to keep their important information 
+organized and accessible in one place.
