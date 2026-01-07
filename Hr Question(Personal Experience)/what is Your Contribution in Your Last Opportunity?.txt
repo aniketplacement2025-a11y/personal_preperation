@@ -1,0 +1,6 @@
+In my previous opportunity, my contribution was mainly in development,
+debugging and improving existing features.
+I worked closely with senior developers and followed assigned tasks related
+REST api integration ,Ui optimization and Reusable 
+widget creation. My main contribution was writing clean and reusable code,
+fixing bugs and implementing features as per requirements.
