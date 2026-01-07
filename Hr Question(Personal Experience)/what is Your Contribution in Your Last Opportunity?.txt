@@ -9,3 +9,17 @@ fixing bugs and implementing features as per requirements.
 On the frontend side, I worked with Flutter Ui to build user - friendly
 screens and ensure proper data flow from APIs. I also handle form 
 validation and user input checks to avoid incorrect data submission.
+
+I actively participated in debugging issues like null pointer exceptions,
+API response handling and form submission errors. Whenever an issue came, 
+I first tried to analyze it myself and then discussed it with the team to
+understand best practices.
+
+Apart from coding, I contributed by testing features, improving UI flow,
+and making sure the application behaved correctly in edge cases. I also 
+learned how to work in a team environment, follow deadlines and take 
+ownership of assigned modules.
+
+Overall, my contribution helped in stabilizing the application, reducing
+bugs and delivering features on time while continuously improving my
+technical and problem - solving skills.
