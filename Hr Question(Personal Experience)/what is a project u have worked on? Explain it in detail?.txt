@@ -1,0 +1,9 @@
+           EXPLAINING THE TIJORI+ PROJECT
+  THE PITCH
+one of the most significant projects I've worked on is 'Tijori+'
+a secure digital locker application built with Flutter.
+The primary goal of this project was to provide users with a
+single, organized and secure platform to manage there important
+life documents - everything from contracts , warranties to medical
+records and personal affairs.
+The idea was to eliminate the hassle of physical paperwork.
