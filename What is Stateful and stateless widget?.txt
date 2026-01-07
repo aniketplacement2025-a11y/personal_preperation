@@ -1,0 +1,17 @@
+                 WHAT IS WIDGET IN FLUTTER?
+In flutter, everything is a widget - buttons, text, images, layouts, even
+the entire screen. Widgets describe how the UI should look at a given
+moment.
+
+                   STATELESS WIDGET:
+   DEFINITION (Simple)
+A StatelessWidget is a widget whose UI does not change after it is built.
+ *It does not store mutable state.
+ *Once created, it cannot update itself.
+ *Any change requires rebuilding the widget from outside.
+
+  KEY CHARACTERS
+* Immutable (data cannot change).
+* No 'setState()'.
+* Faster & lightweight.
+* Used for static UI.
