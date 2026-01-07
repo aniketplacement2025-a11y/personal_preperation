@@ -15,3 +15,6 @@ A StatelessWidget is a widget whose UI does not change after it is built.
 * No 'setState()'.
 * Faster & lightweight.
 * Used for static UI.
+
+  EXAMPLES:
+* Text     *Icon    *Image    *Button (UI only)     *Static screens 
