@@ -18,3 +18,78 @@ A StatelessWidget is a widget whose UI does not change after it is built.
 
   EXAMPLES:
 * Text     *Icon    *Image    *Button (UI only)     *Static screens 
+
+  CODE EXAMPLE:
+ class MyText extends StatelessWidget {
+   @override
+  Widget build(BuildContext context){
+   return Text(
+    'Hello Flutter',
+    style: TextStyle(fontSize: 20),
+   );
+  }
+ }
+
+ Once this text is displayed, it never changes unless 
+ Flutter rebuilds the widget tree.
+
+                    STATEFUL WIDGET: 
+A Stateful Widget is a widget whose UI can change during runtime.
+ * It maintains state.
+ * UI updates when data changes.
+ * Uses 'setState()' to rebuild UI.
+
+   KEY CHARACTERISTICS:
+* Mutable state.
+* Has two classes:  *StatefulWidget   *State.
+* Can change UI dynamically.
+* Used for interactive UI.
+
+   EXAMPLES:
+* Checkbox.        * Switch       *Counter app       * Form validation
+* API data loading          *Animations.
+
+                     CODE EXAMPLE:  
+class Counter extends StatefulWidget {
+ @override
+ _CounterState createState() => _CounterState();
+}
+class _CounterState extends State<Counter>{
+ int count = 0;
+ void increment(){
+  setState((){
+   count++;
+  }); }
+ @override
+ Widget build(BuildContext context){
+  return Column(
+   children: [
+    Text('Count: $count'),
+    ElevatedButton(
+     onPressed: increment,
+     child: Text('Increase'),
+    ), ], ); } }
+Every time 'setState()' is called, Flutter rebuilds the UI with updated
+data.
+
+     MAIN DIFFERENCE (Interview Table)
+ Feature               StatelessWidget                StatefulWidget
+*State                   No state                       Has state
+*UI change              Cannot change                   Can Change  
+*setState                No used                          Used
+*Preformance              Faster                      Slightly heavier
+*Use case                Static UI                       Dynamic UI 
+
+              WHEN TO USE WHAT? (Very Important)
+  #Use StatelessWidget when:
+*UI does not change.             *Data is Fixed.
+              *Pure display components.
+  #Use StatefulWidget when:
+*Ui depends on user interaction.             *Data changes over time.
+          *You need to Update UI dynamically.
+
+             GENUINE INTERVIEW ANSWER (Speak This)
+In Flutter, widgets are of two types: Stateless and Stateful.
+A StatelessWidget is used when the UI does not change after it is built. It does not hold any mutable state, and once rendered, it remains the same unless rebuilt externally. Examples include Text, Icon, and static layouts.
+A StatefulWidget is used when the UI needs to change dynamically during runtime. It maintains state using a separate State class, and whenever the state changes, we call setState(), which rebuilds the widget with updated values. Examples include counters, forms, checkboxes, and API-driven UI.
+In short, StatelessWidget is for static UI, while StatefulWidget is for dynamic and interactive UI.
