@@ -1,0 +1,197 @@
+flutter is a cross platform mobile application development software that allows developers
+to create mobile applications that can function on both Android and iOS devices without
+the need for writing separate codes for each platform.
+Flutter is a free. open source UI toolkit for building high quality, natively compiled 
+application for mobile, web and desktop from a single codebase.
+
+flutter is different from other mobile app development frameworks because it uses a 
+single code base for building applications for multiple platforms it includes IOS and
+Android. 
+Flutter also uses a reactive programming model and a unique widget based 
+architecture. That allows faster rendering and customizable Ui elements.
+The main features of flutter 
+*Fast Development         *Expressive and Flexible UI         *Native Performance
+*Cross Platform Development        *Open source.
+
+*Flutter uses the Dart programming language, which was developed by Google.
+*Dart is an object oriented, garbage collected language that is optimized for client
+side development, making it a good fit for building apps with flutter.
+*Dart also includes features such as asynchronous programming and just in time(JIT)
+compiler, which help to improve app performance.
+
+In Flutter, a widget is a basic building block for building user interface. Widgets
+are used to create visual elements such as buttons, text fields and images and 
+can be composed together to create complex UI elements.
+
+In flutter, stateless widgets are immutable and their properties cannot change while
+stateful widgets have mutable state that can change over time. Stateful widgets are
+used when u need to manage state that changes dynamically, such as user input or 
+network requests.
+
+the pubspec.yaml file in flutter is used to specify the dependencies and configuration
+for a flutter project. It contains information such as the project name, version and 
+the packages that the project depends on.
+
+Hot Reload the code changes and updates the UI While Restart totally restart the app 
+and reloads the code and UI.
+Hot Reload has Faster Execution time than restart And Hot Restart has slower 
+execution time than reload.
+Hot reload preserves the app state while Hot restart the app state.
+Hot reload has minimal performance impact on the app performance while Restart
+has Higher impact on the app performance.
+Hot reload is ideal for Ui changes and quick code iteration while Restart used when
+the code changes required a full app restart.
+Hot reload cannot apply all code changes without restarting while Restart Requires 
+more time to complete than hot reload.
+
+The build() method in flutter is responsible for creating and updating the UI of a widget.
+It is called when the first created and again whenever the widget's state changes.
+
+The purpose of the "initState()" method is to initialize the state of the widget.
+Common use cases for "initState()" method are :
+I. initializing variables          2. setting up listeners       3. Fetching data
+The "initState()" method in flutter is called when a stateful widget is first
+created and is used to initialize the widget's state. This method is typically used 
+to fetch data from an API or to set up animations or other long running tasks.
+
+The setState method in flutter is used to update the state of a stateful widget.
+which in turn triggers a rebuild of the widget's UI. This method should be called 
+whenever the state of the widget changes.
+class MyWidget extends StatefulWidget {
+ @override
+ _MyWidgetState createState() => _MyWidgetState();
+} class _MYWidgetState extends State<Widget>{
+  int _counter = 0;
+ void _incrementCounter(){
+  setState((){
+   _counter++;
+  });
+ }
+ @override
+ Widget build(BuildContext context){
+  return Scaffold(
+   body : Center(
+    child: Text('Counter: $_counter'),
+   ),
+  floatingActionButton: FloatingActionButton(
+    onPressed: _incrementCounter,
+    child: Icon(Icons.add), 
+   ),
+  );
+ }
+}
+
+In flutter, a Future is a way of representing a value or error that may not be available
+yet but will be at some point in the future. A Future represents a computation that may
+take some time to complete, such as loading data from a database or making an API call.
+Future<List<Item>> getItemsFromDatabase() async {
+ var db = await openDatabase['my_database.db'];
+ var result = await db.query['items'];
+ return result.map((item) => Item.fromJSON(item)).toList(); 
+} getItemsFromDatabase().then((items){
+ //DO SOMETHING WITH THE LIST OF ITEMS
+}).catchError((error){
+ // HANDLE THE ERROR. 
+});
+
+In flutter, a Future is an object that represents a computation that has not yet completed.
+It is typically used for asynchronous tasks such as network requests or file I/O 
+operations.
+
+A Stream is a way of representing a sequence of asynchronous events. A Stream provides a 
+way for your code to receive and respond to events as they occur, rather than waiting for a 
+computation to complete.
+StreamController<int> _counterController = StreamController<int>();
+void _handleButtonClick(){
+ _counterController.sink.add(1);
+}
+@override void dispose(){
+ _counterController.close();
+ super.dispose();
+}
+@override
+Widget build(BuildContext context){
+ return Scaffold(
+ body: Center(
+   child: StreamBuilder<int>(
+    stream: _counterController.stream,
+    initialData: 0,
+    builder (context, snapshot){
+     return Text('Counter: ${snapshot.data}');
+    },
+   ),
+  ),
+ floatingActionButton: FloatingActionButton(
+  onPressed: _handleButtonClick,
+  child: Icon(Icons.add),
+  ),
+ );
+}
+In flutter, a Stream is a sequence of asynchronous events that can be listened to and 
+processed in real time. Streams are commonly used for processing data that is countinously 
+updated, such as data from a sensor or a database.
+
+MaterialApp widget has some of the key features and benfits of material app:
+*App bar and title               *Navigation            *Theming 
+*Localization                *Accessibility.
+The Material App widget in Flutter is a convenience widget that provides common
+app level features such as navigation, theming and localization. It is typically
+used as the root widget of a flutter app.
+
+Scaffold Widget is a basic visual layout structure for your app's screens or pages.
+It provides a container for app bars, navigation drawers, floating actions buttons,
+bottom navigation bars and other common UI elements that are typically used in a 
+mobile app.
+Some of the key features of Scaffold:
+1. App bar.          2. Body Content         3. Floating Action Button
+4. Button Navigation Bar           5. Drawer. 
+
+In flutter, a layout widget is a widget that arranges its child widgets in a specific way.
+following a certain layout algorithm. A layout widget is used to create the visual 
+structure of your app, by determining the size, position and order of the widgets
+that make up your UI.
+Some Examples of layout Widget:
+i. Column and Row           2. Stack          3. Expanded and flexible
+4. ListView and GridView. 
+In Flutter, a layout widget is a widget that is used to position and size other widgets
+within a parent widget. Examples of layout widgets include Row, Column and Stack.
+These widgets provide different ways to arrange child widgets and control their placement
+and sizing within the parent widget.
+
+Widget Tree is a fundamental concept in flutter that represents the user interface of 
+a flutter app. In flutter, everything is a widget, from the smallest visual element like 
+a button or text label to entire app itself.
+The Widget tree is a fundamental concept in Flutter. It represents the hierarchy of widgets 
+that make up your app's UI. Each widget has a parent widget, except for the root widget which is the top level widget of your app. When a widget needs to be updated or rebuilt,
+flutter traverse the widget tree to determine which widgets need to be updated, and then
+updates them accordingly.
+
+ListView can display a list of items of varying heights While GridView requires that 
+all items have the same height and width.
+ListView is more efficient than GridView while GridView can be used to create a 
+staggered grid, where items are arranged in a grid View but can have varying heights
+or widths.
+ListView is a widget that displays a scrollable list of widgets, while GridView is 
+a widget that displays a scrollable grid of widgets. The main difference b/w the 
+two is the way they arrange their child widgets. ListView arranges its child widgets
+vertically in a single column, while GridView arranges its child widgets in a grid,
+either horizontally or vertically.
+
+A Stream transformer is a class in flutter that allows u to transform a stream of
+data from one form to another. It takes an input stream, applies a transformation
+function to each event in the stream, and produces an output stream of transformed
+events.
+
+There are several ways to handle user input in flutter. Depending on the type of 
+input and the widget you are using. For example, u can use the onPressed property
+of a RaisedButton widget to handle button presses, or the onChanged property 
+of the textfield widget to handle changes to a text field.
+
+Provider is a state management library in flutter that allows to share data between
+widgets efficiently and in a way that is easy to maintain. It works by providing 
+a single source of truth for the app's state, which can be accessed by any widget 
+in the app.
+So, to use the provider u typically define a "change notifier" so this class that
+represents your app's state and then wrap your apps widget in change notifier 
+widget to make the state available to the other widgets so this is how the provider
+works in the flutter
