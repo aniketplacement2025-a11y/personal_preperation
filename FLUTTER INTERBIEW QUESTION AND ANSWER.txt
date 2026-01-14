@@ -242,3 +242,14 @@ General steps to implement Animations:
  so you can use whatever animation you want to use in your flutter
  application as your wish.
 
+The Navigator widget is used to manage the navigation stack in a flutter
+app. It allows you to push new routes onto the navigation stack, pop
+routes off the stack and control the transition between screens.
+
+In flutter, a package is a collection of Dart code that can be shared 
+and reused across multiple flutter projects while a plugin, on the
+other hand is a package that provides access to platform specific 
+functionality such as camera or location services, in a cross 
+platform way using platform channels. While packages can be purely 
+dart based, plugin typically required native code developement for 
+android and iOS in addition to Dart code.
