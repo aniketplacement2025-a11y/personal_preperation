@@ -295,4 +295,25 @@ text and scrolling. To use the flutter driver, developers can write
 text scripts in Dart and run them using the flutter test runner.
 
 some techniques for implementing responsive design in flutter includes
-using MediaQuery 
+using MediaQuery to get information about the device's screen size,
+using the LayoutBuilder widget to create layouts that adapt to the
+screen size, using the flex and Expanded widgets to create flexible
+layouts and using the AspectRatio widget to maintains the aspect ratio 
+of UI elements.
+
+Flutter's architecture follows the reactive programming paradigm and 
+uses a uni-directional data flow architecture called the flutter
+architecture, which is inspired by the Model-View-Update pattern.
+This architecture is composed of three main parts:
+ *Model: Is the data layer of the application that represents the
+  state of the app and also it includes all the data and logic that
+  are required to maintain the state of the application.
+ *View: Is the presentation layer of the application that displays
+  the user interfaces it also includes all the widgets that are 
+  required to display the user interface and receives input for the
+  user.  
+ *Update Functions: we have the update function so this is a control
+  layer of the application that manages the state of the application.
+  But also it includes all the logic that updates the model and it 
+  rebuilds the view based on the changes in the model.
+
