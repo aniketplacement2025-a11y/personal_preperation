@@ -1,6 +1,7 @@
 I am a 2025 B.Tech graduate in Computer Science Engineering from 
-Shri Vaishnav Vidhyapeeth Vishwavidhyalaya. I am working as a 
-flutter Developer Intern at VKAPS IT Solutions Pvt. Ltd., Where
+Shri Vaishnav Vidhyapeeth Vishwavidhyalaya. I recently completed 
+my internship as 
+"flutter Developer Intern" at VKAPS IT Solutions Pvt. Ltd., Where
 I'm gaining hands on experience in building cross platform
 mobile applications.
 
