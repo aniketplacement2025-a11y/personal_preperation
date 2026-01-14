@@ -195,3 +195,50 @@ So, to use the provider u typically define a "change notifier" so this class tha
 represents your app's state and then wrap your apps widget in change notifier 
 widget to make the state available to the other widgets so this is how the provider
 works in the flutter
+
+Flutter plugin are the packages that provide a way to access platform
+specific functionality, such as accessing the device camera or sending
+push notifications in flutter apps.
+To create a flutter plugin, u can follow these general steps:
+ *Create a new flutter plugin project using the flutter create
+ --template =plugin command.
+ *Implement the plugin functionality in the target platform 
+ language (e.g., Java/Kotlin or Swift/Objective-C).
+ *Create a platform channel that allows the flutter app to communicate
+ with the plugin code.
+ *Implement the plugin functionality in the flutter app using the
+ platform channel.
+ *Publish the plugin to a package manager such as 'pub.dev' for other
+ developers to use.
+
+Flutter provides a powerful framework that allows you to create complex
+animations in your app. You can use the animation framework to animate
+any property of a widget. such as it's position, size, opacity or color.
+General steps to implement Animations:
+ *Create an animation controller: Is used to drive the animations by
+   specifying the duration like start time and the value range of the
+  animations so u can create an animation controller by calling
+  just an animation controller into the parameters and u can pass the 
+  duration and u can sync the argument over there and then u need to 
+  create an animation here.
+ *Create an Animation:
+  Here an animation is a value that changes over time right so usually
+  a lineraly are using a curve so you can create an animation by
+  calling the tween Constructor and passing it to the start and
+  the ending value of the animations then you can pass the twin object
+  to the Controller driver this method to create an animation object.
+  after that u need to wrap the widget in an animationWidget.
+ *Wrap the widget in an AnimatedWidget:
+  This is a special widget that automatically rebuilds itself whenever
+  the animation values changed so u can wrap the widget that u want
+  to animate in an animated widget and pass it in the animation object
+  then after that you need to animate the widget property.
+ *Animate the widget property:
+  you can use the value of the animation object to 
+  animate any property of the widget.
+ For example: You can use the transform.translate so this widget is to
+ animate the position of the widget or you can use the animated opacity
+ widget to animate the opacity of the widget so it is as simple as that
+ so you can use whatever animation you want to use in your flutter
+ application as your wish.
+
