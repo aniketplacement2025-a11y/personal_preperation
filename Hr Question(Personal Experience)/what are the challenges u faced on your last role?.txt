@@ -1,13 +1,21 @@
-In my last role, As a "Flutter Developer Intern" profile, I faced multiple
-challenges that helped me grow technically and professionally.
-One major challenge was handling backend integration and data flow correctly.
-while working with state management library called providers, REST API 
-integration and data extraction from API.
+In my last role as a Flutter Developer Intern, I encountered several 
+challenges that contributed significantly to my technical growth.
 
-I internally faced issues like null values being passed from widget to 
-model. incorrect HTTP methods (GET vs POST). Debugging these problems
-was challenging because a small mistake in parameter naming or form 
-configuration will break the entire flow.
+One of the key challenges was managing backend integration and smooth 
+data flow while working with Provider-based state management, REST APIs, 
+and JSON data extraction.
 
-To overcome this, I improved my debugging approach - I started validating
-request parameters, logging intermediate outputs and testing each
+I faced issues like null data being passed between widgets and models and 
+problems caused by using incorrect HTTP methods. Debugging these issues 
+was time-consuming, as even minor mistakes in parameter mapping or API 
+configuration could affect the entire application flow.
+
+To address this, I adopted a more structured debugging approach by 
+verifying API responses, logging data at different stages, and testing 
+components individually before integration. This approach helped improve 
+application reliability and reduced runtime errors.
+
+These experiences strengthened my problem-solving skills and taught me 
+the value of strong fundamentals and clean architecture. As a result, I 
+am now more confident in handling backend integration and building 
+scalable Flutter applications.
