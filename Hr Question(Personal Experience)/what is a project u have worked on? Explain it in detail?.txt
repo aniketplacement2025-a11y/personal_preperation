@@ -6,4 +6,38 @@ The primary goal of this project was to provide users with a
 single, organized and secure platform to manage there important
 life documents - everything from contracts , warranties to medical
 records and personal affairs.
-The idea was to eliminate the hassle of physical paperwork.
+The idea was to eliminate the hassle of physical paperwork and create
+a digital 'safe' that is accessible anytime, anywhere.
+
+  MY ROLE AND RESPONSIBILITES:
+As a key developer on this project, I was responsible for 
+the end to end development of the mobile application.
+This included:
+Designing and Implementing the User Interface (UI):
+   I translated the design mockup into a fully functional and responsive 
+   user interface using flutter's widget system.
+Building the code application logic:
+   I handled the business logic for features like user authentication,
+   document management and category organization.
+API Integration: 
+   I managed the communication between the app and the backend server,
+   handling tasks like fetching, uploading and updating user data and
+   documents.
+State Management: 
+   I was responsible for implementing a robust state management solution
+   to ensure data consistency and a smooth user experience across the 
+   app.
+
+  TECHNICAL DEEP DIVE:
+Let me break down the technical architecture of the application.
+Framework:
+   The entire application was build using Flutter and the Dart 
+   programming language. This allowed us to have a single codebase
+   for both android and iOS, which was a major advantage in terms of
+   developement speed and maintenance.
+Architecture & State Management:
+   We used the "Provider" package for State management. This choice
+   was ideal because it offers a simple yet powerful way to manage the
+   app's state, making it easy to separate business logic from the UI.
+   for Example, 
+      when a user logs in, their authentication state is managed
