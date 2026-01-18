@@ -6,3 +6,19 @@ while Raw Data is used when we want to send structured data like JSON or
 XML in a specific format.
 
 Then u expand (This is where u score points).
+    FORM DATA IN POSTMAN (multipart/form-data)
+ What it is:
+  *Form Data sends data as key-value pairs.
+  *It uses 'multipart/form-data' content type.
+  *Commonly used in HTML forms and file uploads.
+ Example (Postman -> Body -> form-data)
+ Key              Value             Type
+ name        Aniket Rathore          Text
+ email       aniket@gmail.com        Text
+ resume       resume.pdf             File
+
+    REAL WORLD USE CASES (VERY IMPORTANT FOR INTERVIEW)
+When we upload images, documents or files along with text data, we
+use Form Data.
+Example: *Uploading Aadhaar image.         *Uploading profile picture.
+ *Submitting a form with attachments.
