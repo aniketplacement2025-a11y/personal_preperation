@@ -1,0 +1,45 @@
+                  HIGH LEVEL INTRODUCTION
+Yes, REST API integration was a core part of my work as a Flutter Developer
+Intern. I was responsible for consuming backend APIs, 
+handling authentication, parsing responses, managing application state and
+displaying dynamic data in the UI. I worked closely with backend 
+developers to understand API contracts and ensured smooth, secure, and
+efficient data flow between the flutter app and the server.
+
+               WHAT REST API MEANT IN MY PROJECT?
+In our project, REST API were used to handle features like user 
+authentication, registration, fetching user profiles, listing dynamic 
+data, submitting forms, and handling updates. The backend was exposing
+APIs in JSON format, and my responsibility was to integrate them correctly 
+in flutter and make sure the app behaved reliably in real world 
+scenarios like slow internet, API failure or Invalid responses.
+
+             STEP BY STEP DEEP DIVE (THIS IS THE CORE)
+   UNDERSTANDING THE API CONTRACT
+Before Implementation, I always started by understanding the API contract
+- endpoint URL, HTTP method (GET ,POST, PUT, DELETE), headers, request body,
+response structure and status codes.
+
+  WHY THIS MATTERS(say confidently):
+This reduced integration bugs and helped me map backend responses correctly
+to Flutter models.
+
+  CHOOSING THE HTTP APPROACH IN FLUTTER:
+In Flutter, I mainly used the 'http' package for REST API calls. For more
+cases like interceptors or advanced error handling, I also explored Dio
+conceptually.
+Typically structure u can explain:
+*API service layer           *Model classes           *UI layer
+"I followed a clean separation so that API logic never lived directly
+inside widgets."
+
+  MAKING API CALLS (GET / POST)
+"For GET requests, I fetched data such as lists or user details. 
+ For POST requests, I sent form data like login credentials, registration
+ details, or OTP verification.".
+ What you handled practically:
+*Headers (Content-Type, Authorization).
+*Request body (JSON encoding).
+*Async/await for non blocking UI.
+
+   
