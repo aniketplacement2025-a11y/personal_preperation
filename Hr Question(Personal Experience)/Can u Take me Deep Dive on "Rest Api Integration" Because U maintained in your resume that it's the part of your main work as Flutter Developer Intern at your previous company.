@@ -43,3 +43,27 @@ inside widgets."
 *Async/await for non blocking UI.
 
    
+  JSON PARSING & MODEL CLASSES (VERY IMPORTANT)
+Since APIs returned JSON, I created Dart model clases using 'fromJson' and
+'toJson' methods. This ensured type safety and avoided runtime errors.
+  You can add:
+This also made the code more readable and easier to maintain when the 
+response structure changed.
+ If interciewer probes:
+*Explain handling nested JSON.            *Lists vs Single objects.
+*Nullable fields.
+
+  AUTHENTICATION & TOKEN HANDLING:
+For authenticated APIs, I handled token based authentication. After login,
+the token was stored securely and passed in headers for subsequent API 
+calls.
+Explain maturity: *Token expiry handling(basic level).
+ *Logout clearly tokens            *Unautorized(401) response handling. 
+
+  State Management During API Calls:
+I managed API states like loading, success, and errors using proper state
+management techniques. while fetching data, I showed loaders, 
+on success data was rendered and on failure, meaningful error messages were
+displayed.
+You can mention: *setState     *GetX/Provider (if used conceptually)
+ *Avoiding unnecessary rebuilds.
