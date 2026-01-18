@@ -1,0 +1,52 @@
+Postman is an API developement and testing tool that allows us to design,
+test, debug and document APIs without writing a frontend.
+It helps developers and testers to interact directly with backend services
+using HTTP methods like GET, POST, PUT, DELETE, etc.
+
+In real projects, especially backend focused ones, APIs are created before
+the UI. Postman acts as a client that sends requests to the server and
+shows the response clearly, which makes development and testing mush faster.
+
+                 WHY WE USE POSTMAN?
+ 1. TO TEST APIs WITHOUT FRONTEND:
+ When we build APIs in flutter framework, the frontend may not be ready yet.
+ With Postman:
+  *I can send requests manually.
+  *Pass parameters, headers and body.
+  *Verify whether the API is working correctly.
+ => This is very useful in backend development.
+
+ 2. TO VERIFY REQUEST & RESPONSE:
+ Postman helps us check:
+  *Request URL.         *HTTP method       
+  *Headers (Authorization, Content - Type).
+  *Body (JSON/Form-Data).
+  *Response status codes like 200, 201, 400, 401, 500.
+  *Response data in JSON format.
+ This helps in debugging issues quickly.
+
+ 3. FOR CRUD OPERATIONS:
+ Using Postman, we can easily test:
+  *POST -> create data (like user registration).
+  *GET -> fetch data.
+  *PUT / PATCH -> update data.
+  *DELETE -> remove data.
+ In projects, Postman is very helpful to test:
+ *User registration APIs.
+ *LOGIN & Authentication APIs.
+ *VOTE submission APIs.
+ *RESULT fetching APIs.
+
+ 4. AUTHENTICATION & SECURITY TESTING:
+  Postman supports:
+   *JWT tokens.
+   *Bearer tokens.
+   *Basic Auth.
+   *API keys.
+ So, we can test secured APIs by adding tokens in headers and verify 
+ whether authorization is working properly.
+
+    SIMPLE ONE LINE SUMMARY (VERY IMPORTANT)
+Postman is used to test, debug and validate APIs efficiently without
+depending on the frontend, ensuring that backend services work correctly 
+and securely.
