@@ -50,3 +50,9 @@ shows the response clearly, which makes development and testing mush faster.
 Postman is used to test, debug and validate APIs efficiently without
 depending on the frontend, ensuring that backend services work correctly 
 and securely.
+
+    SHORT VERSION (If interviewer Wants Quick Answer)
+Postman is an API testing tool used to send HTTP requests and analyze
+responses. We use it to test backend APIs, debug issues, validate
+authentication and ensure APIs work correctly even before frontend 
+integration.
