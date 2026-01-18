@@ -6,7 +6,7 @@ while Raw Data is used when we want to send structured data like JSON or
 XML in a specific format.
 
 Then u expand (This is where u score points).
-    FORM DATA IN POSTMAN (multipart/form-data)
+    1. FORM DATA IN POSTMAN (multipart/form-data)
  What it is:
   *Form Data sends data as key-value pairs.
   *It uses 'multipart/form-data' content type.
@@ -22,3 +22,37 @@ When we upload images, documents or files along with text data, we
 use Form Data.
 Example: *Uploading Aadhaar image.         *Uploading profile picture.
  *Submitting a form with attachments.
+ BACKEND PERSPECTIVE (Java/Servlet)
+* Data is received using 'request.getParameter()'.
+* Files are handled using 'MultipartConfig' or Libraries like Apache 
+  Commons File Upload.
+
+  2. RAW DATA IN POSTMAN:
+ What it is:
+  *Raw Data sends the entire body as a single block.
+  *Mostly used for JSON, XML or plain text.
+  *Content-Type is explicitly defined.
+   Example (Postman -> Body -> raw -> JSON)
+   { 
+"name": "Aniket Rathore", "email": "aniket@gmail.com", "password": "123456"
+   }
+   Content - Type Header
+     Content-Type: application/json
+
+   REAL WORLD USE CASE:
+Raw Data is mostly used in REST APIs, especially for:
+ *Login  *SignUp  *API to API communication 
+ *Mobile & frontend apps (Flutter, React, Angular).
+
+  3. WHEN TO USE WHAT (THIS LINE IMPRESSES INTERVIEWERS)
+ If i need to send files or form like data, I use Form Data.
+ If I'm building a REST API where data is structured, I use Raw JSON.
+
+  4. BONUS: WHY RAW JSON IS PREFERRED IN MODERN APIs
+ *Lightweight      *Easy to parse     *Language independent
+ *Works perfectly with Flutter, React, Angular.
+ *Industry standard for REST APIs.
+
+  5. ONE LINE FINAL ANSWER (FOR HR/QUICK ROUND)
+Form Data is used to send key value data and files, while Raw Data is used
+to send structured data like JSON in REST APIs.
