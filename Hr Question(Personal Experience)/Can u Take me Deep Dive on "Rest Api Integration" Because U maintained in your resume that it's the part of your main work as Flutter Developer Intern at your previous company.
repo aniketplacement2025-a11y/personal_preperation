@@ -60,10 +60,46 @@ calls.
 Explain maturity: *Token expiry handling(basic level).
  *Logout clearly tokens            *Unautorized(401) response handling. 
 
-  State Management During API Calls:
+  STATE MANAGEMENT DURING API CALLS:
 I managed API states like loading, success, and errors using proper state
 management techniques. while fetching data, I showed loaders, 
 on success data was rendered and on failure, meaningful error messages were
 displayed.
 You can mention: *setState     *GetX/Provider (if used conceptually)
  *Avoiding unnecessary rebuilds.
+
+  ERROR HANDLING & EDGE CASES (INTERVIEW GOLD)
+I implemented proper error handling for scenarios like no internet, timeout
+, server error (500), bad requests (400), and unauthorized access (401).
+What made you professional:
+ *Try-catch blocks.
+ *Status code checks.
+ *User friendly messages.
+ *Logging errors for debugging.
+
+  PERFORMANCE & OPTIMIZATION:
+To improve performance, I avoided repeated API calls by caching data when
+possible and calling APIs only when required, like on screen load or 
+pull to refresh.
+Optional add:
+ *Pagination           *Lazy Loading      *Debouncing API calls.
+
+  REAL WORLD EXAMPLE(VERY IMPORTANT)
+For example, in one feature, I integrated an API that fetched user specific
+data after login. I handled loading indicators, parsed the response into
+models, displayed it in a ListView, and handled empty or error states 
+gracefully. If the API failed, the app didn't crash and instead showed a
+retry option.
+
+  COLLABORATION & BEST PRACTICES:
+I regularly coordinated with backend developers to resolve API mismatches
+and suggested improvements in response structures. I also followed best
+practices like keeping API URLs centralized, using constants and writing
+reusable service methods.
+
+  FINAL STRONG CLOSING STATEMENT:
+Overall, REST API Integration was not just about fetching data for me - it
+involved understanding backend logic, handling real world edge cases, 
+maintaining clean architecture and delivering a smooth user experience gave
+me strong confidence in building scalable Flutter applications that 
+interact reliably with backend systems.
