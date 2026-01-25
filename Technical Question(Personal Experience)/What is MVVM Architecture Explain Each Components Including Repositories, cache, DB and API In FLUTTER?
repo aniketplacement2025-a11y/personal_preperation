@@ -138,4 +138,23 @@ Temorary data storage for quick access.
  Example:   *In - memory vaiables.        *SharedPreferences.
    *SecureStorage
    WHY CACHE?    *Faster performance         *Reduce API calls.
- *Better UX.   
+     *Better UX.   
+   Example:
+ class CacheService(){
+  User? _user;
+  void saveUser(User user) => _user = user;
+  User getUser() => _user!;
+  bool hasUser() => _user != null;
+ }
+             COMPLETE MVVM DATA FLOW (IMPORTANT)       
+User taps Button -> View calls ViewModel -> ViewModel calls Repository
+If Not Fount => DB  <-  Repository checks Cache        <-|
+    |->   If Not Found => API    ->    Data returned to ViewModel
+Ui rebuilds automatically   <-  View Model updates State  <-|
+
+                   WHY MVVM IS IMPORTANT?
+*Clean separation.          *Easy testing.        *Easy debugging.
+*Scalable for big apps.         *Team friendly.
+      KILLER INTERVIEW LINE:
+MVVM helps Flutter apps follow separation of concerns, making 
+UI independent from business logic and data sources.
