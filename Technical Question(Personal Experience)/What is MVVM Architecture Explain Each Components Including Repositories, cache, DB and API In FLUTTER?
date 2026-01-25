@@ -115,4 +115,26 @@ Repository is an abstraction layer that decides:
                API layer does ONLY networking.
                --------------X--------------
 
-    DATABASE (Local Storage)
+     DATABASE (Local Storage)
+Stores data offline.     Common Flutter DBs.
+  *SQLite(sqflite)       *Hive     *Floor      *Drift
+  RESPONSIBILITIES:
+  *Store data locally             *Fetch offline data.
+  Example:
+ class UserDao {
+  Future<void> insertUser(User user) async {
+   await db.insert('users', user.toJson());
+  }
+  Future<User?> getUser() async {
+   final data = await db.query('users');
+   return User.fromJson(data.first);
+  }
+ }
+               --------------X--------------
+               DB never talks to UI directly.
+               --------------X--------------
+      CACHE (Fast Memory)
+Temorary data storage for quick access.
+ Example:   *In - memory vaiables.        *SharedPreferences.
+   *SecureStorage
+   WHY CACHE?    *Faster
