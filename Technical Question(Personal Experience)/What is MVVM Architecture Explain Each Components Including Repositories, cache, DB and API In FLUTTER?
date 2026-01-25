@@ -1,0 +1,118 @@
+                  MVVM = Model - View - ViewModel
+MVVM is a architectural pattern that separates UI from business logic and
+data handling making app scallable, testable and easy to maintain.
+ => THINK OF IT LIKE BELOW
+  USER <=> VIEW <=> VIEWMODEL <=> RESPOSITORY <=> (API / DB / CACHE).
+Each layer has one clear responsibility.
+
+     VIEW (UI Layer)
+The View is the UI - everything the user sees and interacts with.
+In Flutter: 
+*Widget     *Screens    *Pages    *Buttons    *TextFields
+   WHAT VIEW DOES: 
+*Display data.        *Sends user actions (tap, submit, refresh).
+*Listens to state changes.
+   WHAT VIEW DOES NOT DO:
+*API calls.       *Business logic.        *Database work.
+ Example:
+ CODE:
+ Text(userName);     ElevatedButton(onPressed: viewModel.login);
+               ----------X-----------
+View should be dumb - it only knows what to show, not how data comes.
+               ----------X-----------
+
+     VIEWMODEL (Brain of the App)
+ViewModel is the bridge between View and data.
+  => It contains business logic and state.
+   RESPONSIBILITIES
+*Holds UI state.             *Calls Respoitory.
+*Processes data.             *Notifies UI when data changes.
+   IN FLUTTER, VIEWMODEL IS USUALLY:
+*ChangeNotifier(Provider).          *StateNotifier(Riverpod).
+*Cubit/Bloc.                 *GetxController. 
+   Example:
+ class LoginViewModel extends ChangeNotifier {
+  bool isLoading = false;
+  User? user;
+
+  Future<void> login() async {
+   isLoading = true;
+   notifyListeners();
+   user = await repository.loginUser();
+   isLoading = false;
+   notifyListeners(); 
+  }
+ }
+               ------------X------------
+  ViewModel never knows about Widgets, only data.
+               ------------X------------
+
+     MODEL (Data Structure Layer)
+ Model represents data objects.
+ In Flutter:    *Plain Dart classes        *JSON serialization.
+  RESPONSIBILITIES:
+*Hold data       *Convert JSON -> Dart        *No logic
+  Example:
+ class User {
+  final String id;
+  final String name;
+
+  User({required this.id, required this.name});
+
+  factory User.fromJson(Map<String, dynamic> json){
+   return User(
+    id: json['id'],
+    name: json['name'],
+   ); 
+  }
+ }
+             -----------X-----------
+    Model is pure data, no UI, no API calls.
+             -----------X----------- 
+
+    RESPOSITORY (DATA MANAGER)
+ This is where real architecture starts.
+ *WHAT IS REPOSITORY?
+Repository is an abstraction layer that decides:
+     "Where should data come from?"
+  API?           DATABASE?         CACHE?
+ The ViewModel does not care. 
+   RESPONSIBILITIES:
+*Fetch data.          *Decide data source.
+*Combine API + DB + Cache.         *Return clean data to ViewModel.
+   Example:
+ class UserRepository {
+   final ApiService api;
+   final UserDao db;
+   final CacheService cache;
+
+   Future<User> getUser() async {
+    if(cache.hasUser()){
+     return cache.getUser();
+    }
+    final user = await api.fetchUser();
+    await db.insertUser(user);
+    cache.saveUser(user);
+    return user;
+   }
+ }
+               --------------X--------------
+   Repository hides data source complexity from ViewModel.
+               --------------X--------------
+
+    API LAYER (Remote Data)
+ Handles network calls.
+ In Flutter:    *http.        *dio.        *retrofit.
+ RESPONSIBILITIES:
+ *Call REST APIs    *Handle Headers    *Parse Responses
+ EXAMPLES:
+  class ApiService {
+   Future<User> fetchUser() async {
+    final response = await dio,get('/user');
+    return User.fromJson(response.data);
+   } }
+               --------------X--------------
+               API layer does ONLY networking.
+               --------------X--------------
+
+    DATABASE (Local Storage)
