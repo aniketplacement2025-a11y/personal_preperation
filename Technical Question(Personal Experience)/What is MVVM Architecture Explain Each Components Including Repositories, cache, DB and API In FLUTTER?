@@ -137,4 +137,5 @@ Stores data offline.     Common Flutter DBs.
 Temorary data storage for quick access.
  Example:   *In - memory vaiables.        *SharedPreferences.
    *SecureStorage
-   WHY CACHE?    *Faster
+   WHY CACHE?    *Faster performance         *Reduce API calls.
+ *Better UX.   
