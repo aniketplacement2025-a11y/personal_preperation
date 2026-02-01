@@ -69,3 +69,23 @@ Because we went to publish over application on production level) And
  2. 'Setting Up your Store listing': At which write 'App name', 'short description'
    'full description', 'App Icon', future graphic(Add Banner), Youtube video, 
    Screen Shot(on Phone).
+ CLICK ON 3 DOTS AT BOTTOM RIGHT At Last click 'Save'. 
+
+     GO to Google Play Console's DashBoard:
+    ---------------NOTE-------------------
+We Don't have to click 'Start Testing Now'.
+We Don't have to click "Release Your app's First 3 Options.
+i. 'Test your app with a larger group of testers that you control'.
+ii. 'Build excitment for your app with pre registration'.
+    -----------------X--------------------
+ Click on 'Create and publish a release' and click on 'Hide tasks'.
+1. CLick on 'select countries and regions' then click on 
+   'Add Country region' Select 'Region'.
+ Now click on 'Releases' then click on 'Edit' realese
+  then Click on 'Add new release' button.
+ Navigated to 'Create production release' on which we got
+'App Bundles' Option on which we have to upload over 'app_release.aab' file.
+Now on 'Release details' we have to write 'release name' and 'notes'.
+Now click on 'Next' then 'Save' then 'Go to Overview' Button.
+
+AT LAST WAIT TO COMPLETE THE CHECK THEN CLICK ON 'Send 9 changes for reviews'.
