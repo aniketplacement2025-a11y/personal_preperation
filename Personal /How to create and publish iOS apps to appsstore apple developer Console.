@@ -1,0 +1,65 @@
+In App Store connect u have an App ICon Then New app.
+            -------------X-------------
+Note: Is there we can have a Paid Apps Aggrement notificatication that it's painding
+            ------------X--------------
+Now After clicking 'New App' We got Pop Up on which u have to choose for which
+platform IOS(For Mobile), MAC OS(PC).
+On Which we have to write : Name, primary language(US), 
+ BUNDLE ID:
+To Add Bundle Id in Xcode Over project Top Bar We got option called 
+PRODUCT -> ARCHIEVE
+Then We got A Pop Up of Archieve  On Which We check the Build of Over Application:
+And We got Option Called Distribute App.
+AFTER CLICK ON 'DISTRIBUTE APP' IT GIVE SO MANY OPTION ON WHICH WE HAVE TO CHOSE 
+'TESTFLIGHT & APP STORE'.
+           ------------NOTE-----------
+It's Possability that here we got an Error name
+ "APP RECORD WITH BUNDLE IDENTIFIER NOT FOUND".
+SO WE RETURN TO APP STORE CONNTECTION'S NEW APP PAGE at Which below 'BUNDLE ID' field
+we got 'Register a new bundle ID in 'CIP' On which we Click on CIP(Certificate)'.
+Here we have to register Over App On which we have to fill 'DESCRIPTION'
+And BUNDLE ID("Same Path We Have to Copy Just Show in Error").
+CAPABILITIES ARE ALREADY INBUILD. JUST CLICK ON REGISTER ICON.
+THEN WE REDIRECTED TO IDENTIFIERS PAGE AT WHICH WE HAVE TO RE CHECK ALL DETAILS ARE
+LOOKS GOOD OR NOT.
+THEN REFRESH THE APP STORE CONNNECT'S APPS PAGE U SEE NOW BUNDLE ID FIELD SUGGESTING
+OVER REGISTERED BUNDLE ID     ------------------------------------------------------|
+          ------------X-------------                                                |
+                                                                                    |
+Now we start to Register Over app In App Store Connect's New APP With               |
+Name, Primary language, Bundle Id, SKU(KUCHE BHI DAL D) CLICK ON 'CREATE':          |    
+                                                                                    |
+AFTER CLICK ON CREATE WE COME ON APP STORE CONNECT OVER PROJECT'S DISTRIBUTION      | 
+CATEGORY ON WHICH WE HAVE TO ADD OVER APP'S SCREEN SHOT OF IPHONE, IPAD.            |  
+                                                                                    |
+AFTER ADDING ALL SCREEN SHOTS WE HAVE TI WRITE PROMOTIONAL TEXT, DESCRIPTION        |
+, KEYWORDS, SUPPORT URL(Take from Official Website),                                |   
+MARKETING URL(Take from official website), COPYRIGHT(official Website).             | 
+ NOW ON TOP CLICK ON 'SAVE' BUTTON.                                                 |
+                                                                                    |
+              NOW ON SIDE BAR CLICK ON APP INFORMATION                              |     
+Localizable InFO: First is 'subtitle'(MANDATORY to write)                           | 
+General Info: On Category Option(MANDATORY TO Select).                              |
+Age Rating: Answer All The Thing(MANDATORY TO CHOOSE).                              |
+       NOW ON TOP CLICK ON 'SAVE' Button.                                           |
+                                                                                    |
+              ----------NOTE-----------                                             |
+Now Here we Cancel Those Error Pop Up And Re-Click on 'Destribute App' Choose <------
+'TestFlight & App store' on which we click 'Distribute'.
+After "Upload for app store connect uploading process' click on 'next' button.
+Then Done.
+              -----------X-------------
+Now Come to App Store connect website and click on refresh button.
+On Screen u got 'App Review Information' At which u have to write 
+On Which u have to write 'Contact Information'.
+*Check on 'Sign In Required'.
+*Write Notes         AT LAST CLICK ON 'SAVE' Button THEN 'ADD TO REVIEW' Button.
+           THEN CHECK WHAT THINGS ARE PENDING THEN COMPLETE THE REQUIRED 
+              PROCESS JUST LIKE CURRENTLY WE REQUIRED:
+1. App Policy at which u have to write 'App Poilcy URL'.
+2. Data Collection & Data Sefety.
+ Contact info: Name, Phone Number, Physical Address, coarse location.
+               AT LAST CLICK ON PUBLISH AND THAT'S IT.
+3. App Pricing.
+4. App Information: Content Rights, Choose App Build(Choose Recent Build).
+          CLICK 'Add Review' Button 'Submit to App Review'.    
