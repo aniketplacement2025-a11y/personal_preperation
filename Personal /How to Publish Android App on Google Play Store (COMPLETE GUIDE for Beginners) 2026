@@ -1,0 +1,71 @@
+First Go to 'Google Paly Console' On Which we got a 'create app' option.
+* Write all 'App details' like name, default language, app or game,
+  free or paid Then Click on 'Create'.
+
+We redirect to Over App Project's Dashboard On Which 
+*Remember Not Choose "Start Testing Now" Option(
+Because we went to publish over application on production level) And 
+ Start Over Process From 'Set Up your app'.
+*At "Set up your app's LET US KNOW ABOUT THE CONTENT OF YOUR APP".
+ we have to click on 'View task' At Which We Got Below Tasks:
+ 1. 'SET PRIVACY POLICY': 
+ On which we have to set over applications Privacy Policy Url.
+
+ 2. 'APP ACCESS': 
+ On which we Choose 'All or some functionality in my app is restricted'
+ And Click on 'Add Instructions' Button:
+ At Which We have to Fill 'Instruction name', 'Username and passowrd'
+ And At Description Box(Provide Detail Instruction).
+ At Last Click on "Add Button".
+
+ 3. Is 'Ads': Choose Option That Application Contains Ads Or not.
+
+ 4. 'Content Ratings': Which Contains 3 categories:
+ I. 'Category': At Which we have to provide 'Email Address',
+  'Category' and 'Terms and Conditions' Then Click on Start. 
+ II. 'Questionaire': At Which According to Your App U have to fill Choose 
+   'Yes' and 'No'
+ III. 'Preview': Re-check All Option, At Last click 'Save'.
+
+ 5. 'Target Audience and content': Which contains 2 categories: 
+ I. 'Target age': Choose the Target Audience and click on save.
+ II. 'Summary': Re-check All Details, At Last click 'Save'.
+
+ 6. 'Data safety': It contains 5 categories:
+ I. 'Overview': Click save.
+ II. 'Data Collection and Security': Read Carefully and Choose according the Your App.
+   But If u choose 'Yes' then we got allot sub option in 'OAuth' option then 
+   Mandatory U have to give 'Delete Account Url'.
+ At Last Click on 'Next' Button.
+ III. 'Data Types': At Which U Have To fill Details About What kind of Personal Details
+  U Getting from Users. But In 'Personal Info' Column At which u are taking Permissions
+  u have to take clarification as well.
+  To Done Those thing CLick on 'Start' Button At which u got 2 option 'Collected' or
+  'shared' When u choose then u got Sub Options.
+                  PLEASE WRITE ALL THE INFORMATION CAREFULLY HERE.
+  IV. 'Preview': Re-check All Details,
+  CLICK ON 3 DOTS AT BOTTOM RIGHT At Last click 'Save'.
+
+ 7. Government Apps: Easy 'Yes/No' and save.
+
+ 8. Financial features: Contains 2 Categories.
+  I. Financial features in Your app:
+  Check all options as per Your app Requirement And click Next.
+  II. Documentation: CLICK ON 3 DOTS AT BOTTOM RIGHT At Last click 'Save'.
+
+ 9. App Content: Contains 2 Categories.
+ I. Need Attention: If u need 'ADVERTISING ID' Click on 'start Declaration'.
+    It has Some sub Options So please Check it carefully.
+    Health Apps("declaration need attention"): Check all options carefully. 
+ II. Regional requirements: CLICK ON 3 DOTS AT BOTTOM RIGHT At Last click 'Save'.
+
+ NOW U CHECK THAT BACK OPTION IS NOT VISIBLE BECAUSE U DONE ALL THE STEPS SO, U
+ CLICK ON 'ALL APPS' BACK ICON.
+
+ *At "Set up your app's MANAGE HOW YOUR APP IS ORGANIZED AND PRESENTED".
+ 1. 'Select an App category': On which first click on 'App category' Edit Button.
+   b. Click on 'App category' tags Button.
+  ii. 'Store Listing Contact details' Edit Button.
+ 2. 'Setting Up your Store listing': At which write 'App name', 'short description'
+   'full description', 'App Icon', future graphic(Add Banner), Youtube video, 
+   Screen Shot(on Phone).
