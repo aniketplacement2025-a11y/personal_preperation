@@ -1,0 +1,35 @@
+                      THE CODER BRAIN
+1. Add 2 Dependencies in Your 'pubspec.yaml' Is 'connectivity_plus'
+  and 'get'.
+
+2. Build a 'internet_controller' File at which Initialize the 
+  'GetXController'.
+  class InternetController extends GetXController {
+    final Connectivity _connectivity = Connectivity();
+    bool isInternet = false;
+    @override void OnInit(){ super.OnInit(); 
+    _connectivity.onConnectivityChanged.listen(InternetStatus);
+    }
+   internetStatus(ConnectivityResult result){
+    if(result == ConnectivityResult.none){
+     isInternet = true;
+     update();
+    } else {
+     isInternet = false;
+     update();
+    }
+   }
+  }
+
+ 3. We Inject the internet connectivity in 'main.dart'.
+  void main(){
+    runApp(const MyApp());
+    Get.put(InternetController(), permanent: true);
+  }
+  class MyApp extends StatelessWidget {
+    const MyApp({super.key});
+    return const GetMaterialApp(
+     debugShowCheckedModeBanner: false,
+     home: HomePage(),
+    );
+  }
