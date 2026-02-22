@@ -1,0 +1,29 @@
+To Publish New app Version Of already existing Published app on Google
+Play Console.
+So, U must have an Updated '.aab' file for Of Your App.
+1. On 'build.gradle.kts' in 'app' folder U have to Upgrade the
+"versionCode" and 'versionName' from it's previous version +1.
+2. Now we have to build the 'signed APK bundle'. So go to "menu"
+then 'build' Now select the 'Generate Signed App Bundle or APK'.
+Choose 'AAB' then make Sure u choose the "Previous released Version"
+of your app which is already there.
+Choose existing one and keep password same. 
+Click on 'next' and 'release'.
+3. Now 'Generate Signed Bundle' is Create U can see on 'Right Corner'
+pop up click on 'locate'.
+   NOW U GOT '.AAB' FILE WHICH WE WENT TO UPLOAD NOW NAVIGATE TO
+          GOOGLE PLAY CONSOLE OVER EXISTING APPLICATION
+                  DASHBOARD:
+1. On Right Slider We Got Options At which we have to choose 
+'Test and Release' At Which we Got Sub options.
+We Choose 2nd option called 'Production'.
+2. Inside Production we got Option of 'Release Dashboard'
+Then Now click on 'Create New Release'.
+Now Here If u scroll Down Got An Option 'App Bundle'.
+So, Upload Your 'App Bundle'.
+3. When Your "App Bundle" Is Uploaded U See it's 'name' 
+and 'Version'.
+     ---------------Note----------------
+If u Scroll down U See 'Release Details' of previous Version.
+At WHich U can Modify 'Release Notes' For Being Professional.
+     ----------------X------------------
