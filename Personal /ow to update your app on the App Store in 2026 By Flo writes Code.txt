@@ -1,0 +1,53 @@
+So We have to open "Xcode" Make Sure it's Open For Your Project.
+At Which In 'Categories' bar we got allot of Options like
+'General', "Signing & Capabilities" and Etc.
+But We choose By default open 'General' which contains so many 
+options Like 'Supported Destination', 'Minimum Deployments' etc
+but we have to focus on 'identity'.
+
+1. In 'Identity' card we have to Upgrade 'Version' name with '+1'
+I not increasing build because we went to let xcode handle that
+itself but 
+"Of course u manually increase Build No."
+
+2. Now We have to 'Archive' Current app For that Go to "Product"
+menu placed On "TopBar".
+Click on 'Archive' option It takes Few seconds Up to 'minutes'.
+
+3. Then 'Archive' Window open automatically Now in this 
+organizer window Click on 'Distribute App' at which we got 
+Several Options now we had to go through now we can just
+select "test flight" in "App Store" Then click on 'Distribute'
+This will now fetch the app record analyze the version.
+
+4. Now Switch to "App Store Connect" Select Your App Click On
+Top Left Got "Ios App +(add)" Option.
+Got Dialog Of 'New Version' at which u have to assign a version
+number Click on "Create" Don't wait For it. 
+When it's Uploaded Successfully which means we can click 'done'
+And close organizer window.
+
+5. Got Navigated to "iOS App version" window At Which Focus on 
+"What's new in this Version" It Should Accurately describe what
+U changed With Current Version.
+
+6. Now Scroll Down Up to 'Build' Section But Notice that it's empty
+after you uploaded your build Reason is Processing Builds takes time.
+We can check it by navigating to "TopCategories' TestFlight" Option
+Then U See the List of Versions and now we notice that our new
+version has finish processing and we just need to fill out this
+Compilance app "Encription documentation".
+
+7. When U click on 'manage' option U got 'App Encryption Documentation'
+Dialog So u fill this out and hit save so now that Things filled
+out See Status of build is ready to submit so we can go back to the 
+"Distribution" tab.
+
+8. So Scroll Down up to 'Build' Section At Which U See "Add Build" 
+Options Click on it Then U See List of Builds will get loaded 
+So these are all of the builds On Top U see "Our Uploaded Build Version".
+Select It and Click "Done" option.
+
+9. Now U See it Uploaded or attached to this version and u can see the 
+app icon is also Now Check All things look nice If Yes CLick on 'Saved'
+Option on Top And CLick on 'Add for Review' option.
