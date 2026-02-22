@@ -34,5 +34,30 @@ click on it then click on 'Policy and Program' then Go to
 App requirement.
 5. Now on SideBar Choose 'Test and Release' show previous version
 of our release. Choose Sub Option 'Production' here we go to 
-'releases' option Then scroll down u see the previous version.
-Click on 'Manage' option.
+'releases' option Then 
+         -----------X---------------
+         TO GET MORE DETAIL ABOUT PREVIOUS VERSION:
+AFTER CLICK ON 'releases' option then scroll down u see the previous version.
+Click on 'Manage release' option.
+Now Scroll Down Up to 'New App Bundles' click on '->' Symbol on Right
+Edge of Row.
+        -------------X---------------
+Scroll Down click on up to 'untitled release' On which click on 
+'Edit release' U Navigated to 'Create Production release' state
+Scroll down here we have already uploaded the bundle but it will
+not reflect here because we down some changes. 
+Just Vice of 'Upload' Button in 'App Bundles' we got option
+'App from Library' On which click on lartest Uploaded Version
+Click 'Add to Release'.
+
+6. Scroll Down Up to 'Release Notes' if it's updated So not problem.
+Click on 'Next' Button.
+Now we redirect to 'Create Production release' Check all Details and 
+click on 'save' then 'Go to overview'.
+Now we redirect to 'Publishing Overview' At which Check Your Changes
+If Sure then click on 'send 2 changes for review'.
+Then click on 'send changes for Review'.
+After Couple of minutes We got 'Notification' On Top-Right 
+Click on 'Go to publishing Overview'.
+
+7. ON 'Side bar' go to 'DashBoard' At which inside 'test And Release'.
