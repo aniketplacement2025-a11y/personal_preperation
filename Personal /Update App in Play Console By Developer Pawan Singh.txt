@@ -27,3 +27,12 @@ and 'Version'.
 If u Scroll down U See 'Release Details' of previous Version.
 At WHich U can Modify 'Release Notes' For Being Professional.
      ----------------X------------------
+4. Now On SideBar we have To Choose 'Monitor and improve'
+click on it then click on 'Policy and Program' then Go to 
+'App Content' At which On Screen We got two Option Choose 
+'Actioned' On which we have to manage permission According to
+App requirement.
+5. Now on SideBar Choose 'Test and Release' show previous version
+of our release. Choose Sub Option 'Production' here we go to 
+'releases' option Then scroll down u see the previous version.
+Click on 'Manage' option.
