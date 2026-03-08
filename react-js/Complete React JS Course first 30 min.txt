@@ -1,0 +1,5 @@
+i. Make sure U have already installed node.js.
+ii. Go to folder(At which u went to build react project).
+    And write 'npm create vite' command choose 
+    react js.
+iii. Then write 'npm i' it install all required dependencies.
