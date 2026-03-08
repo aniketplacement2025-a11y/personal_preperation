@@ -1,0 +1,52 @@
+1. Use the Right Click the Right Way:
+There's no right click on mac, but like on windows, 
+the right click gives you a wealth of options
+and these are actually several ways to do it.
+
+i. The way apple wants you t do it is by 
+ a. Holding Down Ctrl key and Click your mouse/trackpad.
+            ------------Important-------------
+The right Click(for whatever reason) deactivated by default.
+To Enable It.
+i. Click on Top Bar's Apple Logo.
+ii. Click on 2nd Option called System Settings.
+iii. Scroll Down click on "mouse" See 3 options at which click on 
+'secondary' click.
+Now Magic Mouse will work like any other mouse.
+           ----------------X------------------
+
+2. Search for Anything on Mac OS:
+Windows Search, which is prominently placed in the taskbar too, 
+Has it's Mac equivalent with Spotlight Search.
+Whenever you are on your Mac, 
+Just press 'cmd' + "Space Bar" Brings Up the "Spotlight Search".
+         ----------------IMP---------------------
+Your can find basically anything on your mac and even beyond 
+- simple starting with apps, settings, files or even text within 
+files.
+You can visually search your photos look up weather conditions,
+type in currency conversions, or do quick calculations.
+and all. 
+Without leaving your keyboard:
+i. Use the arrow keys to move up and down your search results,
+ii. Use Space Bar too get a quick preview of the file.
+iii. Drag and drop anything out of spotlight search into 
+let's say 'email' and it's attached.
+And finally, if you've found the file you were looking for 
+But want to see where it's located on your Mac,
+i. Hit 'cmd' and 'R' to reveal it in the finder.
+      -------------------X------------------------
+
+3. Show File Path:
+macOS initially, look very confusing and you have 
+no clue where you are right now.
+i. Let's click "view" at Top bar and select "Show Path Bar".
+
+In case you've missed this feature from the file explorer,
+it now shows you exactly where your are in the folder hierarchy.
+
+4. Preview Any File:
+You can always hit the space bar to get a sneak peak into 
+the file's content without actually opening it in app.
+Works with images, videos, audio, files, PDF documents,
+so basically any file type.
