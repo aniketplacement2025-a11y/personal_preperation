@@ -14,3 +14,5 @@ And then With the help of <script> tag we link a file called
 "main.jsx" given below.
     <script type = "module" src = "/src/main.jsx"></script> 
 3. In 'src' folder we have file "main.jsx".
+4. In 'app.jsx' folder u remove all code then when u run application 
+u see nothing. 
