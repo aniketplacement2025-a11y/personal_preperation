@@ -3,3 +3,14 @@ ii. Go to folder(At which u went to build react project).
     And write 'npm create vite' command choose 
     react js.
 iii. Then write 'npm i' it install all required dependencies.
+iv. With the help of "npm run dev" we able to start the server.
+
+ Not After Above Steps We see Allot of things in our project.
+1."node_modules": Currently we have to can't touch this.
+2. A Familiar file is "index.html" has it's own boiler plate 
+ but we see one more thing below
+      <div id = "root"></div>
+And then With the help of <script> tag we link a file called
+"main.jsx" given below.
+    <script type = "module" src = "/src/main.jsx"></script> 
+3. In 'src' folder we have file "main.jsx".
