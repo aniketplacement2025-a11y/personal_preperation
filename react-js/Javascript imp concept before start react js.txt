@@ -1,0 +1,31 @@
+https://www.linkedin.com/posts/hariharan001_javascript-reactjs-webdevelopment-share-7437827158305247232-fhLb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+Stop trying to read a novel in a language you don’t speak.
+
+Many students ask me:
+“What JavaScript concepts should I learn before starting React?”
+
+The biggest mistake I see is this:
+People jump into frameworks too early.
+Before learning React, build a strong JavaScript foundation.
+
+Here are the concepts you should be comfortable with:
+
+The JavaScript Foundation :
+• Basics → let, const, hoisting, how JS actually runs
+• Functions → arrow functions & higher-order functions
+• Data handling → object/array destructuring, spread & rest
+• Logic → ternary operator, && and || conditional rendering
+• Array methods → .map(), .filter(), .reduce()
+• Async JavaScript → Promises, Fetch API, async/await
+• Events → event listeners & event bubbling
+• Error handling → try/catch
+
+And one more important thing:
+Build at least one small project using only Vanilla JavaScript.
+Frameworks become much easier when you understand the language behind them.
+
+If you're learning React right now
+which JavaScript concept confused you the most?
+
+#JavaScript #ReactJS #WebDevelopment #LearnToCode #FrontendDevelopment
