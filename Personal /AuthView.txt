@@ -1,0 +1,111 @@
+class AuthView extends GetView<AuthController>{
+  const AuthView({super.key});
+  
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: SafeArea (
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            children: [
+              const SizedBox(height: 60),
+
+              Center(
+                child: Icon(
+                   Icons.mood,
+                   size: 100,
+                   color: Theme.of(context).colorScheme.primary,   
+                ),
+              ),
+
+              const SizedBox(height: 24),  
+
+              Text(
+                'Mood Swing',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                 Theme.of(context).colorScheme.primary,
+                 fontSize: 32,
+                ),
+              ),  
+
+              const SizedBox(height: 8),
+
+              Text(
+                'Track your feelings, Understand your mind',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                   fontSize: 16,
+                ),
+              ),   
+
+              const SizedBox(height: 48),
+
+              Obx(() => AnimatedSwitcher(
+                duration: const Duration(miliseconds: 300),
+                child: Column(
+                   key: ValueKey<bool>(controller.isLogin.value), 
+                   children: [
+
+                        if(!controller.isLogin.value) ..[
+                            _buildTextField(
+                              context,
+                              hint: 'Full Name',
+                              icon: Icons.person_outline,  
+                            ),
+                          const SizedBox(height: 16),
+                        ],
+
+                        _buildTextField(
+                           context,
+                           hint: 'Email',
+                           icon: Icons.email_outlined,
+                           KeyboardType: TextInputType.emailAddress,    
+                        ),
+                   ], 
+                ),
+              )),
+            ], 
+          ),          
+        ),
+      ),
+    );
+  }
+}
+
+
+Widget _buildTextField(BuildContext context, {
+    required String hint,
+    required IconData icon,
+    bool obscureText = false,
+    Widget? suffixIcon,
+    TextInputType? keyboardType,
+}){
+ return TextField(
+ obscurceText: obscureText,
+ keyboardType: keyboardType,
+  decoration: InputDecoration(
+    hintText: hint,
+    prefixIcon: Icon(
+      icon,
+      AppColors.textSecondaryLight,
+    ),
+    suffixIcon: suffixIcon,
+    filled: true,
+    fillColor: Theme.of(context).colorScheme.surface,
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide.none,
+   ),
+   enableBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide.none,
+   ),
+   focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(12),
+    borderSide: BorderSide(color: Theme.of(context).colorScheme.primary, width: 2),
+   ),
+  ),
+ )
+}
