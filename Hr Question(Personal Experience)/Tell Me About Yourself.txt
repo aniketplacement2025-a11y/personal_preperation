@@ -20,3 +20,27 @@ improve my analytical thinking and decision making skills.
 I am now looking for full - time flutter Developer opportunity where i can
 apply my skills, learn from experienced professionals and contribute to 
 building impactful mobile applications.
+
+
+        FOR TCS CREATED A NEW TELL ME ABOUT YOUR SELF GIVEN BELOW:
+
+Hi , i'm Aniket Rathore and I recently completed my B.tech in CSE from 
+Shri Vaishnav Vidhyapeth Vishwavidhyala in 2025.
+I have recently worked as a Flutter Developer Intern at VKAPS IT Solution,
+where i gained hands on experience in building cross platform mobile 
+Application.
+
+During My Internship, I have developed "Tijori +", which is a digital
+vault. Aim's to provide users with a single, organised and secure
+platform to manage there important life documents everything from 
+Contracts, Warranties to medical records & Personal Affairs.
+
+I also implemented a secure authentication with otp and designed a
+scalable modular architecture with reusable components.
+
+Apart from technical skills, i enjoy playing chess and reading,
+which help me improve my analytical thinking and Decision making.
+
+Currently i am looking for a full time opportunity as a flutter developer
+where i can apply my skills continue learning and contributing to building
+impactful application.
