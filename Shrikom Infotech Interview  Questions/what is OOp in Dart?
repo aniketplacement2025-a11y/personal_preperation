@@ -21,4 +21,17 @@ is a class.
    because they all extend 'Widget'. Also, override methods like 'build()' is runtime
    polymorphism.
 
-4. 
+4. Abstraction: We define abstract class and interfaces to enforce contracts.
+   ------------ Example:'ChangeNotifier' is an Abstract class, custom notifier
+   implement 'AddListener'.
+   Similarly, Widget is an abstract class, you must implement createElement().  
+
+In flutter, you can't avoid OOP - even a simple "Hello World" Creates a "MyApp" class
+extending "Stateless Widget". OOp makes FLutter code reusable, testable and
+scalable.
+
+
+              SHORT VERSION (IF INTERVIEWER IS RUSHING)
+OOP in flutter means Using dart's class and principles - inheritance, abstraction
+polymorphism, encapsulation - to build a widget and logic. Every flutter widget is an object,
+and pattern like BloC or provider rely on OOP for state management.
