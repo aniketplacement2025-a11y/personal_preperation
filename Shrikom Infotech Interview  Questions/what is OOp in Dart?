@@ -1,0 +1,20 @@
+          # PERFECT ANSWER (For An InterView)
+OOP (Object Oriented Programming) In flutter refers to using core OOP principles -
+Encapsulation, Inheritance, Polymorphism and Abstraction - to structure Dart code,
+which Flutter is built upon.
+Flutter itself is heavily object - oriented: every widget, state and controller
+is a class.
+
+ Here's how each principle applies In flutter:
+1. Encapsulation: We bundle data and methods inside a class and control access using
+   -------------- Private Members (prefix_).
+   For Example: "CounterBloc" exposes only public streams and events, 
+   hiding Internal Logic.
+
+2. Inheritace: Flutter uses single Inheritance. For Instance,
+   -----------  'class MyButton extends StatelessWidget' - we
+   reuse and override behaviour.
+   This Is used Every where in widget Composition.
+
+3. Polymorphism: We can treat different widget uniformly via there parent class (Widget).
+   ------------- Example:              
