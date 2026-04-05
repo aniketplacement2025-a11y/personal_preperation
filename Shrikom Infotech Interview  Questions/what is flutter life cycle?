@@ -1,0 +1,7 @@
+          # PERFECT ANSWER (For An InterView)
+iN flutter, the term 'lifecycle' refers to the sequence of events or states a widget
+or an app goes through - from creation to distruction. However, it's important to 
+distinguish between two different life cycles:
+1. App Level LifeCycle                   2. Widget Level LifeCycle
+
+   1. APP LEVEL LIFECYCYLE
