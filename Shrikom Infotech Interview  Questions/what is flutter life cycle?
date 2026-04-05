@@ -5,3 +5,82 @@ distinguish between two different life cycles:
 1. App Level LifeCycle                   2. Widget Level LifeCycle
 
    1. APP LEVEL LIFECYCYLE
+This tracks whether the app is in the forground, Background, inactive or 
+suspended.
+We access it using 'WidgetBindingObserver' and listen to 
+'didChangeAppLifecycleState'.
+ # POSSIBLE STATES:
+* 'resumed' -> App is visible and responding to user input.
+* 'inActive' -> App is in transition (e.g., receving a phone call).
+* 'paused' -> App is not visible (backgrounded, e.g., After pressing Home button).
+* 'detached' -> App is still running but not attached to any host(rare, e.g., during shutdown).
+
+Example Use Case: Paused a Video when an app goes to background, save user data when paused. 
+
+  2. WIDGET LEVEL LIFECYCLE
+This is a lifecycle of a single 'StatefulWidget's State Object.
+ # KEY METHODS IN ORDER OF EXECUTION:
+i. Constructor: When a widget is created (Dart - level).
+ii. createState(): Creates the State Object.
+iii. mounted -> true : After 'CreateState()' but before 'initState()'.
+iv. initState() : Called Once - initialize data, controllers, listeners.
+v. didChangeDependencies(): called After 'InitState' and whenever an inherited 
+                            changes.
+vi. build(): Builds the UI - can be called many times.
+vii. setState(): User - triggered - Schedules a rebuild.
+viii. didUpdateWidget(): Called when parent widget rebuilds with new config.
+ix. deactivate():  when state is removed from the tree temporarily.
+x. dispose(): called once - permanent removal, clean up controllers/streams.
+xi. 'mounted -> false': After 'dispose'.
+
+                -------------------NOTE------------------
+'build()' can be called many times. 'initState()' and 'dispose()' are called
+exactly once.
+                --------------------X--------------------
+
+  3. STATELESS WIDGET LIFECYLE:
+Simpler - only 'constructor' -> build() -> never changes.
+
+        REAL WORLD EXAMPLE IN FLUTTER: 
+class MyHomePage extends StatefulWidget {
+ @override
+ _MyHomePageState createState() => _MyHomePageState(); 
+}
+class _MyHomePageState extends State<MyHomePage> with WidgetBindingObserver {
+ @override
+ void initState(){
+  super.initState();
+  WidgetsBinding.instance.addObserver(this); // App lifecycle
+  // Initialize controllers, APIs, etc. 
+ }
+
+ @override
+ void didChangeAppLifeCycleState(AppLifeCycleState state){
+  print(state);  // resumed, paused, etc.
+ }
+
+ @override
+ void dispose(){
+  WidgetBinding.instance.removeObserver(this);
+  // Clean up controllers
+  super.dispose();
+ }
+
+ @override
+ Widget build(BuildContext context){
+  return Scaffold(...);
+ }
+}
+
+  #KEY TAKE AWAYS FOR INTERVIEW:
+* Flutter does not have an 'onDistroy' or 'onStop' like Android - use 'dispose()' for cleanup.
+* Never call 'setState' after 'dispose' - check 'mounted' property.
+* App lifecycle is platform - specific but flutter normalize it via 'AppLifecycleState'.
+* The most commonly overriden method in practise: 'initState()', 'build()', 'dispose()'.
+
+  #SHORT VERSION(if time is limited)
+* Flutter has two life cycles: app-level (foreground/background via 'WidgetBindingObserver')
+  and Widget - level (for 'StatefulWidget: initState -> didChangeDependencies -> build -> 
+  didUpdateWidget' -> 'deactive' -> 'dispose').
+  The most important method are 'initState()' for setup, 'build' for UI, and 'dispose'
+  for cleanup.
