@@ -17,4 +17,8 @@ is a class.
    This Is used Every where in widget Composition.
 
 3. Polymorphism: We can treat different widget uniformly via there parent class (Widget).
-   ------------- Example:              
+   ------------- Example: A 'List<Widget>' can contain 'Text', 'Icon', 'Container'
+   because they all extend 'Widget'. Also, override methods like 'build()' is runtime
+   polymorphism.
+
+4. 
