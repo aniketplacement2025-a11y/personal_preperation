@@ -1,0 +1,30 @@
+          # PERFECT ANSWER (For An InterView)
+Dart is an Object Oriented, class - based, garbage - collected Programming language
+developed by google in 2011. It was designed specifically for User Interfaces, and 
+it's primary language for Flutter framework.
+     Dart combines the best features from multiple Languages:
+*C - style syntax (familiar to Java, C#, javascript developers). 
+*Strong typing with optional typing (now fully sound null safety).
+*Both JIT (Just in time) and AOT (Ahead of time) compilation.
+*Async/Await support out of the box.
+*Isolates for concurreny (instead of threads).
+
+     What makes Dart Unique is its abitlity to run in three different environment:
+1. Flutter apps (mobile, web, desktop).
+2. Backend Servers (using Dart VM).
+3. Compiled to Javascript (for web browsers).
+
+Google choose Dart for flutter because it offers hot reload(via JIT) during 
+development and high performance native code (via AOT) in production.
+
+     1. KEY FEATURES OF DART.
+I. Sound Null Safety: Variable cannot be null unless explicitly
+                      declared(int?).
+          Benefit: Eliminates Null pointer Execption.
+ii. Everything Is an Object: Even primitive types (int, bool) inherit
+                 from object.
+          Benefit: Consistent behavior.
+iii. Top - level Functions: Functions don't need to be inside classes.
+           Benefit: More Flexibility.
+iv. Async/Await: Native Support for asynchronous programming.
+           Benefit: Cleaner Async Code. 
