@@ -1,0 +1,66 @@
+          LEARN BASICS
+1.    Follow the style of Interviewer.
+2.    Don't give wrong answers.
+3.    Show that you leave learning.
+
+    GET READY FOR INTERNSHIP, 0 - 1 YEAR EXPERIENCE, 1 - 2 YEAR EXPERIENCE
+1) How many types of widgets are in flutter?
+ans) Stateless and stateful widget.
+
+2) What is difference between them?
+ans) The Stateless Widget does not have any state
+information. It remains static throughout its lifecycle.
+the example of the StatelessWidget are Text, Row, Column,
+Container, etc.
+
+A Stateful Widget has state information. It contains mainly
+two classes: the state object and the widget.
+It is dynamic because it can change the inner data during the 
+widget lifetime.
+this widget does not have a 'build()' method. it has 'createState()'
+method, which returns a class that extends the flutter State class.
+The example of stateful widget are Checkbox, Radio, Slider, inkwell,
+form and TextField.
+
+3. What is Set State?
+ans) Coding Example:
+onTap: (){
+ // passing an anonymous function to 'setState'
+ // that increments counter's value by
+ // and update the UI.
+ setState((){
+   counter++
+ }); },
+
+     Working of set state:
+So if the state of the widget changes you have to call 'setstate'
+to trigger a rebuild of a view and see immediately the changes
+implied by the new state.
+
+4. What is InitState?
+ans) Help us to run functions
+without interaction.
+
+initstate method is the part of the state class that comes into play
+as soon as the stateful widget has been inserted into the widget tree.
+As per official documentation, 'initstate' is the method called immediately
+when the framework inserted the state object. It's the method inside the 
+state class.
+
+5. what is Async and Await?
+ans) 'async' keyword allows the function to use the 'await' keyword inside it.
+the 'await' keyword is use to pause the execution of the asynchronous function
+until the particular asynchronous operation complete.
+it can only be used inside the 'async' function.
+Example:
+ final FirebaseAuth auth = FirebaseAuth.instance;
+ Future<void> inputData() async {
+  final FirebaseUser user = await auth.currentUser();
+  final uid = user.uid;
+ }
+
+It allow the main flow of the program to continue the execution
+while the operation is being carried out from the background.
+however, the await keyword can only be used within functions marked 
+as asynchronous with async keyword, and it is restricted only to the 
+function in which it is called.
