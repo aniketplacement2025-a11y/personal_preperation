@@ -1,1 +1,38 @@
-1) what's the difference between ListView Builder and Stream Builder? 
+          1) what's the difference between ListView Builder and Stream Builder? 
+ans)               DISPLAYING DYNAMIC DATA:
+when u have a list of items that can change in size, such as list of 
+messages, contracts or products fetched from an API.
+it allows you to create UI elements for each item dynamically.
+        StreamBuilder is a widget that builds itself based on 
+lartest snapshot of interaction with stream.
+This is mainly used in application like chat application,
+clock application where the widgets need to be rebuild itself
+to show the current snapshot of data.
+
+There are many comparisons of how to visualize a Stream so I'll
+use a common one. A stream is like a pipe, you put a value on the
+one end and if there is a listener on the other end that
+listener will receive the value.
+
+Common Streams we use:
+i. Firebase Snapshot Stream.             2. WebSocket Streams.      
+
+          2) WHAT IS SNAPSHOT?
+ans) A DataSnapshot contains data from a Database location.
+Any time you read data from the database, you can receive the
+data as DataSnapshot.
+A Datasnapshot is passed to the event callback you attach with
+on() or once(). you can extract the content of the snapshot as 
+the Javascript object by calling the 'val()' method.
+
+          3. WHAT IS FLUTTER NAVIGATION(Routes in flutter)?
+ans) flutter navigation, also known as routing, is the mechanism
+that allow moving between different screen or pages in an app,
+essentially managing the stack of the screens a user has visited.
+
+      4. CAN U WALK ME THROUGH HOW U CAN HANDLE NAVIGATION AND ROUTING 
+              IN YOUR E - COMMERCE APP?
+ans) For this project, I completely bypass the native Flutter 'Navigator',
+and opted for Getx routing. I structured my routing using 'get_cli' pattern,
+which separates concerns perfectly. 
+I have an 'app_routes.dart'
