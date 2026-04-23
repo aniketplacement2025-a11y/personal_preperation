@@ -1,0 +1,47 @@
+          # PERFECT ANSWER (For An InterView)
+When i run 'flutter run', flutter follows a step by step process to build and 
+run my app on a device or emulator.
+First it checks the project files and download required dependencies.
+Then, it compiles the code - using JIT(Just In Time) in development for
+fast changes.
+After that, it installs the app on the device.
+Finally, it launches the app with hot reload support, so changes can be seen 
+instantly.
+
+The key idea is that Flutter uses JIT during development for speed
+and AOT (Ahead Of Time) in production for better performance.
+
+         # COMMON INTERVIEW FOLLOW UP QUESTIONS
+Q) What is Dart kernal?
+ans) A Dart kernal is platform independent intermediate representation
+of your dart code (a binary '.dill' file).
+Flutter uses this to enable cross platform compilation. the same kernal
+can be JIT Compiled for development or AOT compiled for production
+and any platform.
+
+Q) What is difference between Hot reload and hot restart internally?
+ans) Hot reload injects only changed code into the running dart VM without
+resetting state. It works because dart support replacing function bodies at
+runtime.
+hot restart destroy the current isolate, create a new one and re runs 'main()'
+- losing all state but ensuring a clean state.
+
+Q) How does flutter achieve sub second hot reload?
+ans) Three factors are:
+1. Incremental compilation - only changed files are recompiled.
+2. Dart VM's runtime code patching.
+3. Flutter's widget tree re construction is extremely fast due 
+to the reactive programming model.
+The average hot reload takes 300 - 500 ms.
+
+Q) What happens during 'flutter run --release'?
+ans) It skips JIT compilation and uses AOT pre - compiled code.
+A flutter tool builds a release binary (APK/IPA/EXE) with tree
+shaking enabled, remove debug tools and install it without the resident 
+compiler. No hot reload, but performance matches native.
+
+              # SUMMARY (The One - Sentence Takeaway)
+'flutter run' launches a resident compiler that JIT compiles your Dart code,
+deploy it to the target device via platform specific tooling (ADB/ios-deploy)
+and established the hot reload connection - allowing sub second incremental 
+update without restarting the app.
