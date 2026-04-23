@@ -1,0 +1,32 @@
+          # PERFECT ANSWER (For An InterView)
+Firebase offers two cloud based NoSQL Database:
+i. the classic Realtime Database.
+ii. Newer Cloud Firestore.
+While both provide real time data synchronization, they differ
+foundationally in data modeling, querying capabilities, scalability
+and pricing.
+The simplest way to remember the difference is:
+*Realtime Database is a single large JSON tree - simple but limited.
+*Cloud Firestore is a collection of documents - more powerful and scalable.
+Google Now recommended firestore for most new projects because it address 
+the limitations of realtime database while adding the enterprise - grade
+features.
+
+          # PRO INTERVIEW TIPS:
+Q) Can u use both?
+ans) yes! Many production apps use both databases together. For example,
+use 'Realtime Database' for presence/status features and 'firestore' for 
+all other data. They can be synced via cloud functions.
+
+Q) Is Realtime Database going away?
+ans) No - google maintains both. However, newer features focus on firestore,
+and Google officially recommended new projects start with firestore.
+
+Q) Give me a real world migration example?
+ans) I worked on a chat app that start on Realtime database. As we added 
+message search, user typing status and reactions, the json tree become 
+unmanageable.
+Migrating to firestore gave us compound queries and proper data modeling,
+through we kept realtime database just for presence detection.
+
+          # SUMMARY?
