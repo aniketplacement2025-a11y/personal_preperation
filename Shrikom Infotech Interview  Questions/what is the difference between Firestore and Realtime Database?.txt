@@ -30,3 +30,10 @@ Migrating to firestore gave us compound queries and proper data modeling,
 through we kept realtime database just for presence detection.
 
           # SUMMARY?
+Realtime Database is the original Firestore database - a single JSON tree
+that's simple and extremely fast (< 10ms), but limited in querying and scaling.
+    Firestore is mordern successor a document based database with powerful 
+queries, automatic scaling, 99.9999% uptime and multi platform offline supoort.
+google recommends firestore for new project, but Realtime Database remains the 
+best choice for ultra low latency use cases like gaming and live dashboard.
+you can also use both in a same app when needed.
