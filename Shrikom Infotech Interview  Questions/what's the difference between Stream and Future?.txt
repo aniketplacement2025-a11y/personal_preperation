@@ -1,0 +1,47 @@
+          # PERFECT ANSWER (For An InterView)
+In Dart, both Future and Stream are used for asynchronous programming, but they
+serve different purposes:
+*Future represents a single asynchronous operation that eventually produces
+one value (or an error) at some point in future.
+*Stream represents a sequence of asynchronous events that can produce multiple
+values over time.
+the simplest way to remember:
+*Future = One shot (read a file, make an API call).
+*Stream = Ongoing (mouse clicks, sensor readings, chat messaging).
+Think of Future as a promise for a single delivery and Streams as a pipe that
+keeps delivering package.
+
+     # FUTURE IN DEPTH:
+A future is a dart object that represents a value that will be available at some 
+point in the future. It's like a promise that eventually resolves to a value or 
+an error.
+ *BASIC USAGE:
+// Creating a Future 
+Future<String> fetchUserData() async {
+ await Future.delayed(Duration(seconds: 2));
+ return 'User data loaded'; 
+}
+// Using With then() callback
+fetchUserData().then((value) {
+  print(value);
+}).catchError((error) {
+  print('Error: $error');
+});
+
+ *MANUAL FUTURE CREATION:
+// Future that completes with a value
+Future<String> successFuture = Future.value('Immediate value');
+// Future that completes with an error
+Future<void> errorFuture = Future.error('Something went wrong');
+// Future that never completes
+Future<void> neverCompletes = Future.never();
+// Delayed execution
+Future<void> delayed = Future.delayed(
+  Duration(seconds: 1),
+  () => print('After 1 second'),
+);
+
+ *KEY FUTURE METHODS:
+1. 'then()' -> Register callback when future completes.
+2. 'catchError()' -> handles Error.
+3. 'whenComplete()' -> Executes regardles of success and error.
