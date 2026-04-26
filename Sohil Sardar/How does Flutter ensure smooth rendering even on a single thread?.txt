@@ -38,3 +38,8 @@ ii. GPU renders them in parallel.
 *Flutter Uses it's own engine(Impller).
 *No dependency on native UI components.
 *Result:
+i. Fast Rendering    ii. Less coordination overhead.
+
+5. Smart Rebuild System
+*Only affected widgets rebuild (not whole UI)
+*Uses efficient diffing.
