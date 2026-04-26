@@ -1,0 +1,32 @@
+https://www.linkedin.com/posts/sohil-sardar-778a001a9_googlemlkit-ai-mobiledevelopment-activity-7295301395006550016-PaR4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+Exploring Google ML Kit: AI Powered Features For Your Apps!
+
+In the fast evolving world of mobile development. Google ML Kit provides a powerful
+way to integrate on device machine learning capabilities into apps with ease.
+Whether you are working on flutter, android, ios, ML kit provider AI driven features
+that enchance user experience without complexity of building models from scratch.
+
+Here are some exciting features you can leverage:
+1. 'Text Recognition(OCR)': 
+    ---- ---------------- Extract text from image in Real time.
+2. 'Face Detection':
+    ---- --------- Identify facial features, expression and even
+                   Contours.
+3. 'Barcode Scanning':
+    ------- -------- Decode Barcodes and QR Codes Effortlessly.
+4. 'Pose Detection':
+    ---- --------- Track body movements for fitness and AR application.
+5. 'Smart Reply':
+    ----- ----- Generate Contextual replies like in Google Messages.
+6. 'Language Identification And Transaction': Detect language and 
+    -------- -------------- --- ----------- translate on the fly.
+
+          # Why Choose Ml Kit?
+*On device processing for better privacy and Speed.
+*No deep learning expertise needed - easy to integrate APIs.
+*Supports Flutter, Kotlin, Java, Swift with firebase integration.
+*works offline for a seamless user expertise.
+
+I'm currently exploring how ML kit can power innovative AI Driven 
+Applications.
