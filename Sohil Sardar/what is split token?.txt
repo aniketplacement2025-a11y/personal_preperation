@@ -1,0 +1,48 @@
+https://www.linkedin.com/posts/sohil-sardar-778a001a9_apisecurity-softwaredevelopment-tokenauth-activity-7350724863650598912-tEel?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+                 # Core Understanding Questions
+Q) What is a split token in API authentication?
+ans) In context of API Authentication, a split token (or token splitting) 
+refers to a security technique Where is a single authentication credential 
+is divided into two or more separate parts, which are stored and 
+transmitted independently.
+The most common implementation is split token authentication
+used in mobile or single page application (SPAs), often in conjunction
+with Oauth 2.0/OIDC.
+ *How it typically Works:
+   Part                     Location                               Purpose
+Part A(e.g., short    Sent in Request Header                Authenticates API
+lived access token)   (e.g., Authorization: Bearer ...)     Request.
+Part B (e.g.,         Stored in HTTP-only cookie            Obtains new access 
+refresh token)        or secure local storage.              tokens.
+ *Why Split Tokens?
+1. Mitigate token theft - An attacker who intercepts the access token only gets 
+                          short lived access they don't get the 'refresh' token
+   needed to extend the token.
+2. Cross-channel defense - The two parts are transmitted over different channels
+                           (e.g., header vs. cookie), making full interception harder.
+3. Reduced replay damage - 
+             Stolen access token expires quickly without the ability to refresh.
+
+ *Example (OAuth 2.0 with PKCE & split token):
+i. Client authenticates → Authorization server returns:
+    - Access token (sent in API request headers)
+    - Refresh token (set as HTTP-only cookie)
+ii. API requests: send access token in header
+iii. When access expires:
+   - Client calls refresh endpoint (refresh token automatically sent via cookie)
+   - Server verifies both cookie and client identity → issues new access token
+
+ *Is it same as "token splitting" in cryptography?
+ans) No - be careful not to be confuse with the secret splitting 
+(Shamir Secret Sharing), where a cryptographic key is split into shares
+for redundancy or a multi part computations.
+ That's for storage/backup, not real-time API authentication.
+PRACTICAL ADVICE:
+ *If an Api provider maintions "split token authentication" in their docs,
+ask whether they mean:
+* Two-part credential (header + cookie).          *Token fragmentation for large tokens (rare)
+* Cryptographic secret splitting (unlikely for auth)
+ *Modern best practice increasingly uses rotated short-lived tokens
+  + refresh token rotation instead of explicit split-token patterns, 
+  but the concept remains foundational in OAuth 2.0 security.
