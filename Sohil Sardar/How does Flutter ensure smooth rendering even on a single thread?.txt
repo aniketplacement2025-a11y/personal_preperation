@@ -1,0 +1,40 @@
+          # Interview One-Liner
+Flutter ensure smooth rendering on a single thread by maintaning a 
+strict frame budget, using an event driven pipeline, offloading
+rendering to GPU and requiring heavy computation to run in isolates
+So the Ui thread remains unlock.
+
+          # Pro Level Add On
+Even on a single thread, performance is maintained because Flutter 
+minimizes unpredictable work and synchronization overhead,
+which can make it some time more efficient than multi threaded
+coordination.
+
+        # Why Single Thread Still Works
+Because Flutter ensures:
+*Smart and Fast Ui tasks.         *Predictable Execution
+*Parallel GPU Rendering          *Developer Responsibility for Heavy Work.
+
+        # How Flutter Actually Manage It:
+1. Frame Budget Discipline (16 ms rule):
+*Flutter target 60 FPS -> 16 ms per frame.       
+*Build Frame goes through:       Build -> Layout -> Paint
+*If this finishes within 16ms → smooth         *If not → jank (lag)
+   Flutter is optimized so most UI operations are very fast
+
+2. Event Loop + Task Scheduling:
+*Everything runs through a single event loop
+*Tasks are queued and executed in order:
+i. User Input     ii. Animations       iii. UI Updates.
+*No random interruptions → more predictable performance.
+
+3. GPU Offloading:
+*UI calculations happen on CPU (main thread)
+*Actual drawing is pushed to GPU
+This separation ensures:      i. CPU prepares frames.
+ii. GPU renders them in parallel.
+
+4. LightWeight Randering Engine:
+*Flutter Uses it's own engine(Impller).
+*No dependency on native UI components.
+*Result:
