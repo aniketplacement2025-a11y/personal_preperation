@@ -1,0 +1,65 @@
+https://www.linkedin.com/posts/sohil-sardar-778a001a9_flutter-mobiledevelopment-bestpractices-activity-7342825331097010178-vuae?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+Q) What does the ^ (caret) symbol mean in Flutter dependencies?
+ans) The caret(^) allows compitable updates by locking the major version
+while permitting minor and patch updates, ensuring stablitity without 
+missing improvements.
+      # Meaning of ^ (Caret) in Flutter Dependencies
+ In pubspec.yaml, the ^ symbol means:
+  “Allow updates that do NOT break compatibility 
+       (according to semantic versioning)”
+  # Based on Semantic Versioning
+version format:   MAJOR.MINOR.PATCH
+MAJOR → Breaking changes         MINOR → New features (safe)
+PATCH → Bug fixes (safe)
+ ^ allows updates where MAJOR version stays same.
+
+Q) How does Flutter resolve dependency conflicts?
+ans) Flutter resolves dependency conflicts using "Pub's Version Solver",
+which tries to find a single compatile version of every package that 
+satisfies all constraints in your project.
+            # How It works:
+i. Read all Constraints in 'pubspec.yaml'.
+ii. Version Solving Algorithm:
+ *Find One version of 'http'.         *That Satisfy both version 'A' and 'B'.
+iii. Backtracking: Pub doesn’t fail immediately. It:
+ *Tries different versions of A, B, and others.
+ *Backtracks until it finds a valid combination       => If none exists → error.
+iv. Lock the Final Versions:     Once resolved:
+*Stored in pubspec.lock         *Ensures same versions every time you build
+           # INTERVIEW ONE LINER:
+Flutter uses Pub’s version solver, which applies constraint solving and 
+backtracking to select a single compatible version of each dependency. 
+If no common version exists, it throws a conflict error that must
+be resolved manually.
+
+Q) What is the role of pubspec.lock in dependency management?
+ans) Role of pubspec.lock:
+It stores the exact versions of all dependencies (include transitive ones).
+that your project actually uses.
+Think of it as:    “Final resolved snapshot of dependencies”.
+          # WHY IT'S IMPORTANT:
+1. Reproducible Builds:        ii. No “works on my machine” issue.
+i. Same Dependencies for every Machine.
+2. Stability:     iii. Your project still uses locked version
+i. Even if a new version (0.13.6) is released
+3. Faster Builds:    i. No need to resolve dependencies every time.
+
+Q) Difference Between pubspec.yaml vs pubspec.lock?
+ans) Purpose: In 'pubspec.yaml' we Defines dependencies 
+             while In 'pubspec.lock' we Stores resolved versions.
+Written By: In 'pubspec.yaml' by Developer,
+       while In 'pubspec.lock' it's Automatically generated.
+Version type: In 'pubspec.yaml' have Range (e.g. ^0.13.0)
+       while In 'pubspec.lock' it's Exact (e.g. 0.13.5).
+Editable: In 'pubspec.yaml' so 'Yes' while In 'pubspec.lock'
+      It's Not(don’t edit manually).
+Includes transitive deps: In 'pubspec.yaml' so 'No' while In 'pubspec.lock'
+      It's Yes.
+Used For: In 'pubspec.yaml' declaring what you want 
+   while In 'pubspec.lock' ensuring what you get.
+
+          # Interview One-Liner
+pubspec.yaml defines dependency constraints, while pubspec.lock 
+records the exact resolved versions to ensure consistent and 
+reproducible builds across environments.
