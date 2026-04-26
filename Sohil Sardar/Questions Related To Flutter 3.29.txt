@@ -1,0 +1,38 @@
+Q) What does “running Flutter on the main thread” actually mean?
+ans) "Running Flutter on Main thread" means that flutter's UI rendering 
+and framework logic now execute on a same thread as the platform Main (UI)
+thread, instead of running on a separate background thread.
+ # Before(Old Flutter Model)
+ * Flutter Ui run on a separate thread (UI thread of flutter Engine).
+ * Android/ios use their main thread for native work.
+ * Result: *Communication between thread was needed.
+  *Caused Thread Switching Overhead.
+ # Now (With '--run-on-main-thread')
+ * Flutter Ui runs directly on the main thread.
+ * No need to sync between two thread for UI.
+ * Result:
+  *Fast Startup          *Less Overhead         *Smoother UI Interaction
+  ONE LINE INTERVIEW ANSWER:
+  It means flutter Ui and rendering pipeline now execute on platform main thread 
+  Instead of a separate thread, reducing syncronization overhead and improving performance 
+  but requiring careful handling of heavy task to avoid blocking the UI.
+
+Q) What is thread switching overhead, and how does it impact performance?
+ans) Thread Switching Overhead is the extra time and CPU work required when system 
+switches execution from one thread to another thread.
+When Switching happens the System must:
+*Save the Current thread state (registers, stack, etc.).
+*Load the next Thread's state.
+*Synchronized shared data (if needed).
+All of this does not do actual useful work → it’s just management cost.
+        IN CONTEXT OF FLUTTER 3.29
+ Earlier:
+ *Flutter UI thread + Platform thread -> frequent communication.
+ *More thread switching Overhead.
+ Now (main thread execution):
+ *Same thread Handles both  i. Fewer switches  ii. Fast Response
+ iii.  Smoother UI.
+          INTERVIEW ONE LINER:
+ Thread switching overhead is the cost of saving and restoring thread states
+ when the CPU switching between threads. It impacts performance by increasing 
+ latency, wasting CPU cycles and causing UI lag due to missed frame deadline.
