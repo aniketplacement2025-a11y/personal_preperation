@@ -46,3 +46,18 @@ ask whether they mean:
  *Modern best practice increasingly uses rotated short-lived tokens
   + refresh token rotation instead of explicit split-token patterns, 
   but the concept remains foundational in OAuth 2.0 security.
+
+         🧠 Pro-Level Answer Line (Use This in Interview)
+
+Split token authentication divides the token into two parts—one stored
+securely on the server (like an HttpOnly cookie) and the other sent via 
+headers. Even if one part is compromised, the attacker cannot authenticate 
+without the second part, which significantly reduces token theft risks and 
+strengthens overall API security.
+
+💣 If Interviewer Pushes HARD (Advanced Answer)
+
+However, it’s not a complete solution on its own. We still need protections 
+like CSRF tokens, HTTPS, and proper token expiration strategies. 
+It’s best used as part of a layered security model rather than a standalone 
+mechanism.
