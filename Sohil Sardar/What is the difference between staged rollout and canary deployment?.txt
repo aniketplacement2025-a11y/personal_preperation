@@ -1,0 +1,7 @@
+         DIFF B/W CANARY DEPLYMENT & STAGED ROLLOUT
+Core Difference:
+ Staged Rollout → Gradually release a new version 
+                  to users in phases.
+ Canary Deployment → Release a new version to a small 
+                   subset of users first to test it in 
+                   real-world conditions.
