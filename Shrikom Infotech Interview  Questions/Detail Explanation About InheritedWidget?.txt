@@ -51,3 +51,13 @@ This is called: 'dependOnInheritedWidgetOfExactType()'.
 iv. Dependency gets Registered:
 when you call:  'context.dependOnInheritedWidgetOfExactType<MyData>()'.
 Flutter does 2 things:  i. Returns the data.  ii. Registers this widget as a dependent.
+ v. When data changes -> selective Rebuild:   Now Flutter checks Code:
+               updateShouldNotify(oldWidget)
+ a. If true → only dependent widgets rebuild.
+ b. If false → nothing rebuilds.           => This is why it's efficient.
+       2 Visual Flow:
+  MyData (InheritedWidget) -> Child A  -> Child B  ← calls MyData.of(context)  -> Child C
+ *Child B doesn’t need data passed manually    *It directly fetches from above
+      3. IMP Line:
+Inherited widget shares data by letting descendants access it via 'BuildContext'.
+and flutter tracks dependencies to rebuild only the widgets that use that data.
