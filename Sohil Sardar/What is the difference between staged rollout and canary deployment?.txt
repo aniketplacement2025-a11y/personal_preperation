@@ -32,3 +32,21 @@ i.If interviewer asks:
 Staged rollout is a general strategy where a release is gradually to users in phases,
 while canary development is a more controlled approach where a small subset of users 
 receives a new version first, and the system is actively monitor before scaling rollout.
+
+
+                        DIFFERENCE B/W STAGED AND HALT ROLLOUT?
+Staged and halt rollout are Not two strategies at the same level. One is release strategy, 
+the other one is an action/decision during rollout.
+#Core Differences (simple):
+ *Staged Rollout -> Gradually releasing your app/update to users in phase.
+ *Halt Rollout -> Stopping the rollout process due to issues.
+          1. Halt Rollout:
+*You stop the rollout immediately.
+*Done when:    i.Crashes increase.     ii.Bugs found.      iii. Performance drops.
+#Goal: Prevent damage to more users.
+#Example: *At 20% rollout, crash rate spikes.
+=> You halt rollout to stop further exposure.
+             #How they Work together
+*Real World flow:  i. Start Staged Rollout(10%)
+ ii. Monitor metrics       ii. if issue detected -> halt rollout.
+ iv. Fix bug -> resume or redeploy.
