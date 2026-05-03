@@ -34,3 +34,8 @@ class MyData extends InheritedWidget {
   }
 }
  Usage:     Text(MyData.of(context)!.message);
+
+        # How does it share data across the widget tree?
+InheritedWidget shares data using the 'BuildContext'.
+*Every widget has a 'context'.     *That 'context' knows its position in the widget tree.
+*Using that, Flutter can walk up the tree and find the nearest 'InheritedWidget'.
