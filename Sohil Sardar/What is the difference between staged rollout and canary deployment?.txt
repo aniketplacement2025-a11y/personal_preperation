@@ -5,3 +5,19 @@ Core Difference:
  Canary Deployment → Release a new version to a small 
                    subset of users first to test it in 
                    real-world conditions.
+=> In short:
+  Canary = a type of staged rollout with monitoring 
+           + validation focus.
+ 1. STAGED ROLLOUT:
+* You release your app/update in percentage.      5% -> 20% -> 50% -> 100%
+* Used in:   i. Mobile apps (Play Store/App Store).      ii. feature release
+ # Goal:     *reduce risk      *control exposure.
+ # Example:   You push a Flutter app update:
+   * Day 1: 10% users    * Day 2: 50% users      *Day 3: 100% of users.
+
+ 2. Canary Development:
+*You release to a small controlled of Group first.
+*Monitor:  *Errors.   *Performance    *Crashes.
+*Then decide:   *Roll forward Or rollback.
+*Goal: *Test in productiom safelly.
+ 
