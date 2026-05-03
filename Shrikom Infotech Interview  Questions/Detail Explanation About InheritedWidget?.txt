@@ -39,3 +39,15 @@ class MyData extends InheritedWidget {
 InheritedWidget shares data using the 'BuildContext'.
 *Every widget has a 'context'.     *That 'context' knows its position in the widget tree.
 *Using that, Flutter can walk up the tree and find the nearest 'InheritedWidget'.
+      1. Step by Step flow(what really happens)
+i. You place InheritedWidget high in the tree. Code:
+    MyData(  message: "Hello Bro",  child: MyApp(),  ).
+ii. Child widget asks for data using context. Code:
+         MyData.of(context)
+iii. Flutter Searches Up the tree:
+  a. It starts from current widget.
+b. Moves upward(parent -> parent -> parent).    c. stops when it finds 'MyData'.
+This is called: 'dependOnInheritedWidgetOfExactType()'.
+iv. Dependency gets Registered:
+when you call:  'context.dependOnInheritedWidgetOfExactType<MyData>()'.
+Flutter does 2 things:  i. Returns the data.  ii. Registers this widget as a dependent.
