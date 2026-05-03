@@ -1,0 +1,36 @@
+              CORE UNDERSTANDING?
+      #What is Inherited Widget?
+It's a special type of widget used to share data efficently
+across the widget tree without passing it manually(prop drilling).
+  *Simple Defination:
+it's let's you store data at a top level and access it anywhere 
+below the widget tree.
+ 1. Why we need it?
+i. Normally in Flutter:   Parent → Child → Grandchild → Great-grandchild
+ If you want to pass data, you must send it step by step Then:
+  Parent → Child → Grandchild → Great-grandchild ❌ (messy) 
+ With InheritedWidget:
+ Parent (store data once) -> Any child can directly access it ✅
+ 2. When to Use it?
+Use it when:  Many widget need to be same data.
+  ii. Data is used deep in the widget tree.      
+iii. You want better performance (avoids unnecessary rebuilds).
+ *Example: *Theme Data.   *User Authentication info        *App settings.
+ 3. Example (Simple Code Set):
+class MyData extends InheritedWidget {
+ final String message;
+ const MyData({
+  required this.message,
+  required Widget child,
+ }) : super(child: child);
+
+ static MyData? of(BuildContext context) {
+   return context.dependOnInheritedWidgetOfExactType<MyData>();
+ }
+
+  @override
+  bool updateShouldNotify(MyData oldWidget) {
+    return message != oldWidget.message;
+  }
+}
+ Usage:     Text(MyData.of(context)!.message);
