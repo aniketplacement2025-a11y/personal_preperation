@@ -20,4 +20,15 @@ Core Difference:
 *Monitor:  *Errors.   *Performance    *Crashes.
 *Then decide:   *Roll forward Or rollback.
 *Goal: *Test in productiom safelly.
- 
+*Example:  i. 1% of users get new API version.
+ ii. Monitor logs, creahes.        iii. if stable  -> increase traffic.
+
+           #INTERVIEW TRAP
+i.If interviewer asks:
+"Are they the same?"  ans) Canary Deveopment is a specified form of staged rollout
+   focused on validating a release with small user group before wider exposure.
+
+           #PRO LEVEL ANSWER:
+Staged rollout is a general strategy where a release is gradually to users in phases,
+while canary development is a more controlled approach where a small subset of users 
+receives a new version first, and the system is actively monitor before scaling rollout.
