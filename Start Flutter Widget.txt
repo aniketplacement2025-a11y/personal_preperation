@@ -8,3 +8,8 @@
 4. Alert Dialog: Is a Material Design Widget in flutter that display important information or 
    ----- ------- prompts the user for decision. It appers as the model dialog overlay on top 
    of the current screen, require user interation before they can continue using the app.
+5. Align Widget: Is a layout widget in flutter that positions its child within itself based on
+   ----- ------ alignment factor. It allow you to place a child widget at a specific position 
+   relative to the bounds of the align widget itself - such as top - left, center, bottom - right
+   or any custom fraction between 0 and 1.
+6. 
