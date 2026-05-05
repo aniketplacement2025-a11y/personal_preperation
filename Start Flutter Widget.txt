@@ -1,0 +1,10 @@
+1. Alert Dialog: Is a Material Design Widget in Flutter that display a dialog box to the User.
+   ----- ------ typically used for urgent Information, important decisions, or required user 
+   conformation before proceeding.
+2. About List Tile: It's a built in flutter widget that provides a ready made list tile for 
+   ----- ---- ---- for displaying and about section in your app's settings or drawer menu.
+3. Absorb Pointer: It's a flutter widget that prevents its entire subtree from receving pointer
+   ------ -------  events like taps, drag and hover interaction.
+4. Alert Dialog: Is a Material Design Widget in flutter that display important information or 
+   ----- ------- prompts the user for decision. It appers as the model dialog overlay on top 
+   of the current screen, require user interation before they can continue using the app.
