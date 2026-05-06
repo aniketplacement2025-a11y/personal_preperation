@@ -22,7 +22,18 @@
    -------- --------- ------- It's specialized version of a standard container widget that automatically
    animates changes to its properties over a specific duration.
 9. Animated Cross Fade: Is a flutter widget that animates between two child widgets with a cross fade
-   -------- ----- ---- effect - fading one out while simultaniously fading the other in. it's a part of                 flutter's implicitly animation widget, meaning you don't need to manage AnimationController instances 
-   manually.
+   -------- ----- ---- effect - fading one out while simultaniously fading the other in. it's a part of         
+flutter's implicitly animation widget, meaning you don't need to manage AnimationController instances manually.
 10. Animated Default Text Style: Is a Flutter widget that automatically animates changes to the text style.
-    -------- ------- ---- ------ 
+    -------- ------- ---- ------ properties - such as font size, color, weight, or family - whenever the text
+    style provided to it changes.
+    Unlike explicitly controlling animation in 'AnimatedWidget' or 'Tween', this widget infers the animation 
+    automatically by comparing the old and new text style and animating the differences.
+11. AnimatedIcon Widget: Is a Flutter widget that display an icon that can animate smoothly between different 
+    ------------ ------- Visual states. It's specifically Designed to work with an 'AnimatedController' and a
+    pre defined 'AnimatedIconData' - typically used for common ui patterns like hamburger menus
+    (three lines) animating into back arrows.
+12. AnimatedList Widget: It displays a scrollable list of items with a built in animations when the items are 
+    ------------ ------- are added removed and re-ordered. Unlike a standard list view where 
+    changes happens instantly, Animated list automatically animates items entering, exiting, or moving within 
+    the list.
