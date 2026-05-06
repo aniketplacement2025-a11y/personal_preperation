@@ -12,4 +12,17 @@
    ----- ------ alignment factor. It allow you to place a child widget at a specific position 
    relative to the bounds of the align widget itself - such as top - left, center, bottom - right
    or any custom fraction between 0 and 1.
-6. 
+6. Animated Align: It's a flutter widget that automatically animate changes to the alignment of
+   -------- ------ its child widget over a specific duration. it's specialized version of the 
+      align widget that adds smooth, automatic transitions when the alignment property changes.
+7. Animated Builder Widget: Is a general purpose widget in flutter that rebuild the specific part
+   -------- ------- ------- of your UI in response to change in an animation object. It's part of
+   flutter's animation system and is designed to separate the animation logic from the UI rendering.
+8. Animated Container Widget: Is flutter's implicitly animation widget for container properties.
+   -------- --------- ------- It's specialized version of a standard container widget that automatically
+   animates changes to its properties over a specific duration.
+9. Animated Cross Fade: Is a flutter widget that animates between two child widgets with a cross fade
+   -------- ----- ---- effect - fading one out while simultaniously fading the other in. it's a part of                 flutter's implicitly animation widget, meaning you don't need to manage AnimationController instances 
+   manually.
+10. Animated Default Text Style: Is a Flutter widget that automatically animates changes to the text style.
+    -------- ------- ---- ------ 
