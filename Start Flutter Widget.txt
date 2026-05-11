@@ -41,3 +41,17 @@ flutter's implicitly animation widget, meaning you don't need to manage Animatio
     -------- ----- ------- ------- with widget behind it, while animating its color or opacity over time.
 It's commonly used in model dialogs, drawers, popup menus, and the bottom sheet to prevent users from 
 interacting with the background content.
+14. Animated Opacity Widget: It automatically animates changes to its opacity(transparent) over a specific 
+    -------- ------- ------- duration. It's a part of flutter implicitly animation widgets - meaning you 
+    simply change the target value and flutter handles the entire animation transation for you.
+15. Animated Padding Widget: It automatically animates changes to its padding property over a specific 
+    -------- ------- ------- duration. It's a specialized version of padding widget that interpolates 
+    padding values smootly when they change, rather than jump abruptly.
+16. Animated Physical Model Widget: It creates a physical shapes with realistic shadows, elevation and 
+    -------- -------- ----- ------- lighting effect and then automatically animates changes to its property
+    over time.
+    It's the animated version of the PhysicalModel widget — similar to how AnimatedContainer relates 
+    to Container.
+17. Animated Positioned Widget: It automatically animate changes to its position within a Stack over a given
+    -------- ---------- ------- duration. It's a specialized version of positioned widget that interpolated 
+    between the old and new values of top, bottom, left, right, and width/height whenever they changes.
