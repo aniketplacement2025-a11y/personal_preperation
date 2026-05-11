@@ -37,4 +37,7 @@ flutter's implicitly animation widget, meaning you don't need to manage Animatio
     ------------ ------- are added removed and re-ordered. Unlike a standard list view where 
     changes happens instantly, Animated list automatically animates items entering, exiting, or moving within 
     the list.
-13. 
+13. Animated Model Barrier Widget: It creates a semi transparent overly barrier that blocks user interaction
+    -------- ----- ------- ------- with widget behind it, while animating its color or opacity over time.
+It's commonly used in model dialogs, drawers, popup menus, and the bottom sheet to prevent users from 
+interacting with the background content.
