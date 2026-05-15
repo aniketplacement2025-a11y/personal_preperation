@@ -56,4 +56,7 @@ interacting with the background content.
     -------- ---------- ------- duration. It's a specialized version of positioned widget that interpolated 
     between the old and new values of top, bottom, left, right, and width/height whenever they changes.
 18. Animated Rotation Widget: It automatically animate changes in the rotation of its child widget over a 
-    -------- -------- ------- specific duration.
+    -------- -------- ------- specific duration. it's part of flutter's implicit animation widgets - meaning
+    you simply provide the target rotation value and the widget handles all the intermediate animation frames
+    automatically.
+19. 
