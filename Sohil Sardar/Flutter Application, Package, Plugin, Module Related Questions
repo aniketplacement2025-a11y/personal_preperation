@@ -8,4 +8,20 @@ Simple Line: A flutter Application is a full end to end mobile, web and desktop 
              built using flutter.
 
 2. What is Package in flutter?
-ans) It's a reusable dart code. It's mainly used to share  
+ans) It's a reusable dart code. It's mainly used to share:  
+*utilities  *helper function  *business logic  *state management code.
+A package usually contains:  *Dart files only   *No native Android/iOS code.
+Example: *form validators  *API helpers  *custom utilities.
+Simple Line: A Package is reusable Dart only code that can be used accross 
+             multiple flutter projects.
+
+3. What is Plugin in Flutter?
+ans) It's a special type of package that also include native platform code.
+It allows flutter to communicate with: *Android (kotlin/Java)     *iOS (Swift/Objective-C)
+Plugins are used when Flutter needs device specific features. Examples:
+*Camera  *GPS  *Bluetooth  *Fingerprint  *Battery Info.
+Simple Line: A plugin is a package that include native Android/iOS code to access platform
+             Specific features.
+
+4. what is a Module in flutter?
+ans) A Flutter Module is Flutter integrated inside an existing native app.
