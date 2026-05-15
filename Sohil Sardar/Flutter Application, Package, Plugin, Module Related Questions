@@ -25,3 +25,16 @@ Simple Line: A plugin is a package that include native Android/iOS code to acces
 
 4. what is a Module in flutter?
 ans) A Flutter Module is Flutter integrated inside an existing native app.
+Used when: *company already has "Android/iOS" app.     *wants to add flutter screen gradually.
+Example: Native banking app adding Flutter-based payment screen.
+Simple Line: A Flutter Module is used to embed flutter into an existing Android an iOS application.
+
+5. Which one contains native platform code?
+ans) Plugin contains native platform code. using: *kotlin/Java  *Swift/Objective-C
+Because plugin interact with: *Android APIs *iOS APIs.  
+
+6. Can a package becomes a plugin?
+ans) Yes If a package later needs: *camera access *GPS *Bluetooth *native APIs
+then native code can be added and it becomes a plugin.
+Example: Initially: only Dart utility code → Package.
+Later: adds Android/iOS native implementation → Plugin.
