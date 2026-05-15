@@ -1,0 +1,11 @@
+https://www.linkedin.com/posts/sohil-sardar-778a001a9_flutter-mobiledevelopment-cleanarchitecture-activity-7371896743480811520-QOwH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+1. What is Flutter Application?
+ans) A flutter application is a complete app built using flutter. It contains:
+*UI  *Business logic  *APIs  *Assets  *Navigation  *State Management  *Android/iOS folders
+Example: *Food delivery app  *Chat app  *E-commerce app.
+Simple Line: A flutter Application is a full end to end mobile, web and desktop app
+             built using flutter.
+
+2. What is Package in flutter?
+ans) It's a reusable dart code. It's mainly used to share  
