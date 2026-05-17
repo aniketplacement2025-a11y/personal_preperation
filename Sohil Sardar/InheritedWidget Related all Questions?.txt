@@ -49,4 +49,36 @@ Because understanding InheritedWidget shows whether you truly understand:
  ans) Flutter traverses upward through the element tree using BuildContext until 
  it finds the nearest matching Inherited widget type. Internally CODE:
         context.dependOnInheritedWidgetOfExactType<MyWidget>()
-4. 
+
+ 4. What happens internally when u call Theme.of(context)?
+ ans) Theme.of(context) internally uses 'dependOnInheritedWidgetOfExactType' to search 
+ Upward for the nearest theme inheritedWidget. Flutter :
+ 1. Start from current context.             2. Moves Upward.
+ 3. FInd nearest Theme.                 4. Registers Dependency.
+ 4. Rebuild widget if Theme changes.
+
+                  DEEP INTERNAL QUESTIONS:
+ 1. what does 'updateShouldNotify()' do?
+ ans) 'updateShouldNotify()' tells flutter whether dependent widgets should rebuild
+ when the InheritedWidget updates. Example:
+ @override  bool updateShouldNotify(MyWidget oldWidget) {   return data != oldWidget.data;  }
+
+ 2. why is 'updateShouldNotify' important for performance?
+ ans) It prevents unnecessary widget rebuilds.
+ Flutter only rebuilds dependent widgets when data actually changes.
+ This improves:
+ *performance     *rendering efficiency     *UI responsiveness.
+
+ 3. What happens if it always returns true?
+ ans) CODE: bool updateShouldNotify(oldWidget) => true;
+ All dependent widgets rebuild every time, even if data didn’t change.
+ Problem: *unnecessary rebuilds  *performance waste  *large UI cost.
+
+ 4. What happens if it always returns false?
+ ans) CODE: bool updateShouldNotify(oldWidget) => false;
+ Dependent widgets never rebuild even if the data changes.
+ Problem: *stale UI  *incorrect data rebuilds  *UI not updated.
+
+                 STATE MANAGEMENT QUESTIONS:
+ 1. How is Getx related to InheritedWidget?
+ ans) 
