@@ -1,0 +1,33 @@
+https://www.linkedin.com/posts/sohil-sardar-778a001a9_flutter-statemanagement-mobiledevelopment-activity-7372138793488949248-r1Vb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+This is actually one of the MOST important Flutter interview topics 🔥
+Because understanding InheritedWidget shows whether you truly understand:
+*FLutter Architecture          *State Management fundamentals       *Widget tree communication
+*how riverpod/Provider works internally.
+
+                      CORE UNDERSTANDING QUESTIONS?
+ 1. What is Inherited Widget?
+ ans) InheritedWidget is a special flutter widget used to efficiently share data down 
+ the widget tree without manually passing data through constructors.
+ It helps multiple widgets access common data like:   *Theme
+ *User data           *Localization          *Authentication state.
+ without prop drilling.
+
+ 2. Why does Flutter Provide InheritedWidget?
+ ans) Flutter provide Inherited Widget to solve the problem of passing shared data 
+ deeply to multiple widget levels.       Without It:
+ Home( theme: theme, child: Screen( theme: theme, child: AnotherScreen( theme: theme, ), ), ),
+ this becomes messy and Inherited Widget helps to avoids this.
+
+ 3. What problem does it solve?
+ ans) It solves prop drilling and enables efficient shared state access across the
+ widget tree. Main Problem solved:
+ *Reduces constructor passing      *Centralized Shared data       *Efficient rebuild handling
+ *Better Scalability.
+
+ 4. How is it different from passing props via constructors?
+ ans) Constructor Passing: *Manual *Repetative *Hard in deep trees.
+ Inherited Widget: *Centralized sharing *Cleaner architecture 
+ *Widgets are directly access shared data.
+ Best Interview Line: Constructor passing works for small trees, But 
+ InheritedWidget 
