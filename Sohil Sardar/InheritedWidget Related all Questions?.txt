@@ -30,4 +30,23 @@ Because understanding InheritedWidget shows whether you truly understand:
  Inherited Widget: *Centralized sharing *Cleaner architecture 
  *Widgets are directly access shared data.
  Best Interview Line: Constructor passing works for small trees, But 
- InheritedWidget 
+ InheritedWidget is better for app - wide sharing data.
+
+                   WIDGET TREE QUESTIONS:
+ 1. How does InheritedWidget share data across the widget tree?
+ ans) InheritedWidget places data high in a widget tree, and descendent widget access it using 
+ BuildContext.              Example CODE:  MyInheritedWidget.of(context)
+ Flutter searches Upward for the current context until it finds the nearest matching 
+ InheritedWidget.
+
+ 2. Can parent widgets access child InheritedWidgets?
+ ans) No Because
+ "Inherited Widget only shares data downward to descendent widgets".
+ Because flutter searches upward in the widget tree.
+ Parents above the widget tree.
+
+ 3. How does flutter finds the nearest widget?
+ ans) Flutter traverses upward through the element tree using BuildContext until 
+ it finds the nearest matching Inherited widget type. Internally CODE:
+        context.dependOnInheritedWidgetOfExactType<MyWidget>()
+4. 
