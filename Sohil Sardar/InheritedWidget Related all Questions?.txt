@@ -81,4 +81,5 @@ Because understanding InheritedWidget shows whether you truly understand:
 
                  STATE MANAGEMENT QUESTIONS:
  1. How is Getx related to InheritedWidget?
- ans) 
+ ans) Internally, many flutter state management solutions including Getx
+ use flutter's widget tree mechanisms
