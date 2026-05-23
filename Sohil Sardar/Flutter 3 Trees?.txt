@@ -1,0 +1,5 @@
+https://www.linkedin.com/posts/erdipakrana_flutter-flutterdev-mobiledevelopment-share-7462820203345661952-2cuq/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+1. What are Flutter’s 3 trees?
+ans) Flutter Internally works using 3 major trees:
+1. Widget Tree             2. Element Tree           3. RenderObject Tree     
