@@ -117,3 +117,34 @@ ans) Flow: *Element marked dirty    *Scheduled for rebuild     *build() runs
 *RenderObjects update if needed
 BEST INTERVIEW ANSWER: 'setState()' marks the element dirty, triggers rebuild,
 ---- --------- ------- performance reconciliation and updates RenderObjects only if required.
+
+2. which trees rebuild after setState?
+ans) Mostly:  *Widget tree recreates.       *Elements tree updates selectively.
+*RenderObjects tree updates only if UI/layout changed.
+
+3. Does 'setState' rebuild the whole app?
+ans) No, Only affected subtree rebuilds.
+
+4. What gets reused during rebuild?
+ans) Usually reused:  *elements   *RenderObjects
+if widget type and key match.
+
+                   PERFORMANCE QUESTIONS:
+1. Why is Flutter fast despite frequent rebuilds?
+ans) Because:  *Widgets are lightweight.
+*Flutter reuses elements and renderObjects.
+*Rendering engine is highly optimized.
+BEST INTERVIEW ANSWER: Flutter is fast because rebuilding widgets is cheap,
+---- --------- ------- while expensive RenderObjects are reused whenever possible.
+
+2. why are rebuilds cheap in flutter?
+ans) Because widgets are: *immutable  *lightweight  *configuration only.
+
+3. What is the expensive part in Flutter rendering?
+ans) Layout and painting.       *Handle by RenderObjects.
+
+4. Why should RenderObjects be reused?
+ans) Because recreating them causes:  *layout recalculations.
+*repainting and performance cost.
+
+                   BUILDCONTEXT DEEP QUESTIONS:
