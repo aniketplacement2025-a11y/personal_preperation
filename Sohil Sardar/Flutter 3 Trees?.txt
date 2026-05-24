@@ -50,4 +50,21 @@ ans) when 'setState()' is called:
 BEST INTERVIEW ANSWER: During 'setState', Flutter recreates the artifacted widget
 ---- --------- ------- subtree by calling the build method again.
 
-4. 
+4. Does Flutter recreates the entire app on rebuild?
+ans) No, only widgets recreate. Flutter try to reuse:
+*Elements          *RenderObjects        whenever possible.
+Correct Interview Answer: Flutter recreates widget during rebuilds, but 
+------- --------- ------- Elements and RenderObjects are mostily reused,
+so the entire app is not recreated.
+
+                    ELEMENT TREE QUESTIONS:
+1. What is Element Tree?
+ans) The Element tree is a bridge between:  *Widgets       *RenderObjects
+It manages:   *Widget lifecycle      *state       *widget updates
+BEST INTERVIEW ANSWER: The Element tree connect immutable widgets with mutable renderObject
+---- --------- ------- and manage lifecycle and state preservation.
+
+2. what is BuildContext Internally?
+ans) 'BuildContext' is actually an element object.
+BEST INTERVIEW ANSWER: BuildContext is basically a reference to an element 
+---- --------- ------- in the element tree.
