@@ -46,3 +46,8 @@ BEST INTERVIEW ANSWERS: Rebuilding widgets are cheap because widgets are just li
 3. What happens to the Widget tree during setState()?
 ans) when 'setState()' is called:
 *Flutter marks the element dirty.
+*build method runs again.       *new widgets are recreated.
+BEST INTERVIEW ANSWER: During 'setState', Flutter recreates the artifacted widget
+---- --------- ------- subtree by calling the build method again.
+
+4. 
