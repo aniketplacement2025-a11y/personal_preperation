@@ -146,5 +146,3 @@ ans) Layout and painting.       *Handle by RenderObjects.
 4. Why should RenderObjects be reused?
 ans) Because recreating them causes:  *layout recalculations.
 *repainting and performance cost.
-
-                   BUILDCONTEXT DEEP QUESTIONS:
