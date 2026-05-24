@@ -3,3 +3,46 @@ https://www.linkedin.com/posts/erdipakrana_flutter-flutterdev-mobiledevelopment-
 1. What are Flutter’s 3 trees?
 ans) Flutter Internally works using 3 major trees:
 1. Widget Tree             2. Element Tree           3. RenderObject Tree     
+BEST INTERVIEW: Flutter Separates UI configuration, lifecycle management
+---- ---------- and rendering into 3 different trees:
+Widget tree, Element Tree and RenderObject tree.
+
+2. Why does Flutter use multiple trees instead of one?
+ans) Because each tree has a separate responsibiltiy.
+ if everything were inside one tree:
+*rendering would be expensive.       *state handling would be difficult.
+*rendering optimization would suffer.
+BEST INTERVIEW: Flutter uses multiple trees to separate concerns. Widgets describe UI,
+---- ---------- Elements manage lifecycle and state, and Rendering object handle layout
+and painting. This separation improves performance and reusability.
+
+3. What's the purpose of each tree?
+ans) Widget tree: UI configuration/blueprint.
+Element tree: Connects widgets with render object and stores data.
+Render Object: Handle layout and paints pixels.
+
+4. which tree is immutable?
+ans) Widget tree: Widgets are immutable configuration objects.
+
+5. Which tree actually renders UI?
+ans) RenderObject tree Because:
+*calculate layout           *handle painting        *draw pixels on screen.
+
+                  WIDGET TREE QUESTIONS:
+1. Why are widgets immutable?
+ans) Because immutable objects are:
+*lightweight       *predictable       *easy to rebuild.       *easy to optimize
+Flutter simply creates new widget object instead of modifting old ones.
+BEST QUESTIONS ANSWER: Widgets are immutable because flutter rebuilds UI frequently.
+---- --------- ------- creating lightweight immutable configuration is faster and safer
+then mutating existing UI objects.
+
+2. Why is rebuilding widgets considered cheap?
+ans) Because widgets are only configuration objects. They:
+*do not paint pixels.        *do not perform layout.       *Are lightweight dart objects.
+BEST INTERVIEW ANSWERS: Rebuilding widgets are cheap because widgets are just lightweight
+---- --------- -------- configuration objects, not actual rendered UI elements.
+
+3. What happens to the Widget tree during setState()?
+ans) when 'setState()' is called:
+*Flutter marks the element dirty.
