@@ -93,3 +93,27 @@ ans) Because state is stored inside the element tree through stateful element an
 
                RENDER OBJECT TREE QUESTIONS:
 1. what does the RenderObject tree do?
+ans) It handles:  *layout  *sizing  *positioning  *painting
+
+2. which tree handles layout?
+ans) RenderObject Tree.
+
+3. which tree repaints pixels on screen?
+ans) RenderObject Tree.
+
+4. Why are RenderObjects expensive?
+ans) Because they perform: *layout calculations  *painting  *compositing.
+These operations are CPU/GPU intensive.
+BEST INTERVIEW ANSWERS: RenderObjects are expensive because they perform actual rendering work
+                        like layout and painting.
+
+5. what happens if layout changes?
+ans) Flutter marks affected RenderObjects dirty and recalculates layout.
+
+             LIFECYCLE AND SET STATE QUESTIONS?
+1. What exactly happens internally when setState() is called?
+ans) Flow: *Element marked dirty    *Scheduled for rebuild     *build() runs
+*New widgets generated     *UI repaints if necessary   *Reconciliation happens
+*RenderObjects update if needed
+BEST INTERVIEW ANSWER: 'setState()' marks the element dirty, triggers rebuild,
+---- --------- ------- performance reconciliation and updates RenderObjects only if required.
