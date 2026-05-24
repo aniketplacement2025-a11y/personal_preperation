@@ -68,3 +68,28 @@ BEST INTERVIEW ANSWER: The Element tree connect immutable widgets with mutable r
 ans) 'BuildContext' is actually an element object.
 BEST INTERVIEW ANSWER: BuildContext is basically a reference to an element 
 ---- --------- ------- in the element tree.
+
+3. Why does flutter need Elements?
+ans) Because widgets are immutable and temporary.
+Flutter Needs Element to:  *prevent state    *track widget positions     *reuse render Objects.
+Best Interview Answer: Flutter uses Elements to maintain persistent relationships 
+                       between widgets and RenderObjects across rebuilds.
+
+4. How does Flutter Preserve state during rebuild?
+ans) Because state is stored in:    *stateful Element     *State object.       Not inside Widget.
+BEST INTERVIEW ANSWER: Flutter preserves state because state lives in the 
+                       Element tree, not in widgets. 
+
+5. what is reconciliation in Flutter?
+ans) Reconcilination means:       *comparing old widget with new widgets.
+*deciding whether Elements and RenderObjects can be reused.
+BEST INTERVIEW ANSWER: Reconcilination is Flutter's process of matching old 
+---- --------- ------- and new widgets to resuse existing elements and RenderObjects efficiently.
+
+               SUPER COMMON TRAP QUESTIONS:
+1. If widgets are recreated every rebuild, why doesn’t state reset?
+ans) Because state is stored inside the element tree through stateful element and state objects,
+     not inside objects.
+
+               RENDER OBJECT TREE QUESTIONS:
+1. what does the RenderObject tree do?
