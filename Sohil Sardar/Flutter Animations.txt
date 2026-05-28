@@ -1,0 +1,22 @@
+https://www.linkedin.com/posts/iamrupeshrajak_flutter-flutterdev-mobiledevelopment-share-7463420642848296960-9h4D/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+Q1. What are animations in Flutter?
+ans) Animations in flutter are visual transitions that make UI changes smooth instead of instant.
+ They improve user experience by creating motion, feedback, and interactive effects.  Example:
+ *Button scaling       *Page transitions         *Loading indications         *Fade effect.
+
+Q2. Why are animations important in mobile apps?
+ans) Animations improve user experience by making apps feel smoother, more interactive and 
+ visualling appealing. They also help user understand state changes and navigation flow.
+ Example: *Loading animations -> tells user app is working.
+ *Page transitions -> shows navigation transitions.
+ *Button transitions -> gives interation feedback.
+
+Q3) Difference between implicit and explicit animations?
+ans) Implicit Animation: Flutter manage animation automatically. It's easier to implement.
+     -------- ---------- Less coding, Limited Control and Example: AnimatedContainer.
+ii. Explicit Animation: Developer controls animations manually. More powerful and customizable.
+    -------- ---------- More code, Full Control and Example: AnimationController.
+BEST INTERVIEW LINE: Implicit animations are simple and automatically handle by flutter, 
+---- --------- ----- while explicit animation provide fine grained control using 
+                  AnimationController.
