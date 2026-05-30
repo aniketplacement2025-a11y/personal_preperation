@@ -47,4 +47,7 @@ a system pop up. you want a silently update UI. If using 'notification' payload,
 supress it easily.
 
 Q2) A notification arrives when the app is in background, and you need to navigate to a 
-specific screen
+specific screen (e.g., order details). How do you handle that?
+ans) Expected Answer:
+1. In my backend, I include a 'click_action' or a custom key in 'data' payload: Example:
+{  "data": {  "type": "order",   "orderId": "12345",   "screen": "/order-details"  } }
