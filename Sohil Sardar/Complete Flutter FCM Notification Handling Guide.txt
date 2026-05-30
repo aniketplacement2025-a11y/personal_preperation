@@ -45,3 +45,6 @@ Background/terminated then Notification shows automatically, data is delivered t
 Chat app - use 'data' only. Because if user is already in chat screen, you don't went 
 a system pop up. you want a silently update UI. If using 'notification' payload, you can't
 supress it easily.
+
+Q2) A notification arrives when the app is in background, and you need to navigate to a 
+specific screen
