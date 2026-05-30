@@ -20,3 +20,13 @@ ii. Explicit Animation: Developer controls animations manually. More powerful an
 BEST INTERVIEW LINE: Implicit animations are simple and automatically handle by flutter, 
 ---- --------- ----- while explicit animation provide fine grained control using 
                   AnimationController.
+
+Q4) which animation type is easier to use?
+ans) Implicit animations: Because Flutter internally handles:
+     -------- ----------- *animation controller      *interpolation      *timing
+Example: *AnimationContainer    *AnimatedOpacity.
+
+Q5) which animation type gives more control?
+ans) Explicit animations: Because developer can control:
+*duration    *direction    *curves    *repetition     *synchronization.
+using: *AnimationController     *Tween    *CurvedAnimation
