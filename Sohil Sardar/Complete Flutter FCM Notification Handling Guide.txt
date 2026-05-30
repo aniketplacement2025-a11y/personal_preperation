@@ -1,0 +1,47 @@
+https://www.linkedin.com/posts/varun-mulukanoor-35330522b_flutter-firebase-fcm-ugcPost-7465085374588039168-xW7T/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+             PART 1: FUNDAMENTALS (TO PROVE YOU ACTUALLY BUILD IT)
+             ---- -- ------------- -- ----- --- -------- ----- ---
+Q1) What are the three different states an app can be in when a push notification arrives?
+ How does FCM handle each?
+ans) Expected Answer: 
+ 1. Foreground: App is open and visible. FCM does not automatically show a system notification.
+ -- ----------- I must handle it in 'onMessage' and manually show a local notification
+ (e.g., using 'flutter_local_notifications').
+ 2. Background: App is in the background (minimized but not killed). FCM automaticallty shows the
+ -- ----------- notification in the system tray. The 'onBackgroundMessage' handler runs in a 
+ separate isolate  - no UI access, no context, no async gaps.
+ 3. Terminated: App is completely killed (swiped away). FCM still shows the notification. 
+ -- ----------- the 'onBackgroundMessage' will not run. The user's click opens the app, and 
+ I handle navigation in getInitialMessage.
+
+Q2) How do u generate, store and refresh an FCM token?
+ans) Eepected Answer:
+// 1. Get token.    String? token = await FirebaseMessaging.instance.getToken();
+// 2. Store securely (not local storage - use firestore or your backend API)
+ await saveTokenToBackend(token);
+// Listen to refresh events
+ FirebaseMessaging.instance.onTokenRefresh.listen((newToken) {
+   updateTokenInBackend(newToken);
+ });
+                        WHY IT MATTERS:
+Token expire or change when app reinstall/clear data. Not refreshing = broken notifications.
+
+               PART 2: HANDLING DIFFERENT PAYLOADS (CRITICAL FOR INTERVIEWRS)
+               ---- -- -------- --------- -------- --------- ---- -----------
+Q1) Explain the difference between 'notification' payload and 'data' payload. 
+  when would you use each?
+ans) Expected Answer:
+when Payload type is 'notification' with example "{"title":"Hello","body":"Message"}"
+And Behavior in Background/terminated is auto shown by FCM. 'onMessage' doesn't fire
+for click(only 'onMessageOpenedApp').
+But when payload type is 'data' with example "{"type":"chat","messageId":"123"}"
+and behavior in Background/terminated is not auto shown. I must manually show local
+notification. Full control.
+If Both Choosed as payload type with contains both keys and behavior in 
+Background/terminated then Notification shows automatically, data is delivered to 
+'onMessage/onBackgroundMessage'.
+                                 REAL USE CASE:   
+Chat app - use 'data' only. Because if user is already in chat screen, you don't went 
+a system pop up. you want a silently update UI. If using 'notification' payload, you can't
+supress it easily.
