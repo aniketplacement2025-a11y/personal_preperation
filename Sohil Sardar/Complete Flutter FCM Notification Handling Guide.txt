@@ -51,3 +51,9 @@ specific screen (e.g., order details). How do you handle that?
 ans) Expected Answer:
 1. In my backend, I include a 'click_action' or a custom key in 'data' payload: Example:
 {  "data": {  "type": "order",   "orderId": "12345",   "screen": "/order-details"  } }
+2. In 'main()' before runApp(), I set up CODE:
+// For terminated state
+   RemoteMessage? initialMsg = await FirebaseMessaging.instance.getInitialMessage();
+   if (initialMsg != null) {  _handleNavigation(initialMsg.data);  }
+// For background/foreground click
+   FirebaseMessaging.onMessageOpenedApp.listen((msg) {  _handleNavigation(msg.data);  });
