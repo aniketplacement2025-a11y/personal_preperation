@@ -137,4 +137,22 @@ ans) Flutter animations are smooth because flutter directly controls rendering u
 graphics engine and renders at high frame rates.
 
 Q2) What role does the Skia engine play?
-ans) 
+ans) skia is flutter's rendering engine responsible for drawing UI, animations, text,
+graphics efficiently.
+
+Q3) How many FPS does flutter target?
+ans) Flutter target 60 FPS normally But 120 FPS on supported devices.
+
+Q4) Difference between UI thread and Raster thread?
+ans) UI thread builds Widgets/layouts And It handles Dart code with CPU focused working.
+While Raster thread draws pixels on screen, handles GPu rendering with GPU focused working.
+BEST LINE:
+The UI thread prepares frames, while the raster thread renders them onto the screen.
+
+                       REAL WORLD SCENARIO QUESTIONS
+                       ---- ----- -------- ----------
+Q1) how would u create WhatsApp typing animations?
+ans) I would use repeating explicit animations with AnimationController and 
+AnimatedBuilder.
+
+Q3) How would 
