@@ -59,3 +59,40 @@ Q5) when should you use implicit animations?
 ans) Use when: *simple UI transitions are needed        *minimal control is enough.
 *quick animations are required.
 Examples:  *button resize        *fade effect         *alignment change
+
+                           EXPLICIT ANIMATION QUESTIONS
+                           -------- --------- ---------
+Q11) what are explicit animations?
+ans) explicit animations are animations where the developer manually controls the 
+animation using AnimationController.
+They are used for:  *advanced animations   *synchronized animations     *repeating animations.
+*custom motion effect.
+
+Q12) Why do we need AnimationController?
+ans) AnimationController controls the animation lifecycle such as starting, stoping, reversing,
+repeating and tracking animation progress.
+It provides values from code:                    0.0 → 1.0       used to animate widgets.   
+
+Q13) what is tween?
+ans) A tween defines the range between the start and end values of an animation.
+Example:        Tween<double>(begin: 0, end: 100)
+Flutter interpolates values between them.
+
+Q14) what does curvedAnimation do?
+ans) Curved Animations modifies the animation speed pattern to make moment feel natural.
+Example: *easeIn    *bounceOut     *elasticIn
+without curves:    *motion is linear and robotic.
+
+Q15) what is AnimatedBuilder?
+ans) AnimatedBuilder is a widget that rebuilds only the animated portion of the UI when 
+animation values changes.
+
+Q16) Why is AnimatedBuilder more optimized?
+ans) Animated Builder minimizes unnecessary rebuilds by rebuilding only the animation dependent 
+widget instead of the entire widget tree.
+
+                          VSYNC QUESTIONS
+                          ----- ---------
+Q1) what is vsync?
+ans) Vsync synchronizes animations with device screen refresh rate to avoid unnecessary frame
+rendering.
