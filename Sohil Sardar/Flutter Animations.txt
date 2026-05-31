@@ -155,4 +155,10 @@ Q1) how would u create WhatsApp typing animations?
 ans) I would use repeating explicit animations with AnimationController and 
 AnimatedBuilder.
 
-Q3) How would 
+Q2) How would you create Instagram story progress?
+ans) I would use AnimationController with LinearProgressIndicator or 
+custom width animation.
+
+Q3) How would you create splash screen animation?
+ans) I would use fade, scale, or slide animations with AnimationController or 
+implicit animation widgets.
