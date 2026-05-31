@@ -108,3 +108,33 @@ ans) Vsync prevents offscreen or inactive animations from consuming CPU and GPU
 Q4) What happens if we don’t use vsync?
 ans) Animations may continue consuming resources even when not visible, leading to battery 
  drain and performance issues.
+
+                         PERFORMANCE QUESTION
+                         ----------- --------
+Q1) why can animations cause lag? 
+ans) Animations can cause lag due to excessive widget rebuilds, heavy painting, 
+expensive layout or GPU overload. 
+
+Q2) How do you optimize flutter animations?
+ans) Animations can be optimized by minimizing rebuilds, using Animation Builder,
+avoiding heavy UI work during frames and using vsync properly.
+
+Q3) Why should AnimationController.dispose() be called?
+ans) 'dispose()' releases animations resources and stops thickers 
+to prevent momory leaks.
+
+Q4) How does AnimatedBuilder reduce rebuilds?
+ans) AnimatedBuilder rebuilds only the animated widget subtree instead of rebuilding
+the whole screen.
+
+Q5) Why should we avoid rebuilding the whole widget tree during animation?
+ans) Frequent full rebuild increase CPU work and can cause dropped frames and junk.
+
+                       RENDERING AND ENGINE QUESTIONS
+                       --------- --- ------ ---------
+Q1) Why are Flutter Animations Smooth?
+ans) Flutter animations are smooth because flutter directly controls rendering using the skia
+graphics engine and renders at high frame rates.
+
+Q2) What role does the Skia engine play?
+ans) 
