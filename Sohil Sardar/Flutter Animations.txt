@@ -96,3 +96,15 @@ widget instead of the entire widget tree.
 Q1) what is vsync?
 ans) Vsync synchronizes animations with device screen refresh rate to avoid unnecessary frame
 rendering.
+
+Q2) Why do we use 'ThickProviderStateMixin'?
+ans) ThickProviderStateMixin provides vsync support to AnimationController.
+Example: AnimationController(  vsync: this,  )
+
+Q3) What problem does vsync solve?
+ans) Vsync prevents offscreen or inactive animations from consuming CPU and GPU
+ resources unnecessarily.
+
+Q4) What happens if we don’t use vsync?
+ans) Animations may continue consuming resources even when not visible, leading to battery 
+ drain and performance issues.
