@@ -29,4 +29,33 @@ Example: *AnimationContainer    *AnimatedOpacity.
 Q5) which animation type gives more control?
 ans) Explicit animations: Because developer can control:
 *duration    *direction    *curves    *repetition     *synchronization.
-using: *AnimationController     *Tween    *CurvedAnimation
+using: *AnimationController     *Tween    *CurvedAnimation.
+
+                     IMPILCIT ANIMATION QUESTION
+                     -------- --------- --------
+Q1) what are implicit animations?
+ans) This animations where flutter automatically animates property changes without 
+requiring manual animation control. Example:
+*AnimatedContainer      *AnimatedOpacity       *AnimatedAlign.
+
+Q2) How does AnimatedContainer work internally?
+ans) AnimatedContainer internally uses AnimationController and Tween animations 
+managed automatically by flutter. when properties changes:
+1. Flutter detects old and new values.          2. creates tweens
+3. Animates between them smoothly.
+
+Q3) Difference between Container and AnimatedContainer?
+ans) Is Container changes instanlty with no animation support and very lightweight.
+While AnimatedContainer will changes smoothly with animation with Built-in 
+Animation support But it's slightly heavier.
+Example: Container Code:             width = 200 instantly
+-------- AnimatedContainer Code:      width animates from 100 → 200.
+
+Q4) what happens when value change in implicit animations?
+ans) FLutter automatically starts an animation from old value to the new value 
+using internally managed tweens and animation controllers.
+
+Q5) when should you use implicit animations?
+ans) Use when: *simple UI transitions are needed        *minimal control is enough.
+*quick animations are required.
+Examples:  *button resize        *fade effect         *alignment change
