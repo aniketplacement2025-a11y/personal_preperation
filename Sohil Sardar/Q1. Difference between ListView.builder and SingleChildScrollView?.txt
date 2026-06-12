@@ -1,0 +1,24 @@
+https://www.linkedin.com/posts/shoyab-khan-a006a522b_flutter-flutterdev-dart-share-7470730179863089153-EjMg/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+Q1. Difference between ListView.builder and SingleChildScrollView?
+ans) SingleChildScrollView is used when we have a small amount of static content.
+     It takes a single child and build the complete tree at once
+ListView.Builder is used for large or dynamic lists because it creates list item lazily,
+meaning it builds only the widget that are currently visible on screen.
+Example: 
+ SingleChildScrollView:  Image, Name, Buttons, Details.
+ ListView.builder: Instagram feed, Product List, chat message.
+
+Q2) When should you use ListView.builder?
+ans) I use 'ListView.builder' when the data is large, dynamic or coming from an API
+because if improves performance by creating widget only when required.
+Examples: *Product list  *User list  *Chat messages  *Social media feed.
+
+Q3) When should you use SingleChildScrollView?
+ans) I use "SingleChildScrollView" when the content is limited and mostly static,
+where lazy loading is not required.
+Examples: *Login Screen     *Registration Screen    *Profile Screen.
+
+Q4) Why is ListView.builder better for large lists?
+ans) Because 'ListView.builder' does not create all list items at the beginning.
+It creates only visible 
