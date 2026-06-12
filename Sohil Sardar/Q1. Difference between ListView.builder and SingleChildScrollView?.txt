@@ -116,3 +116,19 @@ allow flutter how content appears while scrolling.
 Q22) Difference between ListView and CustomScrollView?
 ans) ListView: Just Simple List Scrolling, support Single type of content with Less Control.
 CustomScrollView: Support Advanced Scrolling, multiple scroll sections with more control.
+
+Q23) Difference between SilverList And ListView?
+ans) Silver list is a lower level version of listView used inside CustomScrollView. ListView
+internally uses silver components.
+
+Q24) What is Silver AppBar?
+ans) It's an appbar that can change its behavior while scrolling, like collapsing or
+expanding.
+
+                        TRAP QUESTIONS
+                        ---- ---------
+Q25) Can we put ListView inside SingleChildScrollView?
+ans) Technically Yes, but it's not recommended because both widgets try to handle scrolling
+and can create performance and layout issue.
+
+Q26) 
