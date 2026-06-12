@@ -141,3 +141,26 @@ Expanded(                          SizedBox(
 Q27)Is ListView always better than SingleChildScrollView?
 ans) No, ListView is better than large Dynamic data, but SingleChildScrollView
 is better for small static content.
+
+                        TECHNICAL QUESTIONS 
+                        --------- ---------
+Q28) Difference between ListView() and ListView.builder()
+ans) ListView() creates all children immediately because children are already provided. 
+ListView.builder creates children lazily using itemBuilder.
+
+Q29) What is itemExtent?
+ans) itemExtent defines a fixed height or width for each list item. 
+Flutter can calculate scrolling more efficiently because every item has the same size.
+
+Q30) What is cacheExtent?
+ans) cacheExtent defines how much area outside the visible screen Flutter should 
+build beforehand. Example:
+*User sees items 1-10.           *Cache may prepare items 11-15.
+
+Q31) How does ListView recycling work?
+ans) Flutter reuses the existing element structure and removes widgets that are no
+longer visible. When new items appear, Flutter creates them using itemBuilder.
+
+Q32) How can you preserve scroll position?
+ANS) using:    PageStorageKey
+Example:     ListView( key: PageStorageKey("list")),  
