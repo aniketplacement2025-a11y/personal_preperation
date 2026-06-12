@@ -131,4 +131,13 @@ Q25) Can we put ListView inside SingleChildScrollView?
 ans) Technically Yes, but it's not recommended because both widgets try to handle scrolling
 and can create performance and layout issue.
 
-Q26) 
+Q26) Why does ListView inside Column give an error?
+ans) Because Column gives Unlimited hight to it's children, but listview needs a fixed 
+hight constraints. Solution:           Or:
+Expanded(                          SizedBox(
+ child: ListView()                  height: 300,
+)                                   child: ListView() ),
+
+Q27)Is ListView always better than SingleChildScrollView?
+ans) No, ListView is better than large Dynamic data, but SingleChildScrollView
+is better for small static content.
