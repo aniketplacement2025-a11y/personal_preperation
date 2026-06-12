@@ -21,4 +21,98 @@ Examples: *Login Screen     *Registration Screen    *Profile Screen.
 
 Q4) Why is ListView.builder better for large lists?
 ans) Because 'ListView.builder' does not create all list items at the beginning.
-It creates only visible 
+It creates only visible items and creates more items when scrolling, which reduce
+memory usage and improves performance.
+
+                     LAZY LOADING QUESTIONS 
+                     ---- ------- ---------
+Q5) why is lazy loading in flutter?
+ans) Lazy loading means creating resources or widgets only when they are needed 
+instead of creating everything upfront.
+Example: If we have 10,000 products: 
+Flutter does not create all 10,000 products immediately.
+It create only visible once.
+
+Q6) How does ListView.builder achieve loading?
+ans) ListView.builder uses an itemBuilder callback. Flutter call this callback 
+only when a particular item need to be displayed.
+Example: 
+ ListView.builder( itemCount: 1000, itemBuilder: (context, index){ return Text("Item $index"); })
+Flutter creates item when required.
+
+Q7) Does ListView Creates all childern at once?
+ans) No, ListView.builder does not create all the childern at once.
+It creates widget according to the viewport and create new ones during scrolling.
+
+Q8) What happens internally when you scroll ListView.builder?
+ans) When scrolling happens, Flutter checks the visible area of the viewport.
+if a new item comes into view, Flutter calls itemBuilder to create that widget.
+Widgets that move out of the visible area can be removed from the tree to save 
+memory.
+
+                     MEMORY AND PERFORMANCE QUESTION
+                     ------ --- ----------- --------
+Q9) Why does SingleChildScrollView consume more memory for large data?
+ans) Because SIngleChildScrollView builds it's complete child tree immediately.
+If we put thousands of widgets inside it, all widgets even if they are not visible.
+
+Q10) What happens if we put 10,000 items inside Column inside SingleChildScrollView?
+ans) Flutter will build all 10,000 widgets together. This increase memory consumtion, 
+causes slow rendering and may lead to performance issues.
+
+Q11) Why does flutter becomes slow with large list?
+ans) Because creating and maintaining thousands of widget increases build time, layout 
+calculation, painting, and memory usage.
+
+Q12) How does 'ListView.builder' improve memory usage?
+ans) It only keep the required widget around the viewport and creates new widget when 
+scrolling requires them.
+
+                     REBUILD RELATED QUESTION
+                     ------- ------- --------
+Q13) when scrolling a ListView, are all items rebuild?
+ans) No flutter does not rebuild every item while scrolling. Only widgets that need 
+Updating are rebuild.
+
+Q14) How can you optimize rebuilding inside ListView?
+ans) I would:
+*Split list items into separate widgets.
+*Use const constructors.        *Avoid necessary setState.
+*Use efficient state management like Provider, Bloc, GetX, Riverpod.
+
+Q15) Why should list item widgets be separated into smaller widgets?
+ans) Because smaller widgets create smaller rebilds area. If one item changes.
+FLutter does not need to be rebuild the complete list.
+
+Q16) How does const help in list performance?
+ans) Const widgets are created at compile time and flutter can reuse them. 
+If the widget does not change, flutter avoids unnecessary rebuilds.
+
+                     REAL WORLD SCENARIO
+                     ---- ----- --------
+Q17. Instagram-like feed with 5000 posts. Which widget?
+ans) I would use ListView.builder because the data is large 
+and dynamic. It supports lazy loading and improves memory performance.
+
+Q18) Profile page with image, username, buttons and details?
+ans) I would use single child scroll view because the content is limited
+and static.
+
+Q19) Header + categories + product list?
+ans) I would use custom scroll view with silvers because it allows multiple
+scrollable sections with different behaviors.
+
+                    CUSTOMSCROLLVIEW / SILVER QUESTIONS
+                    ---------------- - ------ ---------
+Q20) Why use CustomScrollView?
+ans) CustomScrollView is used when u need advanced scrolling behavior and multiple 
+scroll sections in one screen. Example:
+*Collapsing app bar           *Categories          *Product list.
+
+Q21) What are silvers in flutter?
+ans) Silvers are special scrollable widgets that work inside CustomScrollView and 
+allow flutter how content appears while scrolling.
+
+Q22) Difference between ListView and CustomScrollView?
+ans) ListView: Just Simple List Scrolling, support Single type of content with Less Control.
+CustomScrollView: Support Advanced Scrolling, multiple scroll sections with more control.
