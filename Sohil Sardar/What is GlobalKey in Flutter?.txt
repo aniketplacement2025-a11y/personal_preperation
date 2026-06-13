@@ -1,0 +1,62 @@
+
+
+Q1. What is GlobalKey in Flutter?
+ans) Global key is a special type of key in flutter that gives a widget a unique identity
+across the entire widget. Unlike normal keys which work only among siblings, Globalkey
+can identify the widget anywhere in the tree. It also allows us to access the 
+widget's state object and BuildContext.
+
+Q2) Why do we need Globalkey?
+ans) we use Global key when we need direct access to widget's internal state or context 
+from outside that widget. Common Use Cases:
+*Form Validation.          *Accessing State method         *Getting Widget position
+*controlling Scaffold/Snackbar.
+Example:                 formKey.currentState!.validate();
+Here we directly access the form state.
+
+Q3) Difference between Key, ValueKey, ObjectKey, UniqueKey, GlobalKey?
+ans) i. Key --> helps flutter identify widgets during rebuilds and helps preserve
+widget state when the widget tree changes.
+
+ii. ValueKey --> Example:  ValueKey(1)
+ValueKey identifies a widget using a value. if two widgets have the same value, 
+Flutter consider them equally. Example:
+List items:   ListTile(  key: ValueKey(user.id)  )
+
+iii. ObjectKey --> Example:  ObjectKey(user)
+ObjectKey identifies widgets using object equality. It compares the actual object instance.
+Used When Object themselves represent identity.
+
+iv. UniqueKey --> Example: UniqueKey()
+UniqueKey creates a completely new identity every time. No two UniqueKeys are equal.
+Used when we want flutter to treat widgets are completely different.
+
+v. GlobalKey --> Provides identity across the entire widget tree gives 
+ access to State and Context.
+
+                     INTERNAL FLUTTER ARCHITECTURE QUESTIONS:
+                     -------- ------- ------------ ---------
+Q4) How does Flutter identify widgets internally?
+ans) Flutter identify widgets using three things: Widget type, Key, and position
+in the widget tree. flutter compares old widgets with new widget to decide whether to 
+update and existing Element or create a new one.
+
+Q5) Where Is Globalkey store widget identity?
+ans) GlobalKey identity is maintained inside Flutter's framework through a global key registry.
+Flutter keeps a mapping between GlobalKey and its associated Element.
+Concept:
+ Globalkey - -> Element - -> state. 
+
+Q6) Difference between Widget, Element, RenderObject?
+ans) Widget --> It's an immutable configuration that describes how the UI should look.
+Example: Text("Hello")                Widget is build Frequently.
+Element --> Is the bridge between widget and RenderObject. It manage the widget lifecycle
+and store the actual location of the widget in the tree.
+                                                  Element is where state is attached.
+Render Object --> It handles the actual layout and painting of UI on screen. Example:
+*Size Calculation          *Position           *Drawing pixels.
+
+Q7) Why does GlobalKey work with Element tree instead of Widget tree?
+ans) Widgets are immutable and recreated during rebuilds,so they cannot store identity
+permanently. Elements are long lived objects that manage widget lifecycle, therefore
+Gloabelkey attaches identity to elements.
