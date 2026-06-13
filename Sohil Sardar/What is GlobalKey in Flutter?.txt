@@ -60,3 +60,6 @@ Q7) Why does GlobalKey work with Element tree instead of Widget tree?
 ans) Widgets are immutable and recreated during rebuilds,so they cannot store identity
 permanently. Elements are long lived objects that manage widget lifecycle, therefore
 Gloabelkey attaches identity to elements.
+
+                     CURRENT STATE VS CURRENT CONTEXT QUESTIONS
+                     ------- ----- -- ------- ------- ---------
