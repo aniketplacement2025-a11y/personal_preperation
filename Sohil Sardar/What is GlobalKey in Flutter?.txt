@@ -63,3 +63,47 @@ Gloabelkey attaches identity to elements.
 
                      CURRENT STATE VS CURRENT CONTEXT QUESTIONS
                      ------- ----- -- ------- ------- ---------
+Q8) What is currentState in GlobalState?
+ans) currentState gives access to the State object of the Stateful Widget associated with that Global key.
+Example: final formKey = GlobalKey<FormState>();                         formKey.currentState!.validate();
+Here: GlobalKey - -> FormState
+
+Q9) What is currentContext?
+ans) currentContext give access to the BuildContext of the widget associated with the GlobalKey.
+Uses: *Final widget position       *MediaQuery access         *Showing Snackbar.
+Example:               formKey.currentContext
+
+                       FORM VALIDATION QUESTIONS:
+                       ---- ---------- ----------
+Q10) Why do we use GlobalKey as Form?
+ans) Flutter form widget internally maintains a FormState Object. GlobalKey allows us to access that
+FormState from Outside and call methods like validate() and save().
+Example: Form( key: formKey,  child: Column(  children:[ ] ) )
+         Then:        formKey.currentState!.validate(); 
+
+Q11) Why not use normal state management for form validation?
+ans) State management manages application data, but Form validation is the responsibility of form state.
+Using Global key here is simpler because we only need direct access to one widget internal behavior.
+
+                      WIDGET REPRESENTING QUESTIONS
+                      ------ ------------ ----------
+Q12) What happens when widget with Global key moves?
+ans) Flutter recognizes the GlobalKey and finds the existing Element instead of creating a new one. 
+Because the Element is reused, the widget keeps its previous State.
+Example: Moving:
+
+Q13) Why does global key preserve widget state?
+ans) Because Flutter uses the GlobalKey to locate the existing Element. Since the Element containing 
+the State is reused, the State object remains alive.
+
+                       GLOBALKEY VS STATE MANAGEMENT
+                       --------- -- ----- ----------
+Q14) Why not use GlobalKey instead of Provider/GetX/Bloc/Riverpod?
+ans) GLobalkey is not designed for managing application state. It only provide direct access to specific 
+widget.State management solutions handle sharing and updating data across multiple widgets.
+
+Q15) Can global key replace state management?
+ans) No, Global key works for widget level control, while state management works for application level 
+data flow.
+
+Q16) 
