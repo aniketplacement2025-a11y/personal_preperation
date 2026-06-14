@@ -106,4 +106,40 @@ Q15) Can global key replace state management?
 ans) No, Global key works for widget level control, while state management works for application level 
 data flow.
 
-Q16) 
+Q16) When use GlobalKey vs State Management?
+ans) GlobalKey: *Form Validation     *Access Widget Methods
+                *Scaffold Control
+State Management: *User Data      *Authentication      *Cart       *Theme      *Api state
+
+                     PERFORMANCE QUESTIONS
+                     ----------- ---------
+Q17) Why can too many GlobalKeys hurt performance?
+ans) Because Flutter has to maintain a global registry and track every Global key across the
+entire widget tree. Excessive usage increases lookup work and widget coupling.
+
+Q18) Why avoid global key for normal communication?
+ans) Because it creates direct dependency between widgets. Flutter architecture prefer passing data 
+downward and callbacks upward.
+
+                    CLEAN ARCITECTURE QUESTIONS:
+                    ----- ----------- ----------
+Q19) Why is global key consider imparative?
+ans) Because we directly tell a widget what action to perform instead of updating data and letting 
+Flutter rebuilf the UI declaratively.
+Example: Imperative:      formKey.currentState.validate();
+Declarative:        Update state → UI rebuilds.
+
+Q20) Why passing callbacks is often better?
+ans) Callbacks keep widget independent and reusable because the child does not need to know about the 
+parent's internal implementation.
+
+                     TRAP QUESTIONS:
+                     ---- ----------
+Q21) Can GlobalKey access any widget in the app?
+ans) NO, it only access the widget that is currently associated with that specific Globalkey.
+
+Q22) Should every Stateful widget need GlobalKey?
+ans) No, most stateful widget do not need Globalkey. It should only be used when we need 
+external access to state or context.
+
+Q23) 
