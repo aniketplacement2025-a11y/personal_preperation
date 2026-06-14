@@ -142,4 +142,7 @@ Q22) Should every Stateful widget need GlobalKey?
 ans) No, most stateful widget do not need Globalkey. It should only be used when we need 
 external access to state or context.
 
-Q23) 
+Q23) Does GlobalKey rebuild widgets automatically?
+ans) No, Globalkey only provide identity and access. Rebuilding happens when setState,
+state changes or parent rebuilds.
+
