@@ -1,0 +1,68 @@
+https://www.linkedin.com/posts/rutvik-dobariya-16873436a_flutter-flutterdev-dart-share-7470355400819740672-_VxP/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+                         BASIC UNDERSTANDING QUESTIONS
+                         ------ ------------ ----------
+Q1) What Is 'compute()' in flutter?
+ans) 'compute()' is flutter utility function that runs a heavy computation 
+in a separate dart isolate instead of running it on the main isolate.
+It helps keep the UI responsible by moving CPU intensive tasks away from UI
+thread. Example:
+*Large Json Pparsing     *Image Processing       *Encryption
+*Data Transformation.
+
+Q2) What problem does compute() solve?
+ans) The main problem it solves is UI blocking. if we perform heavy computation
+on the main isolate, Flutter cannot runs frames smoothly which cause junk or freezing. 
+'compute' keeps the UI isolate free.
+
+Q3) Why do we use compute()?
+ans) we use compute() when a task takes significant CPU time and can block the main isolate.
+Since flutter UI rendering, touch events, and animations run on the main isolate, heavy 
+operations can cause UI lag. compute() moves that work to another isolate.
+
+Q4) when would we use compute()?
+ans) We should use compute() for CPU-heavy tasks, not normal asynchronous operations.
+Examples: Use: *Parsing very large JSON.          Image compression.
+*Encryption/decryption.              Complex calculations.
+Don't Use: *APi calls        *Database queries        *Normal file operations.
+
+                ISOLATE BASED QUESTIONS
+                ------- ----- ---------
+Q5) what is isolate in dart?
+ans) an isolate in dart's unit of concurrency. It has its own memory space and its 
+own event loop. Unlike threads, isolates do not share memory.
+They communicate by sending messages.
+
+Q6) How is isolate different from thread?
+ans) A thread usually shares memory with other threads, so synchronization is required. 
+Dart isolates have separate memory, so there is no shared-state problem.
+Difference: Thread has Shared Memory But Needs locks And Risk of race condition.
+*Isolate has separate memory Done message passing And has safer concurrency.
+
+Q7) Why does Dart use isolates instead of traditional threads?
+ans) Dart uses isolates because they provide concurrency without shared memory issues.
+This makes applications easier to maintain and avoids problems like race condition.
+
+Q8) How does Flutter communicate between isolates?
+ans) Flutter communicate between isolates using message passing through Send Port and receive port.
+Data is copied between isolates instead of sharing the same memory.
+
+                 MAIN ISOLATE VS BACKGROUND ISOLATE:
+                 ---- ------- -- ---------- --------
+Q9) What happens when you run heavy JSON parsing on the main isolate?
+ans) The Json parsing the blocks the main isolate because it is CPU intensive. Since 
+UI rendering and event handling also happend on the main thread, frames are delayed 
+and UI becomes Slow or freezes.
+
+Q10) Why does UI freeze during heavy computation?
+ans) Flutter needs the main isolate to complete work within the frame deadline.
+If heavy computation takes too much time, Flutter misses frame rendering, causing
+dropped frames and UI junk.
+
+Q11) What happens internally when compute is called?
+ans) When compute() is called, Flutter creates a new isolate, sends the required 
+data to that isolate, executes the function there, and sends the result back to 
+the main isolate. After completion, the isolate is closed.
+
+                  ASYNC AND AWAIT RELATED QUESTIONS
+                  ----- --- ----- ------- ---------
