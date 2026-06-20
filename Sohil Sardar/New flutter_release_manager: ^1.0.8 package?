@@ -1,0 +1,60 @@
+                BASIC PACKAGE UNDERSTANDING QUESTIONS:
+Q1) What problem does your 'flutter_release_manager' package solve?
+ans) During Flutter app releases, developers repeatedly perform manual 
+tasks like building APK/IPA files, uploading builds to Google Drive or testing 
+platforms, organizing release files, and sharing links with QA teams.
+My package automates these repetitive release activities and provides
+a simple workflow to generate builds and distribute them faster.
+
+Q2) Why did you create a custom Flutter package instead of doing these 
+tasks manually?
+ans) Manual release processes are time-consuming and error-prone. 
+Every developer follows different steps, which can create inconsistency.
+I created this package to standardize the release workflow, reduce manual 
+effort, and make the process reusable across multiple Flutter projects.
+
+Q3) Difference between Flutter package, Plugin, and Dart package?
+ans) A Dart package is a reusable code written in Dart language.
+It does not create on flutter framwork.
+*A flutter package is a package specifically designed for flutter
+application and can contain widgets, UI components or flutter 
+related functionality.
+*A Plugin is a special type of package that communicate with native
+platform apis like Android and iOS.
+Example:    Dart Package  -------->  Flutter Package  ----------->  Flutter Plugin (+ Native Code)
+
+                    FLUTTER BUILD PROCESS QUESTIONS
+Q4) What happens internally when you run "flutter build apk"?
+ans) When we run "flutter build apk", flutter analyzes the project and resolves dependencies.
+The dart code is compiled into native machine code using AOT compilation using release mode.
+After that Android build tools generate APK, resources are bundled and finally apk is signed to
+installation.
+
+Q5) Difference between flutter run and flutter build apk?
+ans) 'flutter run' is mainly used for development. it launches the app on a device/emulator 
+and supports debugging and hot reload.
+flutter build apk creates a production APK file that can be distributed to users or testers.
+
+Q6) What are APK and IPA files?
+ans) APK is the Android application package file used to install apps on Android devices.
+IPA is the iOS application archive file used to distribute iOS applications.
+
+                     ANDROID IOS RELEASE QUESTIONS
+Q7) How does Flutter generate APK?
+ans) Flutter uses Android Gradle tool internally. Flutter converts Dart code into native 
+ARM code, bundles assets, generates android resources and gradle package everything into
+an APK file.
+
+Q8) what is app signing in android?
+ans) App signing is the process of digitally signing an APK using a private key.
+It verifies that the application is created by a trusted developer and has not been modified.
+
+Q9) Difference between APK and AAB?
+ans) APK is the installable file directly used on devices.
+AAB (Android App Bundle) is a publishing format uploaded to Google Play Store. 
+Google Play generates optimized APKs for different devices from the AAB.
+
+Q10) Why is IPA generation more complicated than APK?
+ans) iOS has a stricker security system. Before creating IPA, we need Apple certificates, 
+provisioning profiles, signing configuration, and Xcode build settings.
+
