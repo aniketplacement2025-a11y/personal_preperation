@@ -7,3 +7,20 @@ the execution flow. It allows functions to perform tasks like API calls, databas
 operations, or file operations and return a Future.
 It works with Dart's Event Loop, where the main isolate can continue processing 
 other events while waiting for the result.
+
+2. Why does Flutter use Isolates instead of Threads?
+ans) Flutter uses isolates because dart avoids shared memory concurrency.
+In traditional threads, multiple thread shared memory, which can cause problems 
+like race conditions and synchronization issues.
+Isolates that separate memory, so they can suffer easier to manage.
+
+3. Difference between Async and isolates?
+ans) Async is mainly used for non-blocking I/O operations like API calls or 
+database operations. It runs inside the same isolate using the Event Loop.
+Isolates are used for CPU-intensive tasks because they run separately with 
+their own memory and can execute work in parallel.
+
+            EVENT LOOP QUESTIONS:
+4) How does async/await work internally?
+ans) when a function is marked async, it returns a future. When execution reaches 
+await, Dart pauses that functions until the future completes.
