@@ -1,3 +1,9 @@
 https://www.linkedin.com/posts/namrasheta66_flutter-flutterdev-dart-share-7469330348431007744-Te1f/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
 
-1. 
+                     BASIC UNDERSTANDING QUESTIONS:
+1. What is async in Dart?
+ans) In Dart, async is used to perform asynchronous operations without blocking 
+the execution flow. It allows functions to perform tasks like API calls, database 
+operations, or file operations and return a Future.
+It works with Dart's Event Loop, where the main isolate can continue processing 
+other events while waiting for the result.
