@@ -58,3 +58,83 @@ Q10) Why is IPA generation more complicated than APK?
 ans) iOS has a stricker security system. Before creating IPA, we need Apple certificates, 
 provisioning profiles, signing configuration, and Xcode build settings.
 
+Q11) What are certificates and provisioning profile?
+ans) Certificate identify the developer identity. Provisioning profile connect the 
+developer account, app indentifier, and allow devices together for installing and 
+distributing iOS apps.
+
+                    GOOGLE DRIVE UPLOAD INTEGRATION
+Q12) How do you upload files to Google Drive using Flutter?
+ans) Flutter communicate with Google Drive API. First we authenticate the user using OAuth 2.0,
+receive an access token and then use that token to upload files through Drive API.
+     Flutter APP ---> OAuth Login   ----> Access Token ------> Google Drive API -------> Upload File.
+
+Q13) what is Auth 2.0?
+ans) OAuth 2.0 is an authorization protocol that allows an application to access user resources 
+without sharing the user's password.
+
+Q14) Difference between API Key and OAuth Token?
+ans) API Key identifies the application making the request.
+OAuth Token gives permission to access user data. Example:
+API KEY: 'Who is calling'?
+OAuth: 'what permission does this user type'?
+
+                   AUTHENTICATIONS QUESTIONS:
+Q15) How do you securely store Google credentials?
+ans) Sensitive credentials should not be hardcoded. They should be stored using 
+environment variables. secret managers, or CI/CD encrypted secrets.
+
+Q16) Why should secrets not be committed to git?
+ans) Because anyone who get access to the repository can misuse those credentials.
+It creates security risks.
+
+                   PACKAGE DEVELOPMENT QUESTIONS:
+Q17) How do you publish a Flutter package on pub.dev?
+ans) First we create a package structure, add metadata in pubspec.yaml, write documentation
+and run tests, validate using dart pub publish --dry-run, and finally using dart pub publish.
+
+Q18) What files are required in flutter package?
+ans) Main Files: 
+lib/      pubspec.yaml    README.md    CHANGELOG.md    LICENSE   test/
+
+Q19) What is pubspec.yaml?
+ans) pubspec.yaml is the configuration file of Flutter projects and packages.
+It contains package name, version, dependencies, assets, and environment constraints.
+
+                             CI / CD QUESTIONS:
+Q20) what is CI/CD?
+ans) CI/CD is a practise where code changes are automatically tested, built and deploy
+using automation pipelines.
+
+Q21) How can Flutter apps be automated using CI/CD?
+ans) Whenever developers push code, CI pipeline automatically installs dependencies, runs tests, 
+creates APK/IPA builds, and uploads artifacts.
+Flow: Git Push --> CI Pipeline --> Install Dependencies --> Run Test --> Build APK/IPA --> 
+ Upload Artifact ---> QA Testing.
+
+                           REAL SCENARIO QUESTIONS:
+Q22) Your package builds APk locally but fails in CI/CD. why?
+ans) Possible Reasons: *Different Flutter version       *Missing Environment variables.
+*missing signing keys       *Dependency mismatch         *Incorrect CI configuration.
+
+Q23) Google Drive upload fails after deployment. How will you debug?
+ans) I will check:    *Authentication token validity.
+*Drive APi permissions.          *API configuration 
+*network Errors            *APplication logs.
+
+                            PERFORMANCE AND ARCITECTURE QUESTIONS:
+Q24) How did you structure your package?
+ans) I separated responsibilities into different layers:
+*Build manager handles apk/ipa generation.       *Upload service handles cloud uploads.
+*Authentication service manages tokens.       *Configuration layer handles environment settings.
+
+Q25) How did you handle large file uploads?
+ans) For large files, I use chunked uploads so files are uploaded in smaller parts. 
+This improves reliability and allows retrying failed chunks.
+
+Q26) How do you calculate upload speed?
+ans) Upload speed is calculated by dividing uploads bytes by elapsed time.
+
+Q27) how do you calculate ETA?
+ans) ETA is calculated using remaining file size divided by current upload speed.
+
