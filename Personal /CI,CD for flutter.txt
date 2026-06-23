@@ -1,0 +1,27 @@
+https://www.linkedin.com/posts/girijesh-paliwal-05454b190_flutter-mobiledevelopment-cicd-share-7474666134902833152-ulZX/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+                        BASIC CI CD UNDERSTANDING QUESTIONS
+Q1) What is CI/CD?
+ans) CI/CD is a practice that automates the process of interacting code changes, 
+testing, building and deploying applications.
+In flutter projects, CI/CD helps automate tasks like dependency installation,
+running tasks, generating apk/aab bundle and releasing apps to play store or
+App Store.
+
+Q2) Why do we need CI/CD in flutter projects?
+and) We need CI/CD because mobile app releases involves many repetative steps like 
+building, signing, testing and Uploading application.
+CI/CD involves manual efforts, avoids human errors, improves release build, and 
+ensures every code change is validated before reaching production.
+
+Q3) What problems does manual deployment create?
+ans) Manual deployment can create problems like:
+*Homan mistakes during build configuration.            *Incorrect version updates.
+*Missing tests before release.                   *wrong signing files.
+*slow release process.                        *Different developers following different steps.
+
+Q4) Difference between Continuous Integration and Continuous Delivery?
+ans) Continuous Integration (CI):
+focuses on automatically validating code whenever developers push changes.
+It Usually performs:       *Dependency installation            *Code Analysis.
+*Unit tests            *Build verification.
