@@ -25,3 +25,109 @@ ans) Continuous Integration (CI):
 focuses on automatically validating code whenever developers push changes.
 It Usually performs:       *Dependency installation            *Code Analysis.
 *Unit tests            *Build verification.
+
+              FLUTTER BUILD PIPELINES QUESTIONS:
+Q5) Explain your Flutter CI/CD pipeline from code push to release.
+ans) My Flutter CI/CD pipeline starts when code is pushed to GitHub.
+GitHub Actions triggers the workflow: The Workflow:
+1. Checks out the code.
+2. Installs the Flutter sdk.
+3. Gets dependencies using flutter pub get.
+4. Runs flutter analyze.
+5. Runs flutter test.
+6. Creates Android/iOS build.
+7. Signs the application.
+8. Uses Fastlane for deployment
+9. Uploads build to Play Console/TestFlight.
+FLOW: Developer push -> Github Actions -> Installs Flutter -> Test Analyze -> Built Apk/aab 
+-> Fastlane Deployment -> Store Actions.
+
+Q6) what happens when u run "flutter build appbundle"? 
+ans) Flutter compiles the application into an Android App Bundle (.aab). It performs:
+*Dart compilation            *Asset bundling           *Android native build.
+*release optimization.             *Generates signed/unsigned release bundle.
+OUTPUT: build/app/outputs/bundle/release/app-release.aab
+
+Q7) Difference between flutter build apk and flutter build appbundle?
+ans) Apk: Direct intall file, Large size, Used for testing, Contains all device resources.
+AAB: Publishing format, Optimized size, Used for Play store, Google generates optimized APKs.
+
+Q8) Why upload .aab instead of .apk to Play Store?
+ans) Google play prefers AAb because it creates optimized APks based on user's device 
+configuration. This reduces app download size and improves user experience.
+
+                   GITHUB ACTIONS QUESTIONS:
+Q9) WHY did you choose Github actions?
+ans) I chose github actions because it directly integrated with Github, easy to configure,
+support flutter workflow, provide hosted runner and support secret management.
+
+Q10) How does GitHub Actions trigger Flutter build?
+ans) Github actions uses workflow triggers.
+When an event occurs like push or pull request, GitHub executes the workflow file.
+Example:  .github/workflows/flutter.yml
+
+Q11) What is a workflow file?
+ans) A workflow defines the automation steps that github actions should executes.
+It contains: *triggers events.      *Jobs.      *Steps.     *Environment variables.
+
+                   GITHUB ACTIONS DEEP QUESTIONS:
+Q12) What are jobs and steps?
+ans) A job is a group of tasks executed on a runner. Example:
+*Android Build Job.          *IOS Build Job.
+A step is an individual action inside a job.
+Install Flutter      Run Tests        Build App.
+
+Q13) How do u cache flutter dependencies?
+ans) We cache Flutter SDK and pub dependencies to reduce build time. Example: ~/.pub-cache
+This avoids downloading packages every build.
+
+Q14) How do you store API keys and secrets?
+ans) Sensitive information is stored using GitHub Secrets.
+Examples: KEYSTORE_PASSWORD       PLAY_STORE_TOKEN       APPLE_CERTIFICATE
+They are injected during runtime.
+
+Q15) How do you prevent exposing signing credentials?
+ans) I never commit keystore files or certificates into Git.
+I store them securely using:
+*GitHub Secrets      *Encrypted files
+*Environment variables.
+
+                ANDROID DEPLOYMENT QUESTIONS:
+Q16. How does CI generate a signed Android build?
+ans) CI downloads the keystore from secure storage, configures signing properties, 
+and runs the release build command. Example:
+                 flutter build appbundle --release
+
+Q17) What is Android Keystore?
+ans) It's a file that contains crypotograpic keys used to sign Android applications.
+
+Q18) Why signing required before Play Store upload?
+ans) Signing verifies app ownership and ensure that 
+future updates come from the same developer.
+
+Q19) How automate Play Store deployment?
+ans) Using Fastlane with Google Play API credentials. Example:
+fastlane supply
+
+               IOS DEPLOYMENT QUESTIONS:
+Q20. How does Fastlane upload builds to TestFlight?
+ans) Fastlane builds the iOS app using Xcode tools, handles signing, creates IPA,
+and upload it to Testflight using App store connect IPA.
+
+Q21) Difference between:
+1. Deployment Cetificate:      Used for testing apps on registered devices.
+2. Distribution Certificate:      Used for App Store/ TestFlight release.
+3. Provisioning Profile:       Connects the app ID, certificate, and devices together.
+
+               FASTLANE QUESTIONS:
+Q22) What is Fastlane?
+ans) Fastlane is a mobile automation tool that automates building, signing, testing, and 
+releasing mobile applications.
+
+Q23) Why use Fastlane with Flutter?
+ans) Flutter handles application development, while Fastlane handles deployment automation.
+It can automate: i. Build  ii. Signing  iii. ScreenShot  iv. Metadata  v. Testflight  vi.Play Store release.
+
+Q24) What are Fastlane lanes?
+ans) Lanes are predefined automation workflows. Example: fastlane android release, fastlane ios beta.
+
