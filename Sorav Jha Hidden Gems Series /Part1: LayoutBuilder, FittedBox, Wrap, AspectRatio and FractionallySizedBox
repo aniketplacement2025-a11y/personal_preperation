@@ -1,0 +1,9 @@
+https://www.linkedin.com/posts/saurav-jha-174a4a174_flutter-flutterdev-flutterdeveloper-activity-7469236709478572034-W4WA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+                LAYOUT BUILDER QUESTIONS:
+Q1) What is layout Builder in flutter?
+ans) It's the widget that builds its child based on the constraints provided by its parent widget.
+It gives us the available wridth and height at the specific position in the widget tree, so we can 
+create responsive layouts.
+Example: Is the container gets 300px width on mobile and 800px on tablet, LayoutBuilder can detect 
+that and change 
