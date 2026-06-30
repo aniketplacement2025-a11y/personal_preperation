@@ -118,3 +118,17 @@ ans) RenderFlex overflow happens when a Flex widget like Row or Column receives 
 total size is bigger than available constraints. Example:
 Row width = 300  Child1 = 200  Child2 = 200  Total = 400  Overflow.
 Solution: Use: *Expanded *Flexible *Wrap.
+
+                       COMPARISON QUESTIONS:
+Q16) LayoutBuilder vs MediaQuery?
+ans) MediaQuery is screen based responsive design, while layoutBuilder is parent constraint based
+responsive design.
+
+Q17) Row vs Wrap?
+ans) Row is used when children fit in one line. Wrap is used when children can move into multiple 
+lines.
+
+Q18) Expanded vs Flexible vs FittedBox?
+ans) Expanded: Forces child to fill available space.
+Flexible: Allows child to take available space but does not force.
+FittedBox: Scales child to fit.
