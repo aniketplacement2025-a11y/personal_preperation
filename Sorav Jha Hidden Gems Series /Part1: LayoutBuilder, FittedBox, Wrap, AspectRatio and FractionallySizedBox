@@ -6,4 +6,115 @@ ans) It's the widget that builds its child based on the constraints provided by 
 It gives us the available wridth and height at the specific position in the widget tree, so we can 
 create responsive layouts.
 Example: Is the container gets 300px width on mobile and 800px on tablet, LayoutBuilder can detect 
-that and change 
+that and change the UI accordingly.
+
+Q2) Why do we use LayoutBuilder instead of MediaQuery?
+ans) MediaQuery gives information about the entire screen size, But layoutBuilder gives the actual 
+space available to that widget from its parent.
+For example: A phone screen width may be 400 px, but the widget inside the row may only get 200px.
+MediaQuery Screen width = 400                LayoutBuilder: Available widget width = 200
+So for creating reusable responsive components, LayoutBuilder is usually better.
+
+Q3) How does LayoutBuilder make responsive UI?
+ans) It provides constraints like maxWidth and maxhight based on these values, we can decide which 
+layout to show. Example:
+if(constraints.maxWidth < 600){  return MobileLayout();  }
+else{  return TabletLayout();  }
+
+Q4) How does LayoutBuilder get available width and height?
+ans) Flutter's parent widget sends containts during the layout phase. LayoutBuilder receives those
+constraints and provides them through the builder method. Example:
+LayoutBuilder(  builder:(context,constraints){  print(constraints.maxWidth); return Container(); } )
+
+# Difference between LayoutBuilder and MediaQuery?
+ans) LayoutBuilder Gives Parent Constraints Get component level responsive And Best for reusable Widgets.
+MediaQuery gives whole screen information, Screen level responsive and Best for page level decision.
+
+#Scenario: UI works on phone but breaks on tablet. How will you fix it?
+ans) I will avoid fixed widths and heights. I will use a responsive widgets like LayoutBuilder, Flexible, Expanded
+Wrap, and create different layouts based on available width.
+Example: Mobile: Column  Image Text Button               Tablets: Image | Details
+
+                              FITTEDBOX QUESTIONS:
+Q5) What is FittedBox?
+ans) fitted box is a widget that scales and positions its child inside the available space while maintaining the 
+child's size ratio. Example:
+Making a logo fit inside different screen size.
+
+Q6)Why do we use FittedBox?
+ans) We use FittedBox to prevent overflow when the child is bigger than the available space.
+Example: Large text inside a small container. 
+Without FittedBox: Text Overflow Error         With FittedBox: Text scales down.
+
+Q7) How does FittedBox solve overflow problems?
+ans) FittedBox applies scaling transformation to the child so the child fits inside the parent's constraints.
+
+# Difference i. FittedBox vs Expanded:  
+FittedBox: Scales the child.     Example: Large logo → smaller logo
+Expanded: takes available remaining space.    Example: Row(  children:[  Expanded(child: Text("Hello"))  ] )
+
+ii. FittedBox vs Flexible:
+Flexible: Allows child to take flexible space inside Row/Column.
+FittedBox: Resizes child by scaling.
+
+# Scenario: Long text overflowing inside button?
+ans) I can use FittedBox if I want scaling, or Flexible/TextOverflow if I want text handling. Example:
+Flexible( child: Text(  "Very long text",  overflow: TextOverflow.ellipsis, ) )
+
+                             WRAP WIDGET QUESTIONS:
+Q8) Difference between Row and Wrap?
+ans) Row display children in a single horizontal line.If children exceed available width, it gives overflow error.
+Wrap automatically moves children to the next line.
+
+Q9) When should we use wrap?
+ans) When the number of children is dynamic and we don't know how much space they will take.
+Example: *chips *Tags *Filters *Categories.
+
+Q10) Why does Row overflow but Wrap doesn't?
+ans) Row has a single axis layout. It cannot create another line. Wrap Support multiple runs, so extra children moves
+to next line.
+#Scenario: Filter screen with dynamic chips?
+ans) I will use Wrap because chips can automatically move to the next row. Example: [Sports] [Food] [Travel]
+[Books] [Music]
+
+                          ASPECT RATIO QUESTIONS:
+Q11) What is AspectRatio?
+ans) It's the widget that maintains a fixed  width to height aspect ratio for its child. Example:
+Video 16:9.
+
+Q12) How does AspectRatio calculate height?
+ans) If width is available:  height = width / aspectRatio
+Example: width = 400   ratio = 16/9        height = 225
+
+# Difference AspectRatio vs SizedBox?
+ans) SizedBox: Fixed Size Example: SizedBox( width:200,  height:100 )
+Aspect Ratio: Maintains ratio. Example: AspectRatio( aspectRatio:16/9 )
+
+                        FRACTIONALLY SIZEDBOX QUESTIONS:
+Q13) What is FractionallySizedBox?
+ans) FractionallySizedBox sizes its child based on a percentage of the available parent size.
+Example: FractionallySizedBox( widthFactor:0.8 )
+Means: 80% of parent width.
+
+#Difference: SizedBox Fixed: width:300
+while FractionallySizedBox Percentage 80% of available width. 
+But Expanded Takes remaining Flex space.
+
+#Scenario: Button should occupy 80% width. 
+ans) FractionallySizedBox( widthFactor:0.8, child:Button() )
+
+                       FLUTTER LAYOUT SYSTEM:
+Q14) Explain Flutter constraint system.
+ans) Flutter follows a constraint-based layout system. 
+Parent widgets provide constraints to children, children decide their size, 
+and parent positions them. Three Important Concepts:
+1. Constraints: 
+i. Available size: minWidth maxWidth minHeight maxHeight
+2. Size: Final size chosen by widget.
+3. Position: Where widget is placed.
+
+Q15) Why RenderFlex Overflow happens?
+ans) RenderFlex overflow happens when a Flex widget like Row or Column receives children whose 
+total size is bigger than available constraints. Example:
+Row width = 300  Child1 = 200  Child2 = 200  Total = 400  Overflow.
+Solution: Use: *Expanded *Flexible *Wrap.
