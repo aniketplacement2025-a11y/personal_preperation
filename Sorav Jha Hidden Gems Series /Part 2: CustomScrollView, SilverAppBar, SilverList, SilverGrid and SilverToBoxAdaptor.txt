@@ -1,0 +1,5 @@
+https://www.linkedin.com/posts/saurav-jha-174a4a174_flutter-flutterdev-flutterdeveloper-activity-7469742592398778368-cIp5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+                         BASIC UNDERSTANDING QUESTIONS:
+Q1) What is CustomScrollView in flutter?
+ans) It's a flutter widget that allows us to create a custom
