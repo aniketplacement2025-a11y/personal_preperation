@@ -1,0 +1,28 @@
+Honestly, when i was exploring which path to take, I was drawn to mobile 
+because everyone everyone around was literally living on the phones that's
+where the real day to day interaction with real technology happens.
+I found that idea more exciting than building something that mostly lives in
+a browser tab.
+
+Then when I looked deeper into mobile develpment specifically. Flutter stood out
+for a very practical reason - One codebase, two platforms. As Someone starting out
+I didn't went split my learning effort into "Swift for iOS, Kotlin for Android".
+Flutter let me learn the dart once and actually ship to both platforms, Which felt
+like a smarter use of time and effort especially early in my carrer.
+
+Beyond that, I liked how fast the feedback loop is in Flutter — the hot reload feature 
+meant I could tweak a UI and see the result instantly. which made learning fun instead of 
+frustrating And when I actually started building — first in my personal project Tijori+, 
+then during my internship at VKAPS — I realized I enjoyed the UI/UX side of things a lot.
+Getting a screen to look and feel exactly right, working closely with designers in Figma, 
+debugging why a widget isn't rendering the way I expect — that whole process just clicked 
+with me.
+
+It's not that I looked down on web development — it just never grabbed me the way building 
+something you can hold in your hand and show your family did. And once I got into real
+production work — like the grocery delivery app I maintain now at Foduu — dealing with
+real users, real bugs, real performance issues, it confirmed that mobile was the right 
+choice for me.
+
+So in short: mobile because it's where people actually live, and Flutter because it let me move
+fast and build for both platforms without doubling my workload.
