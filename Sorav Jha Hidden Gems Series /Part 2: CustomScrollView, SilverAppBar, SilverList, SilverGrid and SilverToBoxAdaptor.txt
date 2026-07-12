@@ -59,4 +59,27 @@ It can change its size and behavior while scrolling. It supports:
 Q8) Difference between pinned, floating, snap?
 ans) pinned: True,
 "Pinned keeps the AppBar visible at the top even when we scroll". Example:
+You scroll Instagram profile page, toolbar remains visible.
 
+ii. Floating: true,
+"Floating makes the AppBar appear immediately when the user scrolls upward." Example:
+User scrolls down → AppBar disappears.       User scrolls up → AppBar appears.
+
+iii. snap: true, 
+“Snap works with floating. It makes the AppBar quickly animate into its visible 
+position instead of slowly appearing”.
+
+Q9) Can we use pinned and floating together?
+ans) Yes, they can be used together. This pattern is common in apps where 
+we want a flexible header but also want quick access to navigation. Example:
+*Instagram          *Facebook.
+
+                     SILVER LIST & GRID QUESTIONS:
+Q10) Difference between ListView and SliverList?
+ans) ListView is a complete scrollable widget. It manages scrolling by itself.
+SliverList is only a part of a scrolling area and works inside CustomScrollView.
+Example: ListView:
+               ListView
+                 Item
+  Item
+  Item
