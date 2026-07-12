@@ -2,4 +2,10 @@ https://www.linkedin.com/posts/saurav-jha-174a4a174_flutter-flutterdev-flutterde
 
                          BASIC UNDERSTANDING QUESTIONS:
 Q1) What is CustomScrollView in flutter?
-ans) It's a flutter widget that allows us to create a custom
+ans) A scroll widget that combines multiple sliver widgets into one scrollable area.
+*Used when you need complex scrolling behavior.
+
+Q2) Why do we use Slivers instead of ListView?
+ans) ListView: Simple linear scrolling.
+*Silvers: i. Multiple scroll behaviors in one screen.
+ii. Better control      iii. Lazy rendering.     iv. Flexible layouts.
