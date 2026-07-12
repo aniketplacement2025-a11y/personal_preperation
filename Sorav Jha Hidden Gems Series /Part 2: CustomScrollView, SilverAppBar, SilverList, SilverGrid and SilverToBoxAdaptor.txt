@@ -4,8 +4,57 @@ https://www.linkedin.com/posts/saurav-jha-174a4a174_flutter-flutterdev-flutterde
 Q1) What is CustomScrollView in flutter?
 ans) A scroll widget that combines multiple sliver widgets into one scrollable area.
 *Used when you need complex scrolling behavior.
+                                    OR
+CustomScrollView is a Flutter widget that allows us to create a custom scrolling experience
+by combining multiple sliver widgets inside a single scrollable area.
+It is mainly used when we need complex scrolling UI like a collapsible app bar, 
+lists, grids, and other sections together.
+Example:
+*Amazon product page           *Instagram feed         *Dashboard.
 
 Q2) Why do we use Slivers instead of ListView?
 ans) ListView: Simple linear scrolling.
 *Silvers: i. Multiple scroll behaviors in one screen.
 ii. Better control      iii. Lazy rendering.     iv. Flexible layouts.
+                                    OR
+ListView is used for simple linear scrolling where we only need a list of items.
+But when we need multiple scrolling behaviors in one screen, like an expandable 
+AppBar, list, grid, and custom sections, we use Slivers.
+# Advantages of Slivers:
+*Better control over scrolling               *Multiple layouts in one scroll
+*Lazy rendering             *Better memory management for complex screens.
+
+Q3) What are Silvers in flutter?
+ans) Silvers are special scrollable widgets that participate in flutter's scrolling 
+system and can dynamically create/render centent while scrolling.
+                                    OR
+Slivers are special widgets that work with Flutter’s scrolling system. 
+They allow Flutter to build and display content dynamically while scrolling instead of creating 
+everything at once. Examples:
+*SliverAppBar       *SliverList
+*SliverGrid        *SliverToBoxAdapter
+
+                        CUSTOM SCROLLVIEW QUESTIONS:
+Q4) How does CustomScrollView work internally?
+ans) CustomScrollView creates a single scrolling pipeline using a ScrollController. 
+It contains a viewport that manages multiple slivers. Each sliver tells the viewport 
+how much space it needs and which items should be built. Flow:
+    CustomScrollView -> Viewport -> Silvers -> Visible Widgets are built
+
+Q5) How does it manage multiple slivers?
+ans) All slivers share the same scroll position. The viewport calculates which slivers 
+are visible based on scroll offset and asks only those slivers to build their content.
+
+Q6) Can we put ListView inside CustomScrollView?
+ans) Technically, we can but it is not recommended because both widgets try to manage scrolling
+independently, which can cause scroll conflicts and performance issues.
+Better approach: Use: *SliverList      *SliverGrid
+
+                        SILVER APPBAR QUESTIONS:
+Q7) what is SilverAppBar?
+ans) SliverAppBar is an AppBar designed for CustomScrollView. 
+It can change its size and behavior while scrolling. It supports:
+*collapsing       *expanding           *pinned behavior        *floating behavior.
+
+Q8) Difference between pinned, floating, snap?
+ans) 
