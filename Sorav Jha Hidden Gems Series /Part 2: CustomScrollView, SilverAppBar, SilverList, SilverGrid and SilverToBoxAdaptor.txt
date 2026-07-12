@@ -89,3 +89,71 @@ ii. SilverView:
                 SliverList
                 SliverGrid
 
+Q11) How does Silverlist improve Performance?
+ans) SilverList uses leazy loading. It creates only the widget that are currently visible 
+on the screen instead of creating the entire list.
+
+Q12) Difference between SilverGrid and ListView?
+ans) GridView is a complete grid scrolling widget, while SilverGrid is a grid section 
+that works inside CustomScrollView.
+
+                     SILVER TO BOX ADAPTAR Questions?
+Q13) Why do we use SliverToBoxAdapter?
+ans) Custom Scroll View only accept silver widgets. If u want to add the normal flutter widget
+like text, container, or Card we wrap it inside SilverToBoxAdaptar. Example:
+CustomScrollView    SliverAppBar
+  SliverToBoxAdapter(
+     child: Banner()
+  )
+  SliverList
+
+                     ADVANCED ARCITECTURE QUESTIONS
+Q14) Why are Slivers better for large applications?
+ans) Silvers provide better control over complex scrolling screen. They use leazy rendering, reduce memory
+usage, and allow multiple UI sections to share one scrolling system.
+
+Q15) How does Flutter render large lists efficiently?
+ans) “Flutter uses a viewport system. It builds only visible items using lazy construction.
+As the User scrolls, new items are created and old items and old items are removed from
+the rendering pipeline. Teshniques:
+i. viewport      ii. lazy building       iii. silver constraints         iv. efficient widget rebuilding.
+
+                   REAL WORLD SCENARIO QUESTIONS:
+Q16) Scenario 1: Amazon product page. Banner + categories + products.
+answer: I would use CustomScrollView because the page contains multiple scrolling sections.
+Structure: CustomScrollView
+                SliverAppBar
+                 SliverToBoxAdapter
+                   Product Banner
+                 SliverToBoxAdapter
+                   Categories
+                 SliverGrid
+                   Products
+
+Q17) Scenario 2: Instagram feed with thousands of posts.
+answer: I would use SliverList because it provides lazy rendering. 
+Along with that I would implement pagination, image caching, and avoid unnecessary widget rebuilds.
+
+Q18) Scenario 3: Scrolling is lagging:
+answer: First I would analyze rebuilds and performance using Flutter DevTools. 
+Then I would check large images, expensive widgets, unnecessary setState calls, 
+and list optimization.
+
+                      TRAP QUESTIONS:
+Q19: Is SliverList faster than ListView?
+answer: Not always. Both can use lazy rendering. SliverList is useful when we need multiple slivers 
+together, not simply because it is faster.
+
+Q20: Do Silvers Replace ListView?
+answer: No. ListView is actually implemented internally using slivers. 
+Slivers just give more control over scrolling behavior.
+
+Q21: Can every widget be directly placed inside CustomScrollView?
+answer: No. CustomScrollView accepts only sliver widgets. Normal widgets 
+need to be wrapped using SliverToBoxAdapter.
+
+                   Perfect Interview Answer:
+Slivers are Flutter’s advanced scrolling building blocks. They allow developers to combine different
+scrolling behaviors inside one CustomScrollView. Unlike ListView, which handles simple scrolling, 
+slivers provide more control, lazy rendering, and better architecture for complex screens like e-commerce pages, 
+dashboards, and social feeds.
