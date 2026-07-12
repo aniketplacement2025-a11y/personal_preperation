@@ -81,5 +81,11 @@ SliverList is only a part of a scrolling area and works inside CustomScrollView.
 Example: ListView:
                ListView
                  Item
-  Item
-  Item
+                 Item
+                 Item
+ii. SilverView: 
+               CustomScrollView
+                SliverAppBar
+                SliverList
+                SliverGrid
+
