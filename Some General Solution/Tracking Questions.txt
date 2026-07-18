@@ -1,0 +1,35 @@
+                        1. How does a Flutter app receive live location updates?
+A Flutter App usually doesn't receive live location updates directly from kafta. The typical flow
+is that the delivery partner's app send location updates to a backend throw an api. 
+The backend publish those events to kafta. where the different backend services process them.
+The latest location may be stored in Redis for quick access, and then the backend pushes updates
+to the flutter Customer app using Websocket, Server sent events, firebase or another real time
+protocol.
+In most production applications, websockets are the preferred choice because they provide low latency,
+real time communication.
+
+                       2. Why doesn't the Flutter app connect directly to Kafka?
+Flutter should never connect directly to kafta because kafta is a backend event streaming platform, not
+a mobile communication protocol. It isn't designed for client applications, and exposing kafka directly
+would create security, authentication, and scalabilty issues. Instead Flutter communications with the 
+backend through api or websockets, while the backend handles all kafta interactions.
+
+                       3. Which protocol would you use for live tracking?
+I would use websockets because they maintain a persistent connection between client and the sever.
+Unlike Http polling, Websockets allow the server to push updates instantly whenever the rider's 
+location changes, resulting is lower latency and smoother tracking experience.
+
+                       4. What is the difference between Polling and WebSockets?
+Polling continuously sends HTTP requests at fixed intervals to check for updates. Even if there's no new data, 
+the requests continue, which increases network usage and server load.
+With WebSockets, a persistent connection is established once, and the server pushes updates only when new data 
+is available. This reduces unnecessary network traffic, lowers latency, and is much more efficient for real-
+time applications.
+
+                      5. Suppose the Websocket disconnects. What Happens?
+The application should automatically attempt to reconnect instead of requiring user intervention.
+I'd implementexponential backoff so repeated failures don't overload the server.
+I'd also use heartbeat or ping messages to detect broken connections and, once reconnected, resume 
+receiving the latest location updates.
+
+                      6. 
