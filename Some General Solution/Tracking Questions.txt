@@ -32,4 +32,59 @@ I'd implementexponential backoff so repeated failures don't overload the server.
 I'd also use heartbeat or ping messages to detect broken connections and, once reconnected, resume 
 receiving the latest location updates.
 
-                      6. 
+                      6. How would you show rider movement smoothly on Google Maps?
+Instead of updating the marker position instantly, I'd animate the movement between the previous and
+new coordinates. This can be done using interpolation or animates techniques such as TweenAnimation.
+I'd also animate the camera smoothly when required so the tracking experience feels natural rather than
+Jumpy.
+
+                     7. How often should location updates be sent?
+It depends on the application's requirements. Sending updates too frequently drains the battery and 
+increase network usage, while sending them too slowly affects the user experience. 
+A common approach is sending updates every 2 to 5 seconds or whenever the device has moved a significant
+distance.
+
+                     8. What if thousands of users are tracking riders simultaneously?
+ScalabilIty is primarily handled by the backend infrastructure. On the flutter side, I'd ensure
+efficient state management so only the map marker updates instead of rebuilding the entire screen.
+This keep rendering efficient even when the frequent location updates are received.
+
+                        9. Why is Redis Used?
+Redis is an in-memory data store, so it's extremely fast. Instead of querying a database every time
+someone requests the rider's current location, the backend can quickly fetch the latest coordinates
+from Redis, reducing latency and improving performance.
+
+                      10. Why use Kafka instead of direct API calls?
+If millions of riders are sending location updates every few seconds, processing each update 
+synchronously through apis becomes difficult to scale. kafta acts as a event streaming platform 
+that buffers and distributes events efficiently. Multiple backend services can independently consume 
+those events without affecting each other, making the system more scalable and resilient.
+
+                     11. What would your Flutter architecture look like?
+I usually followed a layered architecture. The UI interacts with a state management solution like Bloc, 
+provider, Getx. The state management layer communicates with a Repository, which abstracts the data source.
+The Repository interacts with services such as a WebSocket service or REST API service, which then communicate 
+with the backend.
+        UI  ----->    Bloc / Riverpod / Provider  ----->  Repository  -----> WebSocket / API Service ----|
+                                                                               Kafta <----- Backend <----|
+
+      12. The Google Map Marker Updates every second, but the UI becomes laggy. What would you do?
+I wouldn't rebuild the entire screen for every location update. Instead, I'd Update only the marker that's
+changing, use efficient state management to minimize widget rebuilds, animate the marker movement for
+smoother transitions, and use optimization techniques like RepaintBoundary where appropriate, I'd also 
+avoid processing duplicate or unnecessary updates.
+
+     13. How would you handle the backend stopping location updates?
+I'd continue showing the last known location, display a reconnecting or updating indicator to the user,
+retry the connection automatically with appropriate timeouts, and once the connection is restored,
+resume receiving live updates.
+
+       14. How do you secure a WebSocket connection?
+The WebSocket connection should use WSS, which is the secure version of WebSockets over TLS. Authentication is typically 
+handled using a JWT or access token during the connection or handshake process, and the backend validates the user's 
+authorization before allowing access to real-time updates.
+
+              Trap Question: Does Flutter use Kafka?
+No. Flutter does not communicate directly with Kafka. Flutter communicates with backend services using REST APIs or 
+WebSockets. The backend is responsible for producing and consuming Kafka events. Kafka is purely part of the backend 
+architecture.
