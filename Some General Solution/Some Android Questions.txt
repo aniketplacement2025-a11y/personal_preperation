@@ -1,1 +1,117 @@
 https://www.linkedin.com/posts/krishanu-android_android-androiddevelopment-jetpackcompose-share-7485586810270609409-QxOq/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+                     1. What is collectAsState()?
+ans) It is a jetpack compose api that collects data from a Flow or StateFlow and converts it into a Compose State object
+the UI automatically updates when new values are emitted.
+                                            OR
+collectAsState() is a Jetpack Compose API that collects data from a Flow or StateFlow and converts it into Compose State. 
+Whenever the flow emits a new value, the composable automatically recomposes and updates the UI.
+
+                     2. Is there anything similar in Flutter?
+ans) This is the most likely question. Expected:
+In Flutter, StreamBuilder behaves similarly by listening to a Stream and rebuilding the UI whenever new data arrives.
+                                            OR
+Flutter has several equivalents depending on the state management approach. StreamBuilder is the closest because 
+it listens to a Stream and rebuilds the UI when new data arrives. Other examples include ValueListenableBuilder, 
+BlocBuilder, Consumer in Provider, and Obx in GetX.
+
+                     3. What is Recomposition?
+ans) They may ask because flutter has an equivalent conecpt.
+Compare: Compose: Recomposition.
+Flutter: *Widget rebuild.
+Expected Answer: In Compose, recomposition updates only the composables that depend on changed state. In Flutter,
+ calling setState() marks a widget subtree for rebuilding, although Flutter also optimizes rendering so not everything
+ is redrawn.
+                                          OR
+Recomposition is the process in Jetpack Compose where only the composables affected by a state change 
+are executed again to update the UI. It's similar to Flutter's widget rebuild mechanism, where widgets 
+depending on changed state are rebuilt.
+
+                    4. Does Flutter Rebuilds the entire application?
+ans) Expected: No Only the affected widget subtree is rebuilt.
+                                          OR
+No. Calling setState() only marks that specific widget and its subtree as dirty. 
+Flutter rebuilds only that subtree, not the entire application.
+
+                    5. What is StateFlow?
+ans) Expected: A lifecycle-aware observable data holder built on Kotlin Flow.
+Flutter Equivalent: *Stream *Rx variable(Getx) *ChangeNotifier *Riverpod providers.
+                                      OR
+StateFlow is a lifecycle aware state holder built on Kotlin flow. It always contains 
+the latest value and emits updates whenever the value changes. In flutter, similar
+concepts include Stream, ValueNotifier, changeNotifier, Riverpod providers, Getx 
+Rx variables or Bloc state.
+
+                    6. What happens when Flutter state changes?
+ans) Expected Flow: State Changes -> Widget marked dirty -> Build() called -> Element tree updated
+ -> Render tree updated (if needed) -> Paint (if needed)
+                                           OR
+When state changes, Flutter marks the widget as dirty. During the next frame, it calls the widget's
+build() method, updates the Element tree, reuses existing RenderObjects where possible, performs layout 
+if needed, and repaints only the affected areas.
+Interview Flow: State Changes    ↓    Widget Marked Dirty      ↓   build() Called      ↓
+Element Tree Updated      ↓     RenderObject Updated (if needed)      ↓     Layout (if needed)
+      ↓    Paint (if needed)
+
+              7. Difference between Compose Recomposition and Flutter Rebuild
+ans) Expected: Compose: *Recomposition *skips unchanged composables.
+*Flutter: Widget rebuild. *Efficient diffing through Element and RenderObject trees.
+                                   OR
+In Jetpack Compose, recomposition re-executes only the composables that depend on changed state, 
+and unchanged composables can be skipped. In Flutter, widgets are rebuilt, but Flutter efficiently
+reuses the Element and RenderObject trees, so rebuilding widgets doesn't necessarily mean 
+re-rendering everything.
+
+                     8. How does flutter avoid unnecessary redraws?
+ans) Expected: *widget tree *Element tree *RenderObject tree *RenderObjects are reused
+*RepaintBoundary *const widgets *Keys.
+                                   OR
+Flutter separates the Widget, Element, and RenderObject trees. Widgets are lightweight and recreated 
+frequently, while Elements and RenderObjects are reused whenever possible. Flutter also optimizes rendering 
+using const widgets, RepaintBoundary, and Keys to reduce unnecessary work.
+
+              9. What is Flutter's equivalent of Snapshot State?
+Flutter doesn't have a direct Snapshot State equivalent, but similar state holders include ValueNotifier, 
+ChangeNotifier, Riverpod's StateNotifier, GetX Rx variables, and Bloc state.
+
+     10. If 10 widgets listen to the same Provider or GetX variable and it changes, will all 10 rebuild?
+ans) Only the widgets that are actually listening to that specific state will rebuild. Widgets that don't 
+depend on the changed value won't rebuild.
+
+      11. What is the difference between StreamBuilder and FutureBuilder?
+FutureBuilder is used for one-time asynchronous operations and rebuilds once when the Future completes. 
+StreamBuilder listens to a continuous stream of data and rebuilds every time a new value is emitted.
+
+             12. How does Flutter know which widgets to rebuild?
+ans) Flutter tracks widgets using the Element tree. When setState() is called, the corresponding Element
+is marked as dirty. During the next frame, Flutter rebuilds only those dirty Elements and 
+updates the UI efficiently.
+
+                   13. Is rebuilding widgets expensive?
+ans) No. Widgets are immutable and lightweight configuration objects, so rebuilding them is generally 
+inexpensive. Rendering, layout, and painting are usually more performance-intensive than rebuilding widgets.
+
+                   14. Does const stop widget rebuilds?
+ans) Not exactly. A parent widget may still rebuild, but const widgets can be reused because they are 
+compile-time constants. This helps Flutter skip unnecessary widget creation and comparison, 
+improving performance.
+
+                   15. Does setState() repaint the entire screen?
+ans) No. setState() rebuilds only the affected widget subtree. 
+Flutter repaints only the parts of the screen whose rendering output actually changed.
+
+                   16. Why are widgets immutable in Flutter? 
+ans) Widgets are immutable because they simply describe the UI configuration.
+When state changes, Flutter creates new widget instances and efficiently compares 
+them with the existing Element tree to determine what actually needs updating.
+
+            17. What is the difference between Widget, Element, and RenderObject?
+The Widget is an immutable description of the UI. The Element manages the widget's lifecycle 
+and connects it to the render tree. The RenderObject performs layout, painting, and hit testing.
+Flutter recreates widgets frequently but tries to reuse Elements and RenderObjects for better 
+performance.
+
+             18. Why is StreamBuilder considered similar to collectAsState()?
+ans) Both listen to asynchronous data sources and automatically update the UI when new values arrive. 
+The difference is that collectAsState() works with Kotlin Flow in Jetpack Compose, while StreamBuilder 
+works with Dart Streams in Flutter.
