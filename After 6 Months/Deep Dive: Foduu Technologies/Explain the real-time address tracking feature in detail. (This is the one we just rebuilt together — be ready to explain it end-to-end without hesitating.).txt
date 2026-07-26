@@ -1,0 +1,29 @@
+Sure so in our checkout flow, users need to save a delivery address, and originally the requirement was
+for users to manually type everything - flat number, area, city, pincode. My job was to make that faster 
+and more accurate using location and maps.
+
+Here's how I approached it:
+First, when user opens the 'Add Address' Screen, I request location permission and use the 'geolocator' 
+package to get there current lat,lng. That centers a Google Map on their current location using 
+'google_maps_flutter' - for this, for this, I'd requested the client set up a Google Maps Platform account 
+with billing enabled, since Maps SDK, Places, and Geocoding APIs all need that.
+
+Second, I added a search bar on top using the Places Autocomplete API, so if the user's current GPS location 
+isn't accurate — say they're inside a mall or a building — they can just search for their actual delivery 
+location by name. When they select a suggestion, I get a place_id, and from that I fetch the exact coordinates
+using the Place Details API.
+
+Third — and this is the core of the feature — once we have a final lat/lng, whether it came from GPS, from dragging
+the map pin, or from the search selection, I run reverse geocoding on those coordinates. Google returns structured address
+components, and I parse that into our existing form fields: locality maps to city, postal_code to pincode, route/sublocality
+to area or street.
+
+One thing I had to handle carefully — reverse geocoding almost never returns flat or house number, since that's not 
+public map data. So I left that field editable and empty, and auto-filled only what Maps could reliably give us — that 
+was an important UX decision so users didn't just blindly trust wrong data.
+
+Finally, when the user hits 'Confirm Location,' those parsed fields populate the address form my senior had already built 
+the CRUD operations for. The user reviews it, fills in the flat number, and saves — which goes through Firestore.
+
+So overall, the feature combines four pieces — current location, draggable map pin, search-based location, and reverse geocoding — all 
+funneling into one 'confirm and autofill' action, instead of the user typing every address field manually.
