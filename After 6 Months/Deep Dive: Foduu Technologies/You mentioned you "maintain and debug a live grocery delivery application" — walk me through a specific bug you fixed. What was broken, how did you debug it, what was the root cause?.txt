@@ -1,1 +1,42 @@
 
+The Problem:
+Users were reporting that sometimes when they selected an address during checkout, the
+delivery address that actually got saved to the order was a previous address they had
+selected earlier in the session — not the one they picked right before placing the order. It
+wasn't happening every time, which made it trickier — only intermittently, mostly when
+users switched between saved addresses quickly.
+
+How i approached debugging it:
+First step was reproducing it consistently, so I started rapidly switching between two saved 
+addresses and placing test orders. I noticed the bug showed up more often when the address 
+selection screen involved an async call — like reverse geocoding to get a readable address 
+from lat/long, or a Firestore fetch to pull saved address details.
+
+I added print/debug logs at each stage — when the address was selected, when the async fetch 
+completed, and when the final order object was constructed — to trace the actual sequence of 
+events instead of assuming it.
+
+Root Cause:
+Turned out it was a classic race condition with state management. When a user tapped a new address, 
+it kicked off an async operation (fetching full address details), but the UI didn't wait for that 
+to complete before allowing "Place Order" to be tapped if the user was fast enough. So if a user 
+selected Address B right after Address A, and Address A's async fetch happened to resolve after 
+Address B's tap but before B's fetch completed, the state got overwritten with stale data from A.
+
+Basically, the state variable holding the "selected address" wasn't guarding against out-of-order 
+async responses.
+
+The Fix:
+I added a request-token / "latest request wins" pattern — each address selection generated a unique 
+identifier, and when the async fetch resolved, it checked whether it was still the latest request before 
+updating the state. If a newer selection had already come in, the older response was just discarded.
+
+I also disabled the "Place Order" button until the address fetch for the currently selected address had 
+actually completed, so users couldn't submit against a half-loaded state in the first place — that was more 
+of a preventive UX fix on top of the actual state fix.
+
+After that, I ran the same rapid-switching test scenario about 15-20 times and couldn't reproduce it anymore, 
+and we didn't get repeat reports from users after it went out.
+
+That one taught me a lot about being careful with async state updates in Flutter, especially in flows where 
+users can act faster than a network call resolves.
