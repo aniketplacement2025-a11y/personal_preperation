@@ -4,3 +4,40 @@ We used Geolocator for getting the device's GPS coordinates, and Google Map Plat
 The reason is these two solve different problems — 
 Geolocator only gives you a lat/lng number, it has no idea what's on the map or 
 what that address is called. For that, you need a maps/geocoding provider.
+
+Now here's the part that actually matters — the alternatives and why we picked what
+we picked:
+
+        ALTERNATIVE 1: Apple Maps / native platform maps
+Why Not: Apple Maps has no direct Android equivalent, so you'd need to build two completely 
+separate implementations for iOS and Android. Since Flutter's whole value is cross-platform code, 
+using Google Maps Platform (which works identically on both) keeps one codebase instead of two.
+
+        ALTERNATIVE 2: OpenStreetMap (via flutter_map)
+Why not (usually): OSM is free and open-source, no billing account needed 
+— genuinely a strong option for cost-conscious apps. But:
+i. Its Places/search-autocomplete data is far less complete than Google's, 
+   especially in India for smaller localities, plot numbers, or newer buildings
+ii. Its address-component structure for reverse geocoding is inconsistent 
+    compared to Google's standardized address_components
+iii. For a delivery app, address accuracy directly affects whether orders reach 
+    the right doorstep — so weaker geocoding data is a real business risk.
+When you WOULD pick it: If the client wanted to avoid Google's billing costs and mostly 
+cared about basic mapping in well-mapped urban areas, OSM is a legitimate cost-saving trade-off. 
+This is worth mentioning to show you know it's not "Google or nothing."
+
+       ALTERNATIVE 3: Mapbox
+Why not: Mapbox is actually a very solid competitor — better custom map styling, sometimes cheaper 
+at scale. But Google's Places Autocomplete + Geocoding accuracy in India is generally considered 
+stronger, and since the whole feature depended on address accuracy, not map aesthetics, 
+Google made more sense functionally.
+
+The real tradeoff to mention (this is the strong part of your answer)
+"The main tradeoff with Google Maps Platform is cost — it's not free at scale, 
+it requires a billing account linked even during development, and pricing is per-API-call 
+for Places/Geocoding, which matters for a high-order-volume app like grocery delivery. 
+The upside is significantly better address accuracy and autocomplete quality in Indian localities, 
+which was the priority since wrong addresses directly cause failed deliveries. 
+So it was a reliability-over-cost decision, not a default choice."
+
+
