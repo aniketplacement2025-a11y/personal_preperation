@@ -1,0 +1,6 @@
+We used Geolocator for getting the device's GPS coordinates, and Google Map Platform
+(Maps SDK, Places, Geocoding) for everything visual and location search related.
+
+The reason is these two solve different problems — 
+Geolocator only gives you a lat/lng number, it has no idea what's on the map or 
+what that address is called. For that, you need a maps/geocoding provider.
