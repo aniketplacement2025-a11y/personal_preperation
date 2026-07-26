@@ -1,0 +1,39 @@
+The Technical Reality First:
+
+Reverse geocoding almost never returns a flat or house number — and that's not a bug, 
+it's a data limitation. Google's address data comes from public map records: roads, 
+localities, postal codes, sometimes building names. 
+But flat numbers, floor numbers, or house numbers within a building are private information 
+that isn't part of any public geocoding database. So no matter how accurate your GPS pin is, 
+that field will basically always come back empty.
+
+How you handled it in the UI
+
+So I treated the auto-filled fields and the manual fields differently:
+
+i. Auto-filled (from Google, read-only feel but still editable): area/street, 
+city, pincode — these came from address_components like route, sublocality, locality, 
+postal_code.
+ii. Always manual, always empty by default: flat/house number — I never tried to guess
+or force this field, I just left it blank and required the user to type it before they 
+could save.
+
+On the UI side specifically, after 'Confirm Location' fills the form, I'd usually put a 
+short hint or placeholder text on the flat/house number field — something like 
+'Enter flat/house/floor no.' — so it's visually obvious to the user that this one field 
+still needs their input, versus the other fields that already look filled in. 
+That way there's no confusion about 'why didn't it fill this one in too.'
+
+I also made sure the 'Save Address' button validation specifically checked that flat/house
+number wasn't empty — since that's the one field most likely to get skipped if a user is 
+moving fast through the form, and it's honestly the most important one for delivery accuracy. 
+A wrong pincode is annoying, but a missing flat number means the delivery person literally 
+can't find the door.
+
+          Q) If they push further: "Did you consider auto-completing it any other way?"
+There's no reliable way to auto-fill it from location data alone. Some apps solve this partially by remembering 
+previously saved addresses at the same coordinates — so if another user already delivered to that same building 
+and entered flat details, you could suggest it. But that's a much bigger feature involving matching saved 
+addresses to nearby coordinates, and it wasn't something we implemented — it's more of a 'nice to have' 
+I'd flag for a future iteration, not something core to this feature.
+
