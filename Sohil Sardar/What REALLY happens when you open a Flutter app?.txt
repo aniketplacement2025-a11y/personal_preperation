@@ -24,3 +24,69 @@ operating system.
 The embedder starts and communicates with the Flutter Engine. The engine initializes the Dart runtime, 
 rendering pipeline, and platform services.
 Dart starts the application's main isolate and executes 'main()'.
+When runApp() is called, Flutter attaches the root widget to the framework. 
+The framework creates Elements and RenderObjects as needed.
+During a frame, Flutter performs build, layout, paint and compositing. The resulting layer information 
+is then sent through the rendering pipeline and rasterized by the engine.
+Finally, the rendered pixels are presented through the platform to the display.
+
+Q3) What is flutter embedder?
+ans) The Flutter Embedder is the platform-specific layer that integrates the Flutter Engine 
+with the operating system.
+It handles things such as application lifecycle, window and surface management, input events, 
+accessibility, text input, and communication with platform-specific APIs.
+For example, on Android, Flutter needs to integrate with Android's activity and surface system. 
+The embedder provides that connection between Android and the Flutter Engine.
+      # Simple Mental Model:
+ Android / iOS -> Flutter Embedder -> Flutter Engine -> Flutter Framework -> Dart
+ Application.
+
+Q4) What is the Flutter Engine?
+ans) The Flutter Engine is the native core that executes and renders a Flutter application.
+It is primarily implemented in C++ and provides functionality such as the Dart runtime, 
+rendering, text handling, accessibility integration, platform communication, and scheduling.
+In simple terms, the Flutter Framework tells Flutter what UI should exist, while the Engine provides 
+the lower-level infrastructure needed to execute that code and render it.
+
+Q5) what is Dart Runtime in flutter?
+ans) The Dart runtime is responsible for executing Dart code inside the flutter application.
+It manages things such as Dart isolates, memory management, garbage collection, asynchronous 
+execution, and interaction with the Dart VM or runtime environment depending on the build mode.
+Flutter's UI code runs inside Dart's main isolate.
+
+Q6) What is an Isolate in Dart?
+ans) An isolate is Dart's unit of independent execution.
+Each isolate has its own memory and its own event loop, so isolates don't directly share 
+mutable memory.
+They communicate by sending messages between each other.
+Flutter uses isolates because expensive CPU-bound work can be moved away from the main 
+isolate so that UI processing can continue smoothly.
+
+Q7) Why does Flutter Uses Isolates?
+ans) Flutter's Ui work is handled by the main isolates. if i perform heavy CPU intensive 
+work there, it can block the event loop and prevent Flutter from processing frames on time,
+which can cause junk.
+So for expensive CPU-bound operations, I can move the work to another isolate. The main isolate 
+remains available for UI-related work.
+
+Q8) What happens when 'main()' executes?
+ans) 'main()' is the entry point of the Dart application.
+When Flutter starts the Dart application, the main isolate begins executing 'main()'.
+Typically, 'main()' performs some initial synchronous setup and then calls 'runApp()' with the root widget.
+After that, Flutter takes responsibility for attaching and rendering the application UI.
+Example: void main() {  runApp(const MyApp());  }
+
+Q9) What exactly does runApp() do internally?
+ans) 'runApp()' attaches the given widget to the Flutter framework as the root of 
+the application.
+Internally, Flutter creates or updates the root element and schedules the framework to 
+build and render the widget tree.
+It doesn't directly draw the widget on the screen. Instead, it starts the framework's 
+process of creating the element and render trees, followed by layout and painting.
+     #IMPORTANT:
+Don't say: "runApp() draws the UI".
+Better: "runApp() attaches the root widget and starts the framework's rendering process."
+
+Q10) What happens when you call runApp() for the first time?
+ans) Flutter attaches the root widget to the framework. The framework creates the root 
+Element and begins building the widget hierarchy.
