@@ -1,0 +1,26 @@
+https://www.linkedin.com/posts/girijesh-paliwal-05454b190_flutter-dart-flutterdevelopment-share-7491847446763991040-sB_0/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2mRtgBaOGGFFr6kUtyXb1irShlzaEqbzw
+
+                                 1. FLUTTER APPLICATION STARTUP AND INTERNALS?
+Q1) what happens internally when you launch a flutter application?
+ans) When i launch a flutter application, the operating system first starts the application process
+and the platform specific Flutter embedder is initialized.
+The embedder connects the flutter application with the host platform, such as Android or iOS, and 
+starts the flutter engine.
+The engine initialize things like the dart runtime, rendering system and platform communications.
+Then the dart application's 'main()' function executes. Usually, 'main()' calls 'runApp()', which 
+attaches the root widget to flutter's widget tree.
+FLutter then builds the widget tree, creates the corresponding element and RenderObject trees,
+performs layout and painting and finally the engine rasterizes the result into pixels that are 
+displayed on the screen.
+ # MENTAL FLOW:
+ OS -> Flutter Embeddar -> Flutter Engine -> Dart Runtime/Isolate -> main() -> runApp()
+ -> Widget Tree -> Element Tree -> Render Object Tree -> Build -> Layout -> Paint ->
+ Compositing -> Rasterization -> Pixels.
+
+Q2) Explain the complete Flutter startup flow from OS launch to pixels?
+ans) At a high level, the OS launches the flutter application and starts the platform specific
+flutter embedder. The Embedder is responsible for integrating flutter with the host 
+operating system.
+The embedder starts and communicates with the Flutter Engine. The engine initializes the Dart runtime, 
+rendering pipeline, and platform services.
+Dart starts the application's main isolate and executes 'main()'.
