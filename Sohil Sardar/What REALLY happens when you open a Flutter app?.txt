@@ -90,3 +90,93 @@ Better: "runApp() attaches the root widget and starts the framework's rendering 
 Q10) What happens when you call runApp() for the first time?
 ans) Flutter attaches the root widget to the framework. The framework creates the root 
 Element and begins building the widget hierarchy.
+As widgets are inflated, corresponding Elements are created, and RenderObjects are 
+created for widgets that participate in rendering.
+Flutter then performs layout and painting and eventually produces the first frame.
+
+Q11) How does flutter convert widgets into actual pixels?
+ans) Widgets themeselves aren't pixels. Widgets are immutable descriptions of what UI 
+should look like.
+Flutter uses those widget descriptions to create and update the Element tree. RenderObjects 
+then perform layout and painting.
+The painting information is represented through Flutter's layer/compositing system, and the 
+engine's rasterization pipeline converts the resulting scene into pixels that are displayed 
+on the screen.
+       -------------------------------------------------------------------------------------
+                 2. WIDGET -> ELEMENT -> RENDEROBJECT
+Q12) What is the difference between Widget, Element and RenderObject?
+ans) A Widget is an immutable configuration or description of part of the UI.
+An Element is the persistent instance of a widget in the widget tree and manages 
+   the relationship between the widget configuration and the actual tree structure.
+A RenderObject is responsible for the actual rendering-related work such as layout 
+   and painting.
+So i think of it as:
+    Widget = configuration
+    Element = persistent connection
+    RenderObject = layout and painting
+Easy Example: Widget -> Element -> Render Object. 
+
+Q13) Why does Flutter need three different trees?
+ans) They solve different problems:
+*Widgets are lightweight immutable configurations and can be recreated frequently.
+*Elements provide persistent identity and manage the widget hierarchy across rebuilds.
+*RenderObjects handle expensive rendering operations like layout and painting.
+Separating them allows Flutter to rebuild widget configurations without unnecessarily 
+recreating the more expensive parts of the rendering tree.
+
+Q14) What happens when a widget rebuilds?
+ans) When a widget rebuilds, Flutter creates a new widget configuration for that part of the tree.
+Flutter then compares the new widget with the existing widget associated with the Element.
+If they can be updated in place, Flutter reuses the existing Element and usually the existing RenderObject.
+Only the necessary parts of the tree are updated.
+
+Q15) Does rebuilding a widget recreate its RenderObject?
+ans) No, not necessarily.
+A rebuild mainly creates new widget configurations. If Flutter can reuse the 
+existing Element, the existing RenderObject can usually also be reused.
+That's one of the important performance benefits of Flutter's architecture.
+
+Q16) What is the role of Element tree?
+ans) The Element tree acts as the persistent structure between the frequently recreated 
+widget configurations and the longer-lived render objects.
+Elements maintain things like widget identity, parent-child relationships, lifecycle state,
+and references to associated render objects.
+They also allow Flutter to determine which existing parts of the tree can be reused during 
+rebuilds.
+
+Q17) How does Flutter determine whether an existing Element can be reused?
+ans) Flutter primarily looks at the widget's type and key.
+If the new widget has the same type and compatible key as the existing widget at that 
+location, Flutter can generally update and reuse the existing Element.
+If the type or key doesn't match appropriately, Flutter may replace that Element with 
+a new one.
+                 Important phrase:
+Type + Key determine identity during reconciliation.
+
+Q18) How do keys affect the element tree?
+ans) Keys provide identity to widget.
+They become especially important when widgets are reordered, inserted, or removed, 
+because Flutter can use the keys to match new widgets with the correct existing Elements.
+Without appropriate keys, Flutter may associate state with the wrong item after a reorder.
+Example:
+ListView(  children: [    UserTile(key: ValueKey(user.id)),  ], )
+
+Q19) What happens internally when setState() is called?
+ans) When I call setState(), Flutter executes the callback where I modify the 
+state and then marks the associated State object as needing a rebuild.
+Flutter schedules the corresponding Element for rebuilding.
+During the next frame, Flutter rebuilds that part of the widget tree.
+Flutter then reconciles the new widgets with the existing Elements and updates 
+only the necessary parts of the tree.
+            Very important:
+Don't say: "setState() rebuilds the entire app."
+Say: "setState() marks the associated State's Element as needing rebuild."
+   ----------------------------------------------------------------------------------
+                      3. RENDERING PIPELINE:
+Q20) Explain Flutter's rendering pipeline.
+ans) At a high level, Flutter's rendering pipeline goes through build, layout, paint, 
+compositing and rasterization.
+During build, Flutter creates or updates the widget and element structure.
+During layout, RenderObjects determine their sizes and positions based on constraints.
+During paint, RenderObjects record the visual operations needed to draw themselves.
+During compositing, Flutter organizes the painted content into layers when needed.
