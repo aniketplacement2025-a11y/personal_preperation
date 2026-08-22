@@ -9,4 +9,20 @@ ans) They expect something like:
 
 Q2) Why should we use debouncing for username checking?
 ans) if we send an API request for every keystroke, typing 'aniket' could 
-generate 6 requests. Debouncing waits for the user to stop briefly
+generate 6 requests. Debouncing waits for the user to stop briefly before 
+making a request, reduce unnecessary api calls.
+
+Q3) How would you implement debounce in Flutter?
+ans) Possible approaches:
+1. 'Timer' from Dart.     2. Rx debounce with GetX.
+3. debounce() with reactive state management.       
+4. Debounce operators in other state-management solutions
+This is very relevant for a Flutter interview.
+
+                               2. API INTEGRATION QUESTIONS:
+                               -- --- ----------- ----------
+Q4) What API would you create for checking username availability?
+ans) For Example: GET /users/check-username?username=aniket
+Response: {  "available": true }
+
+Q5) 
