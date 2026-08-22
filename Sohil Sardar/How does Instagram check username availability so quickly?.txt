@@ -1,2 +1,12 @@
 https://lnkd.in/p/ddA9r9tu
 
+                                1. MOST IMPORTANT - FLUTTER/API QUESTIONS
+                                -- ---- ---------   ----------- ---------
+Q1) How would you implement username availability checking in Flutter?
+ans) They expect something like:
+     User types → debounce → API request → backend checks username 
+     → response → UI update.
+
+Q2) Why should we use debouncing for username checking?
+ans) if we send an API request for every keystroke, typing 'aniket' could 
+generate 6 requests. Debouncing waits for the user to stop briefly
