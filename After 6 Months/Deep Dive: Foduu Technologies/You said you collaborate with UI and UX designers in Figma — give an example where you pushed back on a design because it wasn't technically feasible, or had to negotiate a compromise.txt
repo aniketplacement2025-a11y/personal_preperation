@@ -4,3 +4,42 @@ the same time as the address tracking work.
 The Original Design:
 The designer had mocked up a checkout screen where the live delivery tracking 
 map was supposed to be embedded inline, 
+scrolling along with the rest of the checkout page - so as you 
+scrolled down through order summary, payment, etc.,the map itself would scroll 
+up and down with it, partially visible, almost like an Instagram-feed-style card.
+
+Why It Wasn't Feasible:
+Technically, this created a real problem. GoogleMap widgets in Flutter are backed 
+by native platform views( 'PlatformView' on both iOS and Android ), and 
+embedding a native view inside.
+a scrollable ListView or CustomScrollView causes real performance issues — janky 
+scroll, behavior, gesture conflicts between the map's own pan/zoom gestures and the
+page's scroll gesture, and on some Android devices, the map would flicker or not 
+render correctly at all when it wasn't fully in frame.
+
+I actually built a quick prototype to test it before pushing back — I didn't want 
+to say "this won't work" based on theory alone. I showed the designer a screen 
+recording of the janky scroll behavior and the gesture conflict where scrolling the 
+page would sometimes accidentally pan the map instead.
+
+The Negotiation:
+Instead of just saying no, I proposed two alternatives and let the designer pick 
+based on what mattered more for the product:
+i. Option A: Keep the map in a fixed, non-scrolling container at the top of the 
+screen (a set height, like 200-250dp), with the rest of the checkout content 
+scrolling independently below it.
+ii. Option B: Make the map a separate, dedicated "Track Order" screen accessible 
+via a button/card on the checkout screen, rather than embedding it directly.
+
+The Compromise:
+We ended up going with Option A — a fixed-height map at the top, non-scrollable, 
+with a small "expand" icon that let users open it full-screen if they wanted a 
+bigger view. This kept the visual intent the designer wanted (live map visible 
+right there on the checkout screen) while avoiding the platform view/scroll conflict
+entirely, since the map's container itself never moved — only the content below it did.
+
+I also explained the why clearly, not just the what — I made sure the designer 
+understood it wasn't a "Flutter can't do this" limitation in general, it was 
+specifically a PlatformView-inside-scrollable-widget constraint, so future designs 
+could account for that pattern without needing to loop me in every time.
+
