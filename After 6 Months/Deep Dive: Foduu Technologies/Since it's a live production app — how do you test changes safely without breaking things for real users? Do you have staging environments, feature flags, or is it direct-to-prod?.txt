@@ -1,0 +1,19 @@
+Fair question — and honestly, I'll be straight about this rather than making 
+it sound more sophisticated than it is, since we're a small-to-mid sized team, 
+not a massive enterprise setup.
+
+Environments
+
+We do maintain a separation between environments — a staging/dev environment 
+pointing to a separate Firebase project (or at least separate Firestore 
+collections/config) from production,
+so I'm never testing against real customer data or live orders. Builds for 
+staging typically get a different app icon/name or a debug banner so nobody 
+on the team accidentally confuses which build they're using.
+
+My actual workflow before anything touches prod:
+i. Local testing first — obviously, running on emulator/physical device against 
+   ----- ------- ----- the staging backend, testing the happy path and then 
+deliberately breaking things (airplane mode mid-flow, killing the app during an 
+async call, rapid tapping — like the race condition bug I mentioned earlier).
+
