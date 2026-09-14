@@ -1,0 +1,44 @@
+Since we can't assume that permission always be granted. That's why me maked a Fallback flow:
+1. Detecting the Denial State Properly:
+ Using the 'permission_handler' package (or 'geolocator's permission APIs), I check the permission
+ status before attempting any location fetch. There are actually a few different states to handle, 
+ not just "granted vs denied":
+* Denied (user said no, but can ask again).
+* Permanently denied / "Don't ask again" (especially on Android)
+* Denied while using the app vs. only granted "once" 
+
+2. If it's a soft denial:
+I show a friendly in-app dialog explaining why we need location — 
+something like "We use your location to show accurate delivery estimates 
+and let you select your address faster." This isn't just a system permission popup; 
+it's a custom UI nudge before re-triggering the system prompt, because a blind second 
+popup with no context usually gets denied again too.
+
+3. If it's permanently denied:
+At that point, the OS won't show the permission dialog again — so I detect that state 
+and instead show a screen or bottom sheet with a "Location access is off" message and a 
+button that deep-links the user directly to the app's system settings page 
+(using openAppSettings() from permission_handler), so they can manually flip it on if 
+they choose to.
+
+4. The actual fallback for address selection
+This is the important part — location permission denial shouldn't block checkout entirely. So:
+*The searchable address field (Google Places Autocomplete) still works fully without device location
+— the user can just type their address manually and select from the dropdown, since that doesn't 
+require GPS permission at all, only network access.
+*I just don't auto-populate or auto-suggest "current location" as a quick option at the top of 
+the address list — that specific convenience feature gets hidden if permission isn't granted.
+
+5. For the Real time tracking side:
+If it's the delivery partner's location being denied (different context, but worth mentioning) — 
+that's actually handled on their end of the app, and if their location isn't available, the 
+customer-side just falls back to showing order status updates (like "Order picked up," "Out 
+for delivery") without the live map marker, using the lastUpdated timestamp logic I mentioned 
+earlier to communicate that live tracking isn't currently available, rather than showing a stale
+or frozen pin.
+
+6. Re-checking permission state
+I also added a check using AppLifecycleState.resumed — so if a user denies permission, 
+goes to Settings, manually enables it, and comes back to the app, I re-check the permission
+status when the app resumes rather than making them restart the app or the flow manually.
+
