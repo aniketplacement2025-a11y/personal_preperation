@@ -1,0 +1,6 @@
+Yeah, this happened during the checkout flow redesign, actually right around 
+the same time as the address tracking work.
+
+The Original Design:
+The designer had mocked up a checkout screen where the live delivery tracking 
+map was supposed to be embedded inline, 
